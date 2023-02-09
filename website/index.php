@@ -5,8 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ITMOMENT</title>
     <link rel="stylesheet" href="./styles/style.css">
-  
-    
+    <?php
+      $link = mysqli_connect("hostip", "usr", "pwd");
+
+      if ($link == false){
+          print("Ошибка: Невозможно подключиться к MySQL " . mysqli_connect_error());
+      }
+      else {
+          print("Соединение установлено успешно");
+      }
+    ?>
   </head>
   <body>
     <div class="vvod">
