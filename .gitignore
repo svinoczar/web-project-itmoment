@@ -6,5 +6,4 @@ out/
 *.xml
 *.suo
 *.ntvs*
-*.njsproj
 *.sln
