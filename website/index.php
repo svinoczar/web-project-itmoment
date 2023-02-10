@@ -6,13 +6,10 @@
     <title>ITMOMENT</title>
     <link rel="stylesheet" href="./styles/style.css">
     <?php
-      $link = mysqli_connect("hostip", "usr", "pwd");
+      $link = mysqli_connect("sql7.freemysqlhosting.net", "sql7597171", "FQ7CvReXHZ");
 
       if ($link == false){
           print("Ошибка: Невозможно подключиться к MySQL " . mysqli_connect_error());
-      }
-      else {
-          print("Соединение установлено успешно");
       }
     ?>
   </head>
