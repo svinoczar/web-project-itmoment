@@ -3,13 +3,6 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/style.css">
-    <?php
-      $link = mysqli_connect("sql7.freemysqlhosting.net", "sql7597171", "FQ7CvReXHZ");
-
-      if ($link == false){
-          print("Ошибка: Невозможно подключиться к MySQL " . mysqli_connect_error());
-      }
-    ?>
     <title>ITMOMENT</title>
   </head>
   <body>
@@ -26,7 +19,7 @@
 
       <div id="id01" class="modal">
 
-        <form class="modal-content animate" action="/action_page.php">
+        <form class="modal-content animate">
           <div class="imgcontainer">
             <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">×</span>
           </div>
@@ -38,7 +31,7 @@
             <label for="psw"><b>Пароль</b></label>
             <input type="password" placeholder="Введите пароль" name="psw" required>
 
-            <button type="submit">Войти</button>
+            <button type="submit"  name="signin">Войти</button>
             <label>
               <input type="checkbox" checked="checked" name="remember"> Запомнить меня
             </label>
@@ -58,12 +51,13 @@
 
       <div id="id02" class="modal">
 
-        <form class="modal-content animate" action="/action_page.php">
+        <form class="modal-content animate">
           <div class="imgcontainer">
             <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">×</span>
           </div>
-
-          <form action="/action_page.php">
+          <!-- очень важно если нужно подключить к форме php вписать к ней action и method -->
+          <!-- Артем. не трогай регистрацию не поговрив с Aнтоном или Sаней. Целую <3 -->
+          <form action="registration.php" method='GET'>
         <div class="container">
           <h1>Регистрация</h1>
           <p>Заполните эти формы, чтобы создать аккаунт</p>
@@ -72,26 +66,33 @@
           <label for="email"><b>Почта</b></label>
           <input type="text" placeholder="Введите почту" name="email" required>
 
-          <label for="psw"><b>Пароль</b></label>
-          <input type="password" placeholder="Введите пароль" name="psw" required>
+          <label for="password"><b>Пароль</b></label>
+          <input type="password" placeholder="Введите пароль" name="password" required>
 
-          <label for="psw-repeat"><b>Повторите пароль</b></label>
-          <input type="password" placeholder="Введите пароль еще раз" name="psw-repeat" required>
           <hr>
-
-          <button type="submit" class="registerbtn">Заренистрироваться</button>
+          <form action="registration.php" method='GET'>
+          <input style='position: relative; top:20px; left: 30px' type="submit" name="signup">
+          </form>
         </div>
-
         <div class="container signin">
         </div>
       </form>
-
+      <?php
+      if (isset($_GET["signup"])) {
+        $data = [
+          'password'=>$_GET['password'],
+          'email'=>$_GET['email']
+      ];
+      extract($data);
+      require 'registration.php';
+    }
+        ?>
 
 </header>
 <!-- тесты-->
 <div class="tests">
   <a href="tests/test1">пройти тест 1</a>
-
+ 
 </div>
   </body>
 </html>
