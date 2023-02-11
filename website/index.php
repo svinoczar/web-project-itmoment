@@ -56,7 +56,7 @@
 
 
 
-      <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Заренистрироваться</button>
+      <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Зарегистрироваться</button>
 
       <div id="id02" class="modal">
 
