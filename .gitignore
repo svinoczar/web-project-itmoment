@@ -2,6 +2,8 @@
 build
 out/
 
+index.html
+
 *.iml
 *.xml
 *.suo
