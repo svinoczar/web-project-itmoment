@@ -13,6 +13,7 @@
     <title>ITMOMENT</title>
   </head>
   <body>
+    <!-- 1234 -->
     <!--верхний блок-->
 <header class="header" id="header">
 
@@ -53,7 +54,7 @@
 
 
 
-      <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Заренистрироваться</button>
+      <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Зарегистрироваться</button>
 
       <div id="id02" class="modal">
 
