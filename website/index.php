@@ -20,9 +20,6 @@
             <div class="header__logo" data-scroll="#intro">ITMOMENT</div>
 
 
-
-
-
                 <!-- кнопочкка, чтобы войти -->
                 <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Войти</button>
 
