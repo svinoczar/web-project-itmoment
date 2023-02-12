@@ -6,32 +6,33 @@
     <title>ITMOMENT</title>
   </head>
   <body>
-    <!-- верхний блок -->
+    <!-- ♥-♥ -->
     <header class="header" id="header">
       <div class="header__inner">
         <div class="header__logo">ITMOMENT
         </div>
-        <!-- button to sing up -->
-        <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Войти</button>
+        <!-- button to sign in -->
+        <button onclick="document.getElementById('registration_window').style.display='block'" style="width:auto;">Войти</button>
         <!-- sing up  window -->
-        <div class="modal" id="id01">
-          <form class="modal-content animate" method="GET" action="login.php" >
+        <div class="modal" id="registration_window">
+        <form class="modal-content animate">
+          
             <div class="container">
               <label for="email"><b>Почта</b></label>
               <input type="text" placeholder="Введите почту" name="email" required>
               <label for="password"><b>Пароль</b></label>
               <input type="password" placeholder="Введите пароль" name="password" required>
               <!-- очень важно если нужно подключить к форме php вписать к ней action и method -->
-              <!-- Артем. не трогай авторизацию не поговрив с Aнтоном или Sаней. Целую <3 -->
-              <!-- <form action="login.php" method="GET"> -->
-                <button name="singin" type="submit">Войти</button>
-              <!-- </form> -->
+              <!-- Артем. не трогай авторизацию не поговорив с Aнтоном или Sаней. Целую <3 -->
+              <form action="login.php" method="GET">
+                <button name="signin" type="submit">Войти</button>
+              </form>
               <label>
                 <input type="checkbox" checked="checked" name="remember"> Запомнить меня
               </label>
             </div>
             <div class="container" style="background-color:#f1f1f1"> <!---->
-              <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Закрыть</button>
+              <button type="button" onclick="document.getElementById('registration_window').style.display='none'" class="cancel_button">Закрыть</button>
               <span class="psw"><a href="#">Забыли пароль?  (не сделано)</a></span>
             </div>
           </form>
@@ -54,7 +55,7 @@
         <!-- button to register -->
         <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Зарегистрироваться</button>
         <div class="modal" id="id02">
-          <form class="modal-content animate" <!-- action="/action_page.php (if all works good, delete it)-->">
+          <form class="modal-content animate"> <!-- action="/action_page.php (if all works good, delete it)-->
             <!-- button to close registration panel -->
             <div class="imgcontainer">
               <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">×</span>
@@ -77,8 +78,8 @@
                 <hr><!--this tag makes line after upper words-->
 
 <!-- чзх ммомент -->
-                <form class="" ction="registration.php" method="GET">
-                  <button type="submit" name="singup" class="registerbtn">Зарегистрироваться</button>
+                <form class="" action="registration.php" method="GET">
+                  <button type="submit" name="signup" class="registerbtn">Зарегистрироваться</button>
                 </form>
               </div>
             </form>

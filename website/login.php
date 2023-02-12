@@ -7,9 +7,9 @@
         $result = mysqli_query($link, $query) or die(mysqli_error($link));
         $rows = mysqli_num_rows($result);
         if ($rows == 1) { 
-            echo ("login_successful.php / profile.php"); // Обновить страницу для авторизованного пользователя
+            print ("login_successful.php / profile.php"); // Обновить страницу для авторизованного пользователя
         } else {
-            echo("Error: " . $query . "<br>" . mysqli_error($link));
+            print("Error: " . $query . "<br>" . mysqli_error($link));
         }
     }
     mysqli_close($link)
