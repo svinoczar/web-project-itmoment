@@ -36,16 +36,19 @@
             </div>
           </form>
           <!-- Подключение скрипта для входа в систему -->
-          <?php
-             if (isset($_GET["signin"])) {
-              $login_data = [
-                'password'=>$_GET['password'],
-                'email'=>$_GET['email']
-            ];
-            extract($login_data);
-            require 'login.php';
-          }
-          ?>
+          <div class="hide">
+            <?php
+               if (isset($_GET["signin"])) {
+                $login_data = [
+                  'password'=>$_GET['password'],
+                  'email'=>$_GET['email']
+              ];
+              extract($login_data);
+              require 'login.php';
+            }
+            ?>
+          </div>
+
         </div>
 
         <!-- button to register -->
