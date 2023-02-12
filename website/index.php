@@ -6,107 +6,102 @@
     <title>ITMOMENT</title>
   </head>
   <body>
-  <header class="header" id="header">
+    <!-- верхний блок -->
+    <header class="header" id="header">
+      <div class="header__inner">
+        <div class="header__logo">ITMOMENT
+        </div>
+        <!-- button to sing up -->
+        <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Войти</button>
+        <!-- sing up  window -->
+        <div class="modal" id="id01">
+          <form class="modal-content animate" method="GET" action="login.php" >
+            <div class="container">
+              <label for="email"><b>Почта</b></label>
+              <input type="text" placeholder="Введите почту" name="email" required>
+              <label for="password"><b>Пароль</b></label>
+              <input type="password" placeholder="Введите пароль" name="password" required>
+              <!-- очень важно если нужно подключить к форме php вписать к ней action и method -->
+              <!-- Артем. не трогай авторизацию не поговрив с Aнтоном или Sаней. Целую <3 -->
+              <!-- <form action="login.php" method="GET"> -->
+                <button name="singin" type="submit">Войти</button>
+              <!-- </form> -->
+              <label>
+                <input type="checkbox" checked="checked" name="remember"> Запомнить меня
+              </label>
+            </div>
+            <div class="container" style="background-color:#f1f1f1"> <!---->
+              <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Закрыть</button>
+              <span class="psw"><a href="#">Забыли пароль?  (не сделано)</a></span>
+            </div>
+          </form>
+          <!-- Подключение скрипта для входа в систему -->
+          <?php
+             if (isset($_GET["signin"])) {
+              $login_data = [
+                'password'=>$_GET['password'],
+                'email'=>$_GET['email']
+            ];
+            extract($login_data);
+            require 'login.php';
+          }
+          ?>
+        </div>
 
-  <div class="header__inner">
-      <div class="header__logo" data-scroll="#intro">ITMOMENT</div>
+        <!-- button to register -->
+        <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Зарегистрироваться</button>
+        <div class="modal" id="id02">
+          <form class="modal-content animate" <!-- action="/action_page.php (if all works good, delete it)-->">
+            <!-- button to close registration panel -->
+            <div class="imgcontainer">
+              <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">×</span>
+            </div>
+            <!-- main registration panel -->
+            <form action="registration.php" method="GET">
+              <div class="container">
+                <h1>Регистрация</h1>
+                <p>Заполните эти формы, чтобы создать аккаунт</p>
+                <hr> <!--this tag used to make line after upper words-->
+                <label for="email"><b>Почта</b></label>
+                <input type="text" placeholder="Введите почту" name="email" required>
 
-          <!-- кнопочкка, чтобы войти -->
-          <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Войти</button>
+                <label for="password"><b>Пароль</b></label>
+                <input type="password" placeholder="Введите пароль" name="password" required>
 
-      <div id="id01" class="modal">
+                <!-- <label for="psw-repeat"><b>Повторите пароль</b></label>
+                <input type="password" placeholder="Введите пароль еще раз" name="psw-repeat" required> -->
 
-        <form method="GET" action="login.php" class="modal-content animate">
-          <div class="imgcontainer">
-            <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">×</span>
-          </div>
+                <hr><!--this tag makes line after upper words-->
 
-          <div class="container">
-            <label for="email"><b>Почта</b></label>
-            <input type="text" placeholder="Введите почту" name="email" required>
-
-            <label for="password"><b>Пароль</b></label>
-            <input type="password" placeholder="Введите пароль" name="password" required>
-            <!-- очень важно если нужно подключить к форме php вписать к ней action и method -->
-            <!-- Артем. не трогай авторизацию не поговрив с Aнтоном или Sаней. Целую <3 -->
-            <form action="login.php" method='GET'>
-            <button type="submit">Войти
+<!-- чзх ммомент -->
+                <form class="" ction="registration.php" method="GET">
+                  <button type="submit" name="singup" class="registerbtn">Зарегистрироваться</button>
+                </form>
+              </div>
             </form>
-            <label>
-              <input type="checkbox" checked="checked" name="remember"> Запомнить меня
-            </label>
-          </div>
-
-          <div class="container" style="background-color:#f1f1f1">
-            <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Закрыть</button>
-            <span class="password"><a href="#">Забыли пароль?  (не сделано)</a></span>
-          </div>
-        </form>
-
-        <!-- Подключение скрипта для входа в систему -->
-        <?php
-           if (isset($_GET["signin"])) {
-            $login_data = [
+          </form>
+          <!-- Подключение скрипта для регистрации -->
+          <?php
+          if (isset($_GET["signup"])) {
+            $data = [
               'password'=>$_GET['password'],
               'email'=>$_GET['email']
           ];
-          extract($login_data); 
-          require 'login.php';
+          extract($data);
+          require 'registration.php';
         }
-        ?>
+            ?>
+        </div>
       </div>
+    </header>
+    <!-- tests -->
+    <div class="tests">
+      <a href="tests/test1">Пройти тест 1</a>
 
 
 
 
-      <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Зарегистрироваться</button>
 
-      <div id="id02" class="modal">
-
-        <form class="modal-content animate">
-          <div class="imgcontainer">
-            <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">×</span>
-          </div>
-          <!-- очень важно если нужно подключить к форме php вписать к ней action и method -->
-          <!-- Артем. не трогай регистрацию не поговрив с Aнтоном или Sаней. Целую <3 -->
-          <form action="registration.php" method='GET'>
-        <div class="container">
-          <h1>Регистрация</h1>
-          <p>Заполните эти формы, чтобы создать аккаунт</p>
-          <hr>
-
-          <label for="email"><b>Почта</b></label>
-          <input type="text" placeholder="Введите почту" name="email" required>
-
-          <label for="password"><b>Пароль</b></label>
-          <input type="password" placeholder="Введите пароль" name="password" required>
-
-          <hr>
-          <form action="registration.php" method='GET'>
-          <input style='position: relative; top:20px; left: 30px' type="submit" name="signup">
-          </form>
-        </div>
-        <div class="container signin">
-        </div>
-      </form>
-
-      <!-- Подключение скрипта для регистрации -->
-      <?php
-      if (isset($_GET["signup"])) {
-        $data = [
-          'password'=>$_GET['password'],
-          'email'=>$_GET['email']
-      ];
-      extract($data);
-      require 'registration.php';
-    }
-        ?>
-
-</header>
-<!-- тесты-->
-<div class="tests">
-  <a href="tests/test1">пройти тест 1</a>
- 
-</div>
+    </div>
   </body>
 </html>
