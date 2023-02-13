@@ -9,8 +9,7 @@
     <!-- ♥-♥ -->
     <header class="header" id="header">
       <div class="header__inner">
-        <div class="header__logo">ITMOMENT
-        </div>
+        <div class="header__logo" style="text-align:center"> ITMOMENT</div>
         <!-- button to sign in -->
         <button onclick="document.getElementById('registration_window').style.display='block'" style="width:auto;">Войти</button>
         <!-- sing up  window -->
@@ -25,7 +24,7 @@
               <!-- очень важно если нужно подключить к форме php вписать к ней action и method -->
               <!-- Артем. не трогай авторизацию не поговорив с Aнтоном или Sаней. Целую <3 -->
               <form action="login.php" method="GET">
-                <button name="signin" type="submit">Войти</button>
+                <button name="signin" type="submit" >Войти</button>
               </form>
               <label>
                 <input type="checkbox" checked="checked" name="remember"> Запомнить меня
@@ -53,7 +52,7 @@
         </div>
 
         <!-- button to register -->
-        <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Зарегистрироваться</button>
+        <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;" >Зарегистрироваться</button>
         <div class="modal" id="id02">
           <form class="modal-content animate"> <!-- action="/action_page.php (if all works good, delete it)-->
             <!-- button to close registration panel -->
@@ -99,13 +98,16 @@
       </div>
     </header>
     <!-- tests -->
-    <div class="tests">
-      <a href="tests/test1">Пройти тест 1</a>
-
-
-
-
-
+    <!-- Тесты были разделены на отдельные классы, возможно нужно будет именно это, 
+    но можно в дальшейшем соединить в один для укорочения -->
+    <div class="test1">
+      <a href="tests/test1.html" class="button">Пройти тест №1</a>
+    </div>
+    <div class="test2">
+      <a href="tests/test2.html" class="button">Пройти тест №2</a>
+    </div>
+    <div class="test3">
+      <a href="tests/test3.html" class="button">Пройти тест №3</a>
     </div>
   </body>
 </html>
