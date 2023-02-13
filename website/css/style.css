@@ -1,6 +1,18 @@
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Courier New, monospace;
     background-color: #2f2f2f;
+}
+
+header{
+    font-size: 20px;
+}
+
+.logo{
+    background-color: #232323;
+}
+
+.logo img{
+    vertical-align: middle;
 }
 
 /* Full-width input fields */
@@ -15,6 +27,7 @@ input[type=text], input[type=password] {
 
 /* Set a style for all buttons */
 button {
+    font-family: Courier New, monospace;
     background-color: #c92fe8;
     color: white;
     padding: 14px 20px;
@@ -25,7 +38,9 @@ button {
 }
 
 /* Настройка для кнопок, которые перенаправляют с главной страницы на страницу тестов */
+/* a.button - общие характеристики кнопок тестов */
 a.button {
+    font-family: Courier New, monospace;
     -webkit-appearance: button;
     -moz-appearance: button;
     appearance: button;
@@ -38,6 +53,29 @@ a.button {
     color: white;
     background-color: #c92fe8;
 }
+
+.test1{
+    position: fixed;
+    top: 320px;
+    left: 100px;
+    border-radius: 12px;
+}
+
+.test2{
+    position: fixed;
+    top: 420px;
+    left: 100px;
+    border-radius: 12px;
+}
+
+.test3{
+    position: fixed;
+    top: 520px;
+    left: 100px;
+    border-radius: 12px;
+}
+
+/* Все классы с неймингом типа testN выше - отдельные классы каждой кнопки теста, нужны раздельные для правильного позиционирования */
 
 button:hover {
     opacity: 0.8;

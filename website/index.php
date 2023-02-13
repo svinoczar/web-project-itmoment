@@ -9,7 +9,7 @@
     <!-- ♥-♥ -->
     <header class="header" id="header">
       <div class="header__inner">
-        <div class="header__logo" style="text-align:center"> ITMOMENT</div>
+        <div class="header logo" style="text-align:center"> <img src="img/ITMOMENT_logo.png"> </div>
         <!-- button to sign in -->
         <button onclick="document.getElementById('registration_window').style.display='block'" style="width:auto;">Войти</button>
         <!-- sing up  window -->
@@ -76,7 +76,7 @@
 
                 <hr><!--this tag makes line after upper words-->
 
-<!-- чзх ммомент -->
+                <!-- чзх ммомент -->
                 <form class="" action="registration.php" method="GET">
                   <button type="submit" name="signup" class="registerbtn">Зарегистрироваться</button>
                 </form>
@@ -101,13 +101,13 @@
     <!-- Тесты были разделены на отдельные классы, возможно нужно будет именно это, 
     но можно в дальшейшем соединить в один для укорочения -->
     <div class="test1">
-      <a href="tests/test1.php" class="button">Пройти тест №1</a>
+      <a href="tests/test1.php" class="button test1">Пройти тест №1</a>
     </div>
     <div class="test2">
-      <a href="tests/test2.php" class="button">Пройти тест №2</a>
+      <a href="tests/test2.php" class="button test2">Пройти тест №2</a>
     </div>
     <div class="test3">
-      <a href="tests/test3.php" class="button">Пройти тест №3</a>
+      <a href="tests/test3.php" class="button test3">Пройти тест №3</a>
     </div>
   </body>
 </html>
