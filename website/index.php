@@ -14,7 +14,7 @@
         <button onclick="document.getElementById('registration_window').style.display='block'" style="width:auto;">Войти</button>
         <!-- sing up  window -->
         <div class="modal" id="registration_window">
-        <form class="modal-content animate">
+        <form class="modal-content animate" action="login.php" method="GET">
           
             <div class="container">
               <label for="email"><b>Почта</b></label>
