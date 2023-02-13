@@ -6,8 +6,9 @@
   //СТРУКТУРА БД(users) id(automated)|email|password|create_datetime
   if (isset($_GET["signup"])) {
     $create_datetime = date("Y-m-d H:i:s");
-    $query = "INSERT INTO `users` (email, password, create_datetime)
-    VALUES ('$email', '$password', '$create_datetime')";
+    $id = mb_substr((hash_hmac('md5', $email, 'CatsAreNotSexToys', false)),0,-20);
+    $query = "INSERT INTO `users` (id, email, password, create_datetime)
+    VALUES ('$id', '$email', '$password', '$create_datetime')";
     //mysqli_query и делает запрос
     if (mysqli_query($link, $query)) {
       //ЭТО УДАЛИТЬ ПОТОМ  

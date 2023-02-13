@@ -29,7 +29,7 @@
               <!-- очень важно если нужно подключить к форме php вписать к ней action и method -->
               <!-- Артем. не трогай авторизацию не поговорив с Aнтоном или Sаней. Целую <3 -->
               <form action="login.php" method="GET">
-                <button class="login_button" name="signin" type="submit" >Войти</button>
+                <button class="loginbtn" name="signin" type="submit" >Войти</button>
               </form>
               <label>
                 <input type="checkbox" checked="checked" name="remember">Запомнить меня
@@ -89,7 +89,7 @@
 
               <hr><!--this tag makes line after upper words-->
               <form class="" action="registration.php" method="GET">
-                <button class="registration_button" name="signup" type="submit" >Зарегистрироваться</button>
+                <button class="registrationbtn" name="signup" type="submit" >Зарегистрироваться</button>
               </form>
             </div>
           </form>
