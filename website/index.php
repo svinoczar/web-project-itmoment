@@ -101,13 +101,13 @@
     <!-- Тесты были разделены на отдельные классы, возможно нужно будет именно это, 
     но можно в дальшейшем соединить в один для укорочения -->
     <div class="test1">
-      <a href="tests/test1.html" class="button">Пройти тест №1</a>
+      <a href="tests/test1.php" class="button">Пройти тест №1</a>
     </div>
     <div class="test2">
-      <a href="tests/test2.html" class="button">Пройти тест №2</a>
+      <a href="tests/test2.php" class="button">Пройти тест №2</a>
     </div>
     <div class="test3">
-      <a href="tests/test3.html" class="button">Пройти тест №3</a>
+      <a href="tests/test3.php" class="button">Пройти тест №3</a>
     </div>
   </body>
 </html>
