@@ -16,7 +16,7 @@
         <button onclick="document.getElementById('login_window').style.display='block'" style="width:auto;">Войти</button> 
         <!-- sign in window -->
         <div class="modal" id="login_window">
-          <form class="modal-content animate" action="login.php" method="GET">  
+          <form class="modal-content animate" action="login.php" method="POST">  
             <div class="container">
               <label for="email">
                 <b>Почта</b>
@@ -28,9 +28,7 @@
               <input type="password" placeholder="Введите пароль" name="password" required>
               <!-- очень важно если нужно подключить к форме php вписать к ней action и method -->
               <!-- Артем. не трогай авторизацию не поговорив с Aнтоном или Sаней. Целую <3 -->
-              <form action="login.php" method="GET">
                 <button class="loginbtn" name="signin" type="submit" >Войти</button>
-              </form>
               <label>
                 <input type="checkbox" checked="checked" name="remember">Запомнить меня
               </label>
@@ -46,16 +44,7 @@
 
         <!-- Подключение скрипта для входа в систему -->
         <div class="hide">
-          <?php
-              if (isset($_GET["signin"])) {
-              $login_data = [
-                'password'=>$_GET['password'],
-                'email'=>$_GET['email']
-            ];
-            extract($login_data);
-            require 'login.php';
-          }
-          ?>
+
         </div>
       </div>
 
