@@ -9,11 +9,13 @@
     <!-- ♥-♥ -->
     <header class="header" id="header">
       <div class="header__inner">
-        <div class="header logo" style="text-align:center">
+        <div class="header logo">
           <img src="img/ITMOMENT_logo.png">
+          <!-- button to autorization -->
+          <button onclick="document.getElementById('login_window').style.display='block'" style="width:auto;">Войти</button>
+          <!-- button to register -->
+          <button onclick="document.getElementById('registration_window').style.display='block'" style="width:auto;">Зарегистрироваться</button> 
         </div>
-        
-        <button onclick="document.getElementById('login_window').style.display='block'" style="width:auto;">Войти</button> 
         <!-- sign in window -->
         <div class="modal" id="login_window">
           <form class="modal-content animate" action="login.php" method="POST">  
@@ -46,10 +48,7 @@
         <div class="hide">
 
         </div>
-      </div>
-
-      <!-- button to register -->
-      <button onclick="document.getElementById('registration_window').style.display='block'" style="width:auto;" >Зарегистрироваться</button>
+        </div>
       <div class="modal" id="registration_window">
         <form class="modal-content animate"> <!-- action="/action_page.php (if all works good, delete it)-->
         
