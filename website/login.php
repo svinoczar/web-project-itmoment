@@ -14,7 +14,7 @@
             print("Error: " . $query . "<br>" . mysqli_error($link));
             header('Location: index.php');
         }     
-    if (!empty($my_row['user_id'])) {
+    else {
         session_start();
         $_SESSION_id = $user_id;
         $_SESSION_email = $email;
