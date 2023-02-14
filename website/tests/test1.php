@@ -3,6 +3,7 @@
  <head>
   <meta charset="utf-8" />
   <title>ITMO.TEST</title>
+  <link rel="stylesheet" href="../css/style.css">
   <style>
    article, aside, details, figcaption, figure, footer,header,
    hgroup, menu, nav, section { display: block; }
