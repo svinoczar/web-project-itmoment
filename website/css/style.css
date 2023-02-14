@@ -1,4 +1,20 @@
-body {font-family: Arial, Helvetica, sans-serif;}
+body {
+    font-family: Courier New, monospace;
+    background-color: #2f2f2f;
+}
+
+header{
+    font-size: 20px;
+}
+
+/* Настройка для блока. в котором находится логотип */
+.logo{
+    background-color: #232323;
+}
+
+.logo img{
+    vertical-align: middle;
+}
 
 /* Full-width input fields */
 input[type=text], input[type=password] {
@@ -12,7 +28,8 @@ input[type=text], input[type=password] {
 
 /* Set a style for all buttons */
 button {
-    background-color: #4CAF50;
+    font-family: Courier New, monospace;
+    background-color: #c92fe8;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
@@ -21,15 +38,55 @@ button {
     width: 100%;
 }
 
+/* Настройка для кнопок, которые перенаправляют с главной страницы на страницу тестов */
+/* a.button - общие характеристики кнопок тестов */
+a.button {
+    font-family: Courier New, monospace;
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+
+    text-decoration: none;
+    color: white;
+    background-color: #c92fe8;
+}
+
+.test1{
+    position: fixed;
+    top: 320px;
+    left: 100px;
+    border-radius: 12px;
+}
+
+.test2{
+    position: fixed;
+    top: 420px;
+    left: 100px;
+    border-radius: 12px;
+}
+
+.test3{
+    position: fixed;
+    top: 520px;
+    left: 100px;
+    border-radius: 12px;
+}
+
+/* Все классы с неймингом типа testN выше - отдельные классы каждой кнопки теста, нужны раздельные для правильного позиционирования */
+
 button:hover {
     opacity: 0.8;
 }
 
 /* Extra styles for the cancel button */
-.cancelbtn {
+.cancel_button {
     width: auto;
     padding: 10px 18px;
-    background-color: #f44336;
+    background-color: #ee2020;
 }
 
 /* Center the image and position the close button */
@@ -117,4 +174,8 @@ span.psw {
     .cancelbtn {
        width: 100%;
     }
+}
+
+.hide{
+  display: none;
 }
