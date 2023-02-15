@@ -14,14 +14,22 @@
             print("Error: " . $query . "<br>" . mysqli_error($link));
             header('Location: index.php');
         }     
-    else {
-        session_start();
-        $_SESSION_id = $user_id;
-        $_SESSION_email = $email;
-        $_SESSION_password = $password;
-        header('Location: profile.php');
-    }
-    
+        else {
+            // $query = "SELECT `admin` FROM `users` WHERE `email`= '$email' AND `password` = '$password'";
+            // $admin_status = mysqli_query($link, $query);
+            $admin_status = 1;
+            session_start();
+            $_SESSION_id = $user_id;
+            $_SESSION_email = $email;
+            $_SESSION_password = $password;
+            $_SESSION_status = $admin_status;
+            if ($admin_status = 0){
+                header('Location: profile.php');
+            }
+            else {
+                header('Location: profile.php');
+            }
+        }
     }
     mysqli_close($link)
 ?>
