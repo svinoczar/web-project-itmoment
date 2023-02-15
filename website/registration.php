@@ -6,7 +6,7 @@
   //СТРУКТУРА БД(users) id|email|password|create_datetime
   if (isset($_GET["signup"])) {
     $create_datetime = date("Y-m-d H:i:s");
-    $id = mb_substr((hash_hmac('md5', $email, 'CatsAreNotSexToys', false)),0,-20);
+    $id = mb_substr((hash_hmac('md5', $email, 'pnhchmo', false)),0,-20);
     $query = "INSERT INTO `users` (id, email, password, create_datetime)
     VALUES ('$id', '$email', '$password', '$create_datetime')";
     //mysqli_query и делает запрос
