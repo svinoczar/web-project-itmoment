@@ -12,13 +12,20 @@
                     <img src="img/ITMOMENT_logo.png"> 
                 </div>
                 <div class="panel" id="expert-panel">
-                    <form class="expert-panel-access" action="login.php" method="POST">
-                    <script>
-                        var spge = <?php echo json_encode($admin_status); ?>;
-                        console.log(spge)
-                    </script>
                     <div class="container">
-                        <button id="expertbtn" name="expert" type="submit" style="visibility: hidden" >Панель эксперта</button>
+                    <?php
+                        if (session_status() == PHP_SESSION_NONE) {
+                            session_start();
+                        }
+                        $entry_value = $_SESSION["admin"];
+                        if ($entry_value) {
+                            // Entry value is true, show the button
+                            echo '<button id="expertbtn" name="expert" type="submit" >Панель эксперта</button>';
+                          } else {
+                            // Entry value is false, hide the button
+                            echo '<button id="expertbtn" name="expert" type="submit" style="visibility: hidden" >Панель эксперта</button>';
+                          }
+                        ?>
                     </div>
                 </div>
             </div>
