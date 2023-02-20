@@ -1,16 +1,28 @@
 <?php
     
-    $link = mysqli_connect("sql7.freemysqlhosting.net", "sql7597171", "FQ7CvReXHZ", "sql7597171");
+    $link = mysqli_connect("db4free.net", "itmo_user", "mUhNf!JELM349ii", "itmoment");
 
-    if (isset($_GET["signin"])) {
-        $query = "SELECT * FROM `users` WHERE `email`= '$email' AND `password` = '$password' ";
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+
+    if (isset($_POST["signin"])) {
+        $query = "SELECT `id`, `group_admin` FROM `users` WHERE `email`= '$email' AND `password` = '$password'";
         $result = mysqli_query($link, $query) or die(mysqli_error($link));
-        $rows = mysqli_num_rows($result);
-        if ($rows == 1) { 
-            print ("login_successful.php / profile.php"); // Обновить страницу для авторизованного пользователя
-        } else {
+        $my_row = mysqli_fetch_array($result);
+        if (empty($my_row)){ 
             print("Error: " . $query . "<br>" . mysqli_error($link));
-        }
+            header('Location: index.php');
+        }     
+    else {
+        session_start();
+        $_SESSION['id'] = $my_row["id"];
+        $_SESSION['email'] = $email;
+        $_SESSION['password'] = $password;
+        $_SESSION['admin'] = $my_row["group_admin"];
+        header('Location: profile.php');
+    }
+     
     }
     mysqli_close($link)
 ?>
