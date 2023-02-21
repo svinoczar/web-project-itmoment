@@ -4,6 +4,8 @@
   <meta charset="utf-8" />
   <title>ITMO.TEST</title>
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/sklt.css">
+
  </head>
  <body>
     <form id="test1" onsubmit="return CheckForm(this)" method="post">
