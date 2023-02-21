@@ -20,10 +20,10 @@
                         $entry_value = $_SESSION["admin"];
                         if ($entry_value) {
                             // Entry value is true, show the button
-                            echo '<button id="expertbtn" name="expert" type="submit" >Панель эксперта</button>';
+                            echo '<a id="expertbtn" name="expert" type="submit" href="tests/sklt.php" >Панель эксперта</a>';
                           } else {
                             // Entry value is false, hide the button
-                            echo '<button id="expertbtn" name="expert" type="submit" style="visibility: hidden" >Панель эксперта</button>';
+                            echo '<a id="expertbtn" name="expert" type="submit" style="visibility: hidden" href="tests/sklt.php" >Панель эксперта</a>';
                           }
                         ?>
                     </div>

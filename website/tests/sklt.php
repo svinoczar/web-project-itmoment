@@ -3,14 +3,11 @@
  <head>
   <meta charset="utf-8" />
   <title>ITMO.TEST</title>
-  <style>
-   article, aside, details, figcaption, figure, footer,header,
-   hgroup, menu, nav, section { display: block; }
-  </style>
+    <link rel="stylesheet" href="../css/style.css">
  </head>
  <body>
     <form id="test1" onsubmit="return CheckForm(this)" method="post">
-        
+        <!--Артем. Сделай красиво кнопку в profile.php сделай красиво тут, строка ниже крупным шрифтом. БЕЛЫЙ ШРИФТ ВЕЗДЕ. Поле ввода поменьше. Кнопка ввода фиолетовая снизу(готово))-->
         <span>Профессии и качества (Выберите от 5 до 10 самых важных качеств для профессии).</span><br></br>
 
         <label for="prof">Профессия:</label>
