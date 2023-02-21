@@ -51,161 +51,265 @@ function CheckForm(el){
     var ans48 = el.que48.value; // Вербальность  
     var ans49 = el.que49.value; // Калькулятивность 
     var ans50 = el.que50.value; // Умение подмечать незначительные (малозаметные) изменения в исследуемом объекте
+    var string = "";
 
     var counter = 0
+
+
+    
     if (ans1 == "yes"){
         counter++;
-    }
+        string += "1";
+    } else {string += "0";}
+
     if (ans2 == "yes"){
         counter++;
-    }
+        string += "1";
+    } else {string += "0";}
+
     if (ans3 == "yes"){
         counter++;
-    }
+        string += "1";
+    } else {string += "0";}
+
     if (ans4 == "yes"){
         counter++;
-    }
+        string += "1";
+    } else {string += "0";}
+
     if (ans5 == "yes"){
         counter++;
-    }
+        string += "1";
+    } else {string += "0";}
+
     if (ans6 == "yes"){
         counter++;
-    }
+        string += "1";
+    } else {string += "0";}
+
     if (ans7 == "yes"){
         counter++;
-    }
+        string += "1";
+    } else {string += "0";}
+
     if (ans8 == "yes"){
         counter++;
-    }
+        string += "1";
+    } else {string += "0";}
+
     if (ans9 == "yes"){
         counter++;
-    }
+        string += "1";
+    } else {string += "0";}
+
     if (ans10 == "yes"){
         counter++;
-    }
+        string += "1";
+    } else {string += "0";}
+
     if (ans11 == "yes"){
         counter++;
-    }
+        string += "1";
+    } else {string += "0";}
+
     if (ans12 == "yes"){
         counter++;
-    }
+        string += "1";
+    } else {string += "0";}
+
     if (ans13 == "yes"){
         counter++;
-    }
+        string += "1";
+    } else {string += "0";}
+
     if (ans14 == "yes"){
         counter++;
-    }
+        string += "1";
+    } else {string += "0";}
+
     if (ans15 == "yes"){
         counter++;
-    }
+        string += "1";
+    } else {string += "0";}
+
     if (ans16 == "yes"){
         counter++;
-    }
+        string += "1";
+    } else {string += "0";}
+
     if (ans17 == "yes"){
         counter++;
-    }
+        string += "1";
+    } else {string += "0";}
+
     if (ans18 == "yes"){
         counter++;
-    }
+        string += "1";
+    } else {string += "0";}
+
     if (ans19 == "yes"){
         counter++;
-    }
+        string += "1";
+    } else {string += "0";}
+
     if (ans20 == "yes"){
         counter++;
-    }
+        string += "1";
+    } else {string += "0";}
+
     if (ans21 == "yes"){
         counter++;
-    }
+        string += "1";
+    } else {string += "0";}
+
     if (ans22 == "yes"){
         counter++;
-    }
+        string += "1";
+    } else {string += "0";}
+
     if (ans23 == "yes"){
         counter++;
-    }
+        string += "1";
+    } else {string += "0";}
+
     if (ans24 == "yes"){
         counter++;
-    }
+        string += "1";
+    } else {string += "0";}
+
     if (ans25 == "yes"){
         counter++;
-    }
+        string += "1";
+    } else {string += "0";}
+
     if (ans26 == "yes"){
         counter++;
-    }
+        string += "1";
+    } else {string += "0";}
+
     if (ans27 == "yes"){
         counter++;
-    }
+        string += "1";
+    } else {string += "0";}
+
     if (ans28 == "yes"){
         counter++;
-    }
+        string += "1";
+    } else {string += "0";}
+
     if (ans29 == "yes"){
         counter++;
-    }
+        string += "1";
+    } else {string += "0";}
+
     if (ans30 == "yes"){
         counter++;
-    }
+        string += "1";
+    } else {string += "0";}
+
     if (ans31 == "yes"){
         counter++;
-    }
+        string += "1";
+    } else {string += "0";}
+
     if (ans32 == "yes"){
         counter++;
-    }
+        string += "1";
+    } else {string += "0";}
+
     if (ans33 == "yes"){
         counter++;
-    }
+        string += "1";
+    } else {string += "0";}
+
     if (ans34 == "yes"){
         counter++;
-    }
+        string += "1";
+    } else {string += "0";}
+
     if (ans35 == "yes"){
         counter++;
-    }
+        string += "1";
+    } else {string += "0";}
+
     if (ans36 == "yes"){
         counter++;
-    }
+        string += "1";
+    } else {string += "0";}
+
     if (ans37 == "yes"){
         counter++;
-    }
+        string += "1";
+    } else {string += "0";}
+
     if (ans38 == "yes"){
         counter++;
-    }
+        string += "1";
+    } else {string += "0";}
+
     if (ans39 == "yes"){
         counter++;
-    }
+        string += "1";
+    } else {string += "0";}
+
     if (ans40 == "yes"){
         counter++;
-    }
+        string += "1";
+    } else {string += "0";}
+
     if (ans41 == "yes"){
         counter++;
-    }
+        string += "1";
+    } else {string += "0";}
+
     if (ans42 == "yes"){
         counter++;
-    }
+        string += "1";
+    } else {string += "0";}
+
     if (ans43 == "yes"){
         counter++;
-    }
+        string += "1";
+    } else {string += "0";}
+
     if (ans44 == "yes"){
         counter++;
-    }
+        string += "1";
+    } else {string += "0";}
+
     if (ans45 == "yes"){
         counter++;
-    }
+        string += "1";
+    } else {string += "0";}
+
     if (ans46 == "yes"){
         counter++;
-    }
+        string += "1";
+    } else {string += "0";}
+
     if (ans47 == "yes"){
         counter++;
-    }
+        string += "1";
+    } else {string += "0";}
+
     if (ans48 == "yes"){
         counter++;
-    }
+        string += "1";
+    } else {string += "0";}
+
     if (ans49 == "yes"){
         counter++;
-    }
+        string += "1";
+    } else {string += "0";}
+
     if (ans50 == "yes"){
         counter++;
-    }
+        string += "1";
+    } else {string += "0";}
 
-    console.log(counter)
-    console.log(ans1)
+
+    console.log(counter);
+    console.log(ans1);
 
     var fail = "";
     if (counter < 5 || counter > 10){
@@ -219,6 +323,8 @@ function CheckForm(el){
         document.getElementById('error').innerHTML = fail;
         return false;
     }else{
+
+        console.log(string);
         
         alert("Качества к професии " + profession + " успешно записаны!");
 
