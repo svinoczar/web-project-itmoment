@@ -12,13 +12,13 @@
         <div class="header logo">
           <img src="img/ITMOMENT_logo.png">
           <!-- button to autorization -->
-          <button onclick="document.getElementById('login_window').style.display='block'" style="width:auto;">Войти</button>
+          <button class="topbuttons" onclick="document.getElementById('login_window').style.display='block'" >Войти</button>
           <!-- button to register -->
-          <button onclick="document.getElementById('registration_window').style.display='block'" style="width:auto;">Зарегистрироваться</button> 
+          <button class="topbuttons" onclick="document.getElementById('registration_window').style.display='block'" >Зарегистрироваться</button>
         </div>
         <!-- sign in window -->
         <div class="modal" id="login_window">
-          <form class="modal-content animate" action="login.php" method="POST">  
+          <form class="modal-content animate" action="login.php" method="POST">
             <div class="container">
               <label for="email">
                 <b>Почта</b>
@@ -51,7 +51,7 @@
         </div>
       <div class="modal" id="registration_window">
         <form class="modal-content animate"> <!-- action="/action_page.php (if all works good, delete it)-->
-        
+
           <!-- button to close registration panel -->
           <div class="imgcontainer">
             <span onclick="document.getElementById('registration_window').style.display='none'" class="close" title="Close Modal">×</span>
@@ -72,7 +72,7 @@
               </label>
               <input type="password" placeholder="Введите пароль" name="password" required>
 
-              <!-- <label for="psw-repeat"><b>Повторите пароль</b></label> 
+              <!-- <label for="psw-repeat"><b>Повторите пароль</b></label>
               <input type="password" placeholder="Введите пароль еще раз" name="psw-repeat" required> -->  <!-- ???????????? -->
 
               <hr><!--this tag makes line after upper words-->
@@ -100,7 +100,7 @@
     </header>
 
     <!-- tests -->
-    <!-- Тесты были разделены на отдельные классы, возможно нужно будет именно это, 
+    <!-- Тесты были разделены на отдельные классы, возможно нужно будет именно это,
     но можно в дальшейшем соединить в один для укорочения -->
 
     <div class="test1">
