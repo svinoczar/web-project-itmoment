@@ -2,18 +2,19 @@ body {
     font-family: Courier New, monospace;
     background-color: #2f2f2f;
 }
-
+/* Настройка для блока. в котором находится логотип & topbuttons*/
 header{
     font-size: 20px;
-}
-
-/* Настройка для блока. в котором находится логотип */
-.logo{
     background-color: #232323;
+    /* padding-top: 1em; */
+    padding-bottom: 0.5em;
+
+
 }
 
 .logo img{
-    vertical-align: middle;
+  margin-top: 0.5em;
+    /* vertical-align: middle; */
 }
 
 /* Full-width input fields */
@@ -32,7 +33,7 @@ button {
     background-color: #c92fe8;
     color: white;
     padding: 14px 20px;
-    margin: 8px 0;
+    margin: 1em 1em;
     border: none;
     cursor: pointer;
     width: 100%;
@@ -178,4 +179,10 @@ span.psw {
 
 .hide{
   display: none;
+}
+/* sign in and reg buttons */
+.topbuttons{
+  width:auto;
+  float: right;
+  margin-right: 1em;
 }
