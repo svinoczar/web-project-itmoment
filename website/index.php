@@ -28,8 +28,6 @@
                 <b>Пароль</b>
               </label>
               <input type="password" placeholder="Введите пароль" name="password" required>
-              <!-- очень важно если нужно подключить к форме php вписать к ней action и method -->
-              <!-- Артем. не трогай авторизацию не поговорив с Aнтоном или Sаней. Целую <3 -->
                 <button class="loginbtn" name="signin" type="submit" >Войти</button>
               <label>
                 <input type="checkbox" checked="checked" name="remember">Запомнить меня
