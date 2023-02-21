@@ -24,3 +24,12 @@ input[type=text], input[type=password] {
     border: 1px solid #ccc;
     box-sizing: border-box;
 }
+.expertbtn{
+    margin-top: 1em;
+    display: inline-block; /* Строчно-блочный элемент */
+    background-color: #c92fe8; /* корпоративный цвет фона (фиолетовый)*/
+    color: #fff; /* Белый цвет текста */
+    padding: 1rem 1.5rem; /* Поля вокруг текста */
+    text-decoration: none; /* Убираем подчёркивание */
+    border-radius: 3px; /* Скругляем уголки */
+}
