@@ -38,6 +38,16 @@ button {
     cursor: pointer;
     width: 100%;
 }
+.button {
+    font-family: Courier New, monospace;
+    background-color: #c92fe8;
+    color: white;
+    padding: 14px 20px;
+    margin: 1em 1em;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
 
 /* Настройка для кнопок, которые перенаправляют с главной страницы на страницу тестов */
 /* a.button - общие характеристики кнопок тестов */
@@ -50,6 +60,7 @@ a.button {
     margin: 8px 0;
     border: none;
     cursor: pointer;
+    width: 25%;
 
     text-decoration: none;
     color: white;

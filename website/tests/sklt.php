@@ -9,11 +9,12 @@
  </head>
  <body>
     <form id="test1" onsubmit="return CheckForm(this)" method="post">
-        <!--Артем. Сделай красиво кнопку в profile.php сделай красиво тут, строка ниже крупным шрифтом. БЕЛЫЙ ШРИФТ ВЕЗДЕ. Поле ввода поменьше. Кнопка ввода фиолетовая снизу(готово))-->
-        <span>Профессии и качества (Выберите от 5 до 10 самых важных качеств для профессии).</span><br></br>
+        <span><h2>Профессии и качества (Выберите от 5 до 10 самых важных качеств для профессии).</h2></span><br></br>
 
         <label for="prof">Профессия:</label>
-        <input type="text" name="prof" placeholder="" value=""><br></br>
+        <div class="enterbar">
+          <input type="text" name="prof" placeholder="" value=""><br></br>
+        </div>
 
         <span>1) Адекватная самооценка</span><br></br>
         <input type="radio" name="que1" id="yes" value="yes">
@@ -317,7 +318,7 @@
 
 
         <div id="error" style="color:crimson"></div>
-        <input type="submit" name="submit" value="Готово">
+        <input class="button" type="submit" name="submit" value="Готово">
 
     </form>
 
