@@ -326,6 +326,7 @@ function CheckForm(el){
         document.getElementById("pq-string").innerHTML = string;
         console.log(string);
         document.cookie = "pqs=" + string;
+        document.cookie = "profession=" + profession;
         alert("Качества к професии " + profession + " успешно записаны!");
 
         return true;

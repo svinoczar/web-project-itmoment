@@ -10,7 +10,6 @@
     //$query = "INSERT INTO `users` (id, email, password, create_datetime)
     $query = "INSERT INTO `users` (id, email, password, group_admin)
     VALUES ('$id', '$email', '$password', '0')";
-    unset($email, $password);
     //mysqli_query и делает запрос
     if (mysqli_query($link, $query)) {
       //ЭТО УДАЛИТЬ ПОТОМ  

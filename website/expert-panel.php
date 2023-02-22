@@ -8,7 +8,7 @@
 
  </head>
  <body>
-    <form id="expert-panel" onsubmit="return CheckForm(this)" method="post">
+    <form id="expert-panel" onsubmit="return CheckForm(this)" action="expert.php" method="GET">
         <span><h2>Профессии и качества (Выберите от 5 до 10 самых важных качеств для профессии).</h2></span><br></br>
 
         <label for="prof">Профессия:</label>
@@ -319,7 +319,7 @@
 
         <div id="error" style="color:crimson"></div>
         <form class="" action="expert.php" method="GET">
-          <button class="button" type="submit" name="submit">Готово</button>>
+          <input class="button" type="submit" name="submit" value="Готово">
         </form>
     </form>
     <form action="expert.php" method="GET">
@@ -328,7 +328,8 @@
     <?php
       if (isset($_GET["submit"])) {
               $data = [
-                'pqs' => $_COOKIE['pqs']
+                'pqs' => $_COOKIE['pqs'],
+                'profession' => $_COOKIE['profession']
             ];
             extract($data);
             require 'expert.php';
