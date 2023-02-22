@@ -3,8 +3,8 @@
  <head>
   <meta charset="utf-8" />
   <title>ITMO.TEST</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/sklt.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/expert-panel.css">
 
  </head>
  <body>
