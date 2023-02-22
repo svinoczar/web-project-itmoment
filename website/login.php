@@ -1,13 +1,13 @@
 <?php
     
-    $link = mysqli_connect("sql7.freemysqlhosting.net", "sql7597171", "FQ7CvReXHZ", "sql7597171");
+    $link = mysqli_connect("db4free.net", "itmo_user", "mUhNf!JELM349ii", "itmoment");
 
     $email = $_POST['email'];
     $password = $_POST['password'];
 
 
     if (isset($_POST["signin"])) {
-        $query = "SELECT `id` FROM `users` WHERE `email`= '$email' AND `password` = '$password'";
+        $query = "SELECT `id`, `group_admin` FROM `users` WHERE `email`= '$email' AND `password` = '$password'";
         $result = mysqli_query($link, $query) or die(mysqli_error($link));
         $my_row = mysqli_fetch_array($result);
         if (empty($my_row)){ 
@@ -16,12 +16,13 @@
         }     
     else {
         session_start();
-        $_SESSION_id = $user_id;
-        $_SESSION_email = $email;
-        $_SESSION_password = $password;
+        $_SESSION['id'] = $my_row["id"];
+        $_SESSION['email'] = $email;
+        $_SESSION['password'] = $password;
+        $_SESSION['admin'] = $my_row["group_admin"];
         header('Location: profile.php');
     }
-    
+     
     }
     mysqli_close($link)
 ?>

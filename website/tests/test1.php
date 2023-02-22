@@ -4,6 +4,8 @@
   <meta charset="utf-8" />
   <title>ITMO.TEST</title>
   <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/sklt.css">
+
   <style>
    article, aside, details, figcaption, figure, footer,header,
    hgroup, menu, nav, section { display: block; }
@@ -136,7 +138,7 @@
         <label for="no">Нет</label><br></br>
 
         <div id="error" style="color:crimson"></div>
-        <input type="submit" name="submit" value="Готово">
+        <input class="button" type="submit" name="submit" value="Готово">
 
     </form>
 

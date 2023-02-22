@@ -1,16 +1,17 @@
+/* вся страница */
 body {
     font-family: Courier New, monospace;
     background-color: #2f2f2f;
 }
-
+/* шапка сайта */
 header{
     font-size: 20px;
 }
-
+/* лого сайта */
 .logo{
     background-color: #232323;
 }
-
+/* лого сайта(снова) */
 .logo img{
     vertical-align: middle;
 }
@@ -23,4 +24,14 @@ input[type=text], input[type=password] {
     display: inline-block;
     border: 1px solid #ccc;
     box-sizing: border-box;
+}
+/* кнопка для перехода в экспертную панель */
+.expertbtn{
+    margin-top: 1em;
+    display: inline-block; /* Строчно-блочный элемент */
+    background-color: #c92fe8; /* корпоративный цвет фона (фиолетовый)*/
+    color: #fff; /* Белый цвет текста */
+    padding: 1rem 1.5rem; /* Поля вокруг текста */
+    text-decoration: none; /* Убираем подчёркивание */
+    border-radius: 3px; /* Скругляем уголки */
 }
