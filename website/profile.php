@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" href="css/profile.css">
-        <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="css/style.css">
 
         <title>ITMOMENT</title>
     </head>
@@ -29,6 +29,7 @@
                             echo '<a id="expertbtn" name="expert" type="submit" style="visibility: hidden" href="expert-panel.php" >Панель эксперта</a>';
                           }
                         ?>
+                          <a class="expertbtn" href="stat.php">Статистика</a>
                     </div>
                 </div>
             </div>
