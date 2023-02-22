@@ -11,14 +11,14 @@
   <body>
     <table class="table" width=100% height=100% border=1 valign=MIDDLE>
  <tr>
-  <th>чтото </th>
-  <th>еще чтото</th>
-  <th>something else</th>
+  <th>Эксперт</th>
+  <th>Профессия</th>
+  <th>ПВК</th>
  </tr>
  <tr>
-  <td>Ячейка 3</td>
-  <td>Ячейка 4</td>
-  <td>4</td>
+  <td></td>
+  <td></td>
+  <td></td>
 </tr>
 </table>
 
