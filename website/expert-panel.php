@@ -325,14 +325,14 @@
     <form action="expert.php" method="GET">
       <p id="pq-string"></p>
     </form>
-    <php
+    <?php
       if (isset($_GET["submit"])) {
               $data = [
-                'password'=>$_GET['password'],
-                'email'=>$_GET['email']
+                'pqs' => $_COOKIE['pqs']
             ];
             extract($data);
-            require 'registration.php';
+            require 'expert.php';
+          }
     ?>
 
     <script src="professionCheck.js"></script>
