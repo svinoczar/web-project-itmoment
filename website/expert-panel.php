@@ -8,7 +8,7 @@
 
  </head>
  <body>
-    <form id="test1" onsubmit="return CheckForm(this)" method="post">
+    <form id="expert-panel" onsubmit="return CheckForm(this)" method="post">
         <span><h2>Профессии и качества (Выберите от 5 до 10 самых важных качеств для профессии).</h2></span><br></br>
 
         <label for="prof">Профессия:</label>
@@ -318,9 +318,22 @@
 
 
         <div id="error" style="color:crimson"></div>
-        <input class="button" type="submit" name="submit" value="Готово">
-
+        <form class="" action="expert.php" method="GET">
+          <button class="button" type="submit" name="submit">Готово</button>>
+        </form>
     </form>
+    <form action="expert.php" method="GET">
+      <p id="pq-string"></p>
+    </form>
+    <php
+      if (isset($_GET["submit"])) {
+              $data = [
+                'password'=>$_GET['password'],
+                'email'=>$_GET['email']
+            ];
+            extract($data);
+            require 'registration.php';
+    ?>
 
     <script src="professionCheck.js"></script>
 

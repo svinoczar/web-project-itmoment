@@ -318,12 +318,12 @@ function CheckForm(el){
     if ( profession == ""){
         fail = "Введите название профессии!"
     }
-   
+    
     if(fail != ""){
         document.getElementById('error').innerHTML = fail;
         return false;
     }else{
-
+        document.getElementById("pq-string").innerHTML = string;
         console.log(string);
         
         alert("Качества к професии " + profession + " успешно записаны!");
