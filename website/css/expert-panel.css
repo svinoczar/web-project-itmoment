@@ -6,7 +6,47 @@
 #expert-panel{
   color: #e3e3e3;
 }
-/* поле ввода в экспертной панели */
-.enterbar{
+/* поле ввода of profession в экспертной панели */
+.prof{
   width: 50%;/*ширина поля*/
+}
+
+.bebra{
+  width: 25%;
+}
+
+.span{
+  color: #e3e3e3;
+}
+
+.checkbox{
+  margin-bottom: 3em;
+}
+
+body {
+    font-family: Courier New, monospace;
+    background-color: #2f2f2f;
+    color: #e3e3e3;
+}
+
+.button {
+    font-family: Courier New, monospace;
+    color: white;
+    padding: 14px 20px;
+    margin: 1em 1em;
+    border: none;
+    width: 100%;
+    margin-top: 1em;
+    display: inline-block; /* Строчно-блочный элемент */
+    background-color: #c92fe8; /* корпоративный цвет фона (фиолетовый)*/
+    color: #fff; /* Белый цвет текста */
+    padding: 1rem 1.5rem; /* Поля вокруг текста */
+    text-decoration: none; /* Убираем подчёркивание */
+    border-radius: 3px; /* Скругляем уголки */
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+    margin: 8px 0;
+    cursor: pointer;
+
 }
