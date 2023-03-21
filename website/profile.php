@@ -29,6 +29,7 @@
                             echo '<a id="expertbtn" name="expert" type="submit" style="visibility: hidden" href="expert-panel.php" >Панель эксперта</a>';
                           }
                         ?>
+                    <a class="expertbtn" href="nums-to-strings.php" >test</a>
                           <a class="expertbtn" href="results.php">Статистика</a>
                     </div>
                 </div>
