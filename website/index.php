@@ -2,7 +2,7 @@
 <html lang="ru" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style1.css">
     <title>ITMOMENT</title>
   </head>
   <body>
@@ -96,19 +96,96 @@
         </div>
       </div>
     </header>
+    <div class="page">
 
-    <!-- tests -->
-    <!-- Тесты были разделены на отдельные классы, возможно нужно будет именно это,
-    но можно в дальшейшем соединить в один для укорочения -->
+    <!-- Intro -->
+    <div class="intro" id="intro">
+        <div class="container">
+            <div class="intro__inner">
+                <h1 class="intro__title">Добро пожаловать</h1>
+            </div>
+        </div>
 
-    <div class="test1">
-      <a href="tests/test1.php" class="button test1">Пройти тест №1</a>
-    </div>
-    <div class="test2">
-      <a href="tests/test2.php" class="button test2">Пройти тест №2</a>
-    </div>
-    <div class="test3">
-      <a href="tests/test3.php" class="button test3">Пройти тест №3</a>
-    </div>
+
+    </div><!-- /.intro -->
+
+
+    <!-- About -->
+    <section class="section" id="about">
+        <div class="container">
+
+            <div class="section__header">
+                <h2 class="section__title">О нас</h2>
+                <div class="section__text">
+                  <p>Команда итмомент напишите тут ченить </p>
+                </div>
+            </div>
+
+
+            </div>
+
+    </section>
+    <section class="section">
+      <div class="container">
+        <div class="section__header">
+          <h2 class="section__title">Пройти тесты</h2>
+        </div>
+        <div class="wedo">
+          <div class="wedo__item">
+            <p>тесты помогут вам выбрать профессию (тоже надо дописать)</p>
+          </div>
+          <div class="wedo__item">
+            <a class="btn" href="tests/tests.php">пройти тесты</a>
+          </div>
+        </div>
+      </div><!-- /.container -->
+
+    </section>
+    <section class="section">
+      <div class="container">
+        <div class="section__header">
+          <h2 class="section__title">Профессии</h2>
+        </div>
+
+        <div class="wedo">
+          <div class="wedo__item">
+            <table>
+              <tr>
+                <td>чзх</td>
+                <td>czx</td>
+              </tr>
+              <tr>
+                <td>opaopa</td>
+              </tr>
+            </table>
+          </div>
+          <div class="wedo__item">
+            <p>типа описание</p>
+          </div>
+        </div>
+      </div><!-- /.container -->
+    </section>
+
+    <section class="section">
+      <div class="container">
+
+        <div class="section__header">
+          <h2 class="section__title">Станьте экспетом</h2>
+        </div>
+
+        <div class="wedo">
+          <div class="wedo__item">
+            <p>типа описание</p>
+          </div>
+          <div class="wedo__item">
+            <a class="btn" href="becomeanexpert.php">стать экспертом</a>
+          </div>
+        </div>
+      </div><!-- /.container -->
+    </section>
+
+
+
+
   </body>
 </html>
