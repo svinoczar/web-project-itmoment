@@ -1335,7 +1335,8 @@ function CheckForm(el){
     }else{
         
         alert("Рейтиговые качества к професии " + profession + " успешно записаны!");
-
+        document.cookie = "pqs=" + res.join("");
+        document.cookie = "profession=" + profession;
         return true;
     }
 }

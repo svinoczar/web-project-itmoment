@@ -10,7 +10,7 @@
   </style>
  </head>
  <body>
-    <form id="test1" onsubmit="return CheckForm(this)" method="post">
+    <form id="test1" onsubmit="return CheckForm(this)" method="GET" action="expert.php">
 
 
 					<span>Профессии и качества (Выберите от 5 до 10 самых важных качеств для профессии).</span><br></br>
