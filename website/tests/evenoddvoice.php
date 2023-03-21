@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>Звук чет/нечет</title>
+    <link rel="stylesheet" href="../css/styletest.css">
     <meta charset="UTF-8">
   </head>
   <body>
@@ -17,4 +18,3 @@
     <script src="evenoddsound.js"></script>
   </body>
 </html>
-
