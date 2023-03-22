@@ -1,39 +1,31 @@
 <?php
 // САНЯ ВПИХНИ ЭТО КУДА НАДО 
-$link = mysqli_connect("db4free.net", "itmo_user", "mUhNf!JELM349ii", "itmoment");
 
+// Антон, я сам был в культурном шоке, но здесь подключаться к бд не надо, тк я подключаюсь к ней в валидаторе и запускаю этот файл оттуда.
+// Пока я это не закомментил, сайт матерился и говорил, что подключение уже закрыто в другом файле (в этом) 
+// $link = mysqli_connect("db4free.net", "itmo_user", "mUhNf!JELM349ii", "itmoment");
 if (!$link) {
   die("Connection failed: " . mysqli_connect_error());
 }
-// $name = "knopkipoehali"; // !!ЭТО ДЛЯ ТЕСТА . В ЭТУ ПЕРЕМЕННУЮ НАДО ЗАГОНЯТЬ НАЗВАНИЕ ПРОФЕССИИ
 
-// $query = "SELECT `pqs` FROM `profession_pqs` WHERE `profession_name` = '$name'";
-// $result = mysqli_query($link, $query);
-
-// if (mysqli_num_rows($result) > 0) {
-//   $row = mysqli_fetch_array($result);
-//   $input = $row["pqs"];
-// }
-$input_arr = array(1, 2, 5, 65, 8);
-$names = array();
-
+$input_arr = $_SESSION["pqs_id"];
+$name = $_SESSION["profession_name"];
+$pqs_array = array();
 
 foreach ($input_arr as $input){
-
   $query = "SELECT `kind` FROM `PQ` WHERE `id` = '$input'";
   $result = mysqli_query($link, $query);
-    
   if (mysqli_num_rows($result) > 0) {
-
     $row = mysqli_fetch_array($result);
-    $names[] = $row["kind"];
+    $pqs_array[] = $row["kind"];
   }
-
 }
+$pqs = implode(", ", $pqs_array);
+//ЗАПИСЬ НЕ РАБОТАЕТ(((
+$query = "INSERT INTO `professions` (name, pqs_array)
+  VALUES ('$name', '$pqs')";
+// ну собсна вот оно и закрывается.
+// mysqli_close($link);
 
-
-mysqli_close($link);
-
-
-echo implode(", " ,$names)
+//КАК ПРОЧИТАЕШЬ КОММЕНТЫ - СОТРИ (все в этом файле)
 ?>

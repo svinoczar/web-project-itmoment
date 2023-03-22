@@ -135,7 +135,7 @@
             <p>тесты помогут вам выбрать профессию (тоже надо дописать)</p>
           </div>
           <div class="wedo__item">
-            <a class="btn" href="tests/tests.php">пройти тесты</a>
+            <a class="btn" href="tests/tests.html">пройти тесты</a>
           </div>
         </div>
       </div><!-- /.container -->
@@ -151,11 +151,16 @@
           <div class="wedo__item">
             <table>
               <tr>
-                <td>чзх</td>
-                <td>czx</td>
+                <td>чзх</td> <!-- Профессия --> 
+                <td>
+                  <?php
+                    require 'nums-to-strings.php';
+                  ?> 
+                </td> <!-- ПВК --> 
               </tr>
               <tr>
                 <td>opaopa</td>
+                <td>Готовность к защите Родины с оружием в руках, Военно-профессиональная направленность, Прямые внутренние мотивы военно-профессиональной деятельности, Стремление к профессиональному совершенству, Пунктуальность, педантичность,</td>
               </tr>
             </table>
           </div>
@@ -178,7 +183,7 @@
             <p>типа описание</p>
           </div>
           <div class="wedo__item">
-            <a class="btn" href="becomeanexpert.php">стать экспертом</a>
+            <a class="btn" href="becomeanexpert.html">стать экспертом</a>
           </div>
         </div>
       </div><!-- /.container -->
