@@ -8,7 +8,7 @@ if (!$link) {
 $query = "SELECT `id` FROM `profession_pqs`";
 $result = mysqli_query($link, $query);
 $EXPERTS_COUNT = 7;
-$PRIMARY_ID = 2; // айдишник с которого начинается проверка таблицы с профессиями из панели эксперта.
+$PRIMARY_ID = 19; // айдишник с которого начинается проверка таблицы с профессиями из панели эксперта.
 $checked_professions = array();
 $depth = (mysqli_num_rows($result));
 
@@ -105,6 +105,7 @@ while ($i = 0 < $depth) {
     print_r($_SESSION["pqs_id"]);
     array_push($checked_professions, $primary_name);
 
+    $checked_professions[] = $primary_name;
     require("nums-to-strings.php");
 }
 
