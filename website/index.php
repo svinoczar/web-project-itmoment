@@ -111,20 +111,20 @@
 
 
     <!-- About -->
-    <section class="section" id="about">
+    <!--<section class="section" id="about">
         <div class="container">
 
             <div class="section__header">
                 <h2 class="section__title">О нас</h2>
                 <div class="section__text">
-                  <p>Команда итмомент напишите тут ченить </p>
+                  <p>Мы  </p>
                 </div>
             </div>
 
 
             </div>
 
-    </section>
+    </section> -->
     <section class="section">
       <div class="container">
         <div class="section__header">
@@ -132,7 +132,7 @@
         </div>
         <div class="wedo">
           <div class="wedo__item">
-            <p>тесты помогут вам выбрать профессию (тоже надо дописать)</p>
+            <p>Здесь вы сможете пройты тесты подготовленные нашей командой.</p>
           </div>
           <div class="wedo__item">
             <a class="btn" href="tests/tests.html">пройти тесты</a>
@@ -150,18 +150,20 @@
         <div class="wedo">
           <div class="wedo__item">
             <table>
-              <tr>
-                <td>чзх</td> <!-- Профессия --> 
-                <td>
-                  <?php
-                    require 'nums-to-strings.php';
-                  ?> 
-                </td> <!-- ПВК --> 
-              </tr>
-              <tr>
-                <td>opaopa</td>
-                <td>Готовность к защите Родины с оружием в руках, Военно-профессиональная направленность, Прямые внутренние мотивы военно-профессиональной деятельности, Стремление к профессиональному совершенству, Пунктуальность, педантичность,</td>
-              </tr>
+
+            <?php
+            $link = mysqli_connect("db4free.net", "itmo_user", "mUhNf!JELM349ii", "itmoment");
+            $query = "SELECT * FROM `professions`";
+            $result = mysqli_query($link, $query) or die(mysqli_error($link));
+            while($row = mysqli_fetch_assoc($result)) {
+              echo "<tr>
+              <td>".$row["name"]."</td>
+              <td> - </td>
+              <td>".$row["pqs"]."</td>
+                  </tr>";
+              }
+              mysqli_close($link);
+              ?>
             </table>
           </div>
           <div class="wedo__item">
@@ -180,10 +182,12 @@
 
         <div class="wedo">
           <div class="wedo__item">
-            <p>типа описание</p>
+            <p>Для того чтобы стать экспертом, напишите на почту <a href = "mailto: itmoment.contact@yahoo.com">itmoment.contact@yahoo.com</a>
+            В письме напишите почему вы хотите им стать и почему мы должны взять в вас в число экспертов.
+            </p>
           </div>
           <div class="wedo__item">
-            <a class="btn" href="becomeanexpert.html">стать экспертом</a>
+
           </div>
         </div>
       </div><!-- /.container -->
