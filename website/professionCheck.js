@@ -1331,7 +1331,7 @@ function CheckForm(el){
         itg = itg + res[i].toString() + " ";
     }
     
-    if (counterBlock < 5 && counterBlock > 10){
+    if (counterBlock < 5 || counterBlock > 10){
         fail = "Неверно указаны очки пвк"
     }
     
