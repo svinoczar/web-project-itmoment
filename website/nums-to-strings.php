@@ -22,8 +22,9 @@ foreach ($input_arr as $input){
 }
 $pqs = implode(", ", $pqs_array);
 //ЗАПИСЬ НЕ РАБОТАЕТ(((
-$query = "INSERT INTO `professions` (name, pqs_array)
+$query = "INSERT INTO `professions` (name, pqs)
   VALUES ('$name', '$pqs')";
+mysqli_query($link, $query);
 // ну собсна вот оно и закрывается.
 // mysqli_close($link);
 
