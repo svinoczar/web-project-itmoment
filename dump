@@ -1,0 +1,259 @@
+-- MySQL dump 10.13  Distrib 8.0.32, for Linux (x86_64)
+--
+-- Host: db4free.net    Database: itmoment
+-- ------------------------------------------------------
+-- Server version	8.0.32
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!50503 SET NAMES utf8mb4 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `PQ`
+--
+
+DROP TABLE IF EXISTS `PQ`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `PQ` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `kind` varchar(400) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=163 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `PQ`
+--
+
+LOCK TABLES `PQ` WRITE;
+/*!40000 ALTER TABLE `PQ` DISABLE KEYS */;
+INSERT INTO `PQ` VALUES (1,'Готовность к защите Родины с оружием в руках'),(2,'Военно-профессиональная направленность'),(3,'Прямые внутренние мотивы военно-профессиональной деятельности'),(4,'Стремление к профессиональному совершенству'),(5,'Адекватная самооценка'),(6,'Самостоятельность'),(7,'Пунктуальность, педантичность'),(8,'Дисциплинированность'),(9,'Аккуратность в работе'),(10,'Организованность, самодисциплина'),(11,'Старательность, исполнительность'),(12,'Ответственность'),(13,'Трудолюбие'),(14,'Инициативность'),(15,'Самокритичность'),(16,'Оптимизм, доминирование положительных эмоций'),(17,'Самообладание, эмоциональная уравновешенность, выдержка'),(18,'Самоконтроль, способность к самонаблюдению'),(19,'Предусмотрительность'),(20,'Фрустрационная толерантность'),(21,'Самомобилизующийся тип реакции на препятствия, возникающие на пути к достижению цели'),(22,'Интернальность'),(23,'Экстернальность'),(24,'Интрапунитивность'),(25,'Экстрапунитивность'),(26,'Способность планировать свою деятельность во времени'),(27,'Способность организовывать свою деятельность в условиях большого потока информации и разнообразия поставленных задач'),(28,'Способность брать на себя ответственность за принимаемые решения и действия'),(29,'Способность принимать решение в нестандартных ситуациях'),(30,'Способность рационально действовать в экстремальных ситуациях'),(31,'Способность эффективно действовать (также быстро принимать решения) в условиях дефицита времени'),(32,'Способность переносить неприятные ощущения без потрясений'),(33,'Способность аргументировано отстаивать свое мнение'),(34,'Способность к переключениям с одной деятельности на другую'),(35,'Способность преодолевать страх'),(36,'Зрительная оценка размеров предметов'),(37,'Зрительное восприятие расстояний между предметами'),(38,'Глазомер: линейный, угловой, объемный'),(39,'Глазомер динамический'),(40,'Способность к различению фигуры на малоконтрастном фоне'),(41,'Способность различать и опознавать замаскированные объекты'),(42,'Способность к восприятию пространственного соотношения предметов'),(43,'Точность и оценка направления на источник звука'),(44,'Способность узнавать и различать ритмы'),(45,'Речевой слух'),(46,'Различение отрезков времени'),(47,'Способность к распознаванию небольших отклонений параметров технологических процессов от заданных значений по визуальным признакам'),(48,'Способность к распознаванию небольших отклонений параметров технологических процессов от заданных значений по акустическим признакам'),(49,'Способность к распознаванию небольших отклонений параметров технологических процессов от заданных значений по кинестетическим признакам'),(50,'Способность к зрительным представлениям'),(51,'Способность к пространственному воображению'),(52,'Способность к образному представлению предметов, процессов и явлений'),(53,'Способность наглядно представлять себе новое явление, ранее, не встречающееся в опыте, или старое, но в новых условиях'),(54,'Способность к переводу образа в словесное описание'),(55,'Способность к воссозданию образа по словесному описанию'),(56,'Аналитичность'),(57,'Синтетичность'),(58,'Транссонантность'),(59,'Логичность'),(60,'Креативность'),(61,'Оперативность'),(62,'Предметность'),(63,'Образность'),(64,'Абстрактность'),(65,'Вербальность'),(66,'Калькулятивность'),(67,'Энергичность, витальность'),(68,'Умственная работоспособность'),(69,'Физическая работоспособность'),(70,'Нервно-эмоциональная устойчивость, выносливость по отношению к эмоциональным нагрузкам'),(71,'Острота зрения'),(72,'Адаптация зрения к темноте, свету'),(73,'Контрастная чувствительность монохроматического зрения'),(74,'Цветовая дифференциальная чувствительность'),(75,'Устойчивость зрительной чувствительности во времени'),(76,'Острота слуха'),(77,'Контрастная чувствительность слуха'),(78,'Слуховая дифференциальная чувствительность'),(79,'Переносимость длительно действующего звукового раздражителя'),(80,'Чувствительность (осязание) пальцев'),(81,'Вибрационная чувствительность'),(82,'Мышечно-суставная чувствительность усилий или сопротивления'),(83,'Ощущение равновесия'),(84,'Ощущение ускорения'),(85,'Обонятельная чувствительность'),(86,'Способность узнавать и различать вкусовые ощущения'),(87,'Объем внимания'),(88,'Концентрированность внимания'),(89,'Устойчивость внимания во времени'),(90,'Переключаемость внимания'),(91,'Способность к распределению внимания между несколькими объектами или видами деятельности'),(92,'Помехоустойчивость внимания'),(93,'Способность подмечать изменения в окружающей обстановке, не сосредотачивая сознательно на них внимание'),(94,'Умение подмечать незначительные изменения в исследуемом объекте, в показаниях приборов'),(95,'Способность реагировать на неожиданный зрительный сигнал посредством определённых движений'),(96,'Способность реагировать на неожиданный слуховой сигнал посредством определённых движений'),(97,'Согласованность движений с процессами восприятия (сложноорганизованная деятельность)'),(98,'Способность к сенсомоторному слежению за движущимся объектом'),(99,'Способность к выполнению мелких точных движений'),(100,'Способность к выполнению сложных двигательных действий (актов)'),(101,'Способность к выполнению плавных соразмерных движений'),(102,'Координация движений ведущей руки'),(103,'Координация движений обеих рук'),(104,'Координация движений рук и ног'),(105,'Координация работы кистей рук и пальцев'),(106,'Твердость руки, устойчивость кистей рук (низкий тремор)'),(107,'Умение быстро записывать'),(108,'Красивый почерк'),(109,'Физическая сила'),(110,'Способность к быстрой выработке сенсомоторных навыков'),(111,'Способность к быстрой перестройке сенсомоторных навыков'),(112,'Пластичность и выразительность движений'),(113,'Отсутствие дефектов речи, хорошая дикция'),(114,'Способность речевого аппарата к интенсивной и длительной работе'),(115,'Способность к изменению тембра'),(116,'Способность к изменению силы звучания'),(117,'Переносимость динамических физических нагрузок'),(118,'Переносимость статических физических нагрузок'),(119,'Быстрый переход из состояния покоя к интенсивной работе'),(120,'Сохранение работоспособности при недостатке сна'),(121,'Сохранение работоспособности при развивающемся утомлении'),(122,'Сохранение бдительности в условиях однообразной деятельности (монотонии)'),(123,'Сохранение бдительности в режиме ожидания'),(124,'Сохранение работоспособности в некомфортных температурных условиях'),(125,'Сохранение работоспособности в условиях знакопеременных перегрузок'),(126,'Сохранение работоспособности в условиях воздействия вибрации'),(127,'Сохранение работоспособности в условиях воздействия разнонаправленных перегрузок'),(128,'Сохранение работоспособности в условиях гипо(гипер) барометрических колебаний'),(129,'Сохранение работоспособности в условиях пониженного парциального давления кислорода'),(130,'Сохранение работоспособности в условиях пониженного парциального давления углекислого газа'),(131,'Сохранение работоспособности в условиях ограничения возможностей удовлетворения базовых жизненных потребностей'),(132,'Сохранение работоспособности в разных природно-климатических условиях'),(133,'Способность переадаптироваться к новым средовым условиям'),(134,'Антропометрические характеристики (в соответствии с требованиями профессии)'),(135,'Особенности телосложения (в соответствии с требованиями профессии)'),(136,'Хорошее общее физическое развитие – выносливость, координированность, сила, быстрота'),(137,'Физическая подготовленность к воздействию неблагоприятных факторов профессиональной деятельности'),(138,'Зрительная долговременная память на лица'),(139,'Зрительная долговременная память на образы предметного мира'),(140,'Зрительная долговременная память на условные обозначения (знаки, символы, планы, схемы, графики)'),(141,'Зрительная долговременная память на цифры, даты'),(142,'Зрительная долговременная память на слова и фразы'),(143,'Зрительная долговременная память на семантику текста'),(144,'Зрительная оперативная память на лица'),(145,'Зрительная оперативная память на образы предметного мира'),(146,'Зрительная оперативная память на условные обозначения (знаки, символы, планы, схемы, графики)'),(147,'Зрительная оперативная память на цифры,  даты'),(148,'Зрительная оперативная память на слова и фразы'),(149,'Зрительная оперативная память на семантику текста'),(150,'Слуховая долговременная память на голоса'),(151,'Слуховая долговременная память на цифры'),(152,'Слуховая долговременная память на условные сигналы'),(153,'Слуховая долговременная память на мелодии'),(154,'Слуховая долговременная память на семантику сообщений'),(155,'Слуховая оперативная память на цифры'),(156,'Слуховая оперативная память на семантику сообщений'),(157,'Кинестетическая (моторная) память на простые движения'),(158,'Кинестетическая (моторная) память на сложные движения'),(159,'Кинестетическая (моторная) память на положение и перемещение тела в пространстве'),(160,'Тактильная память'),(161,'Обонятельная память'),(162,'Вкусовая память');
+/*!40000 ALTER TABLE `PQ` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `profession_pqs`
+--
+
+DROP TABLE IF EXISTS `profession_pqs`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `profession_pqs` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `profession_name` varchar(50) DEFAULT NULL,
+  `pqs` varchar(166) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `expert_email` varchar(80) DEFAULT NULL,
+  `condition` varchar(9) NOT NULL DEFAULT 'unchecked',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=50 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `profession_pqs`
+--
+
+LOCK TABLES `profession_pqs` WRITE;
+/*!40000 ALTER TABLE `profession_pqs` DISABLE KEYS */;
+INSERT INTO `profession_pqs` VALUES (17,'Специалист информационной безопасности','000000000009000000900000000000900000000000000000000000080000000000000000000000000000000000000000000000000000000000000060000000000000000000000000000000000000000000','rodionovaa@gmail.com','unchecked'),(18,'Специалист информационной безопасности','000000000000006000900000090009000000000000000080000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000','vedernikovav@gmail.com','unchecked'),(19,'Тестировщик','000000000040000000500000000000000000000000000000000000000000000000000000000000000000005006000000004000000000000000000000000000000000000000000000000000000000000000','rodionovaa@gmail.com','unchecked'),(20,'Data Scientist','000006005000800000000000009000000000000000000000000000000000000004000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000','rodionovaa@gmail.com','unchecked'),(21,'Специалист информационной безопасности','000004000000003000000000000000000000000000000000000000000060000000000000000000000003000000000000000000000000000000000000000000000000000000000000005000200000000000','ovchinnikovis@gmail.com','unchecked'),(22,'Специалист информационной безопасности','000007000000005000000000000000000000000000000000000000000030000000000000000000000009000000000000000000000000000000000000000000000000000004000000008700000000000000','babushkinam@gmail.com','unchecked'),(23,'Тестировщик','000045027000000000000000000000000000000000000070000000000000000000000000000000000000000000000000000000000000000000000000004000000000000000000000000000000010000000','ovchinnikovis@gmail.com','unchecked'),(24,'Data Scientist','000000008007000000600000000000000000000000000000000000050000000000040000000000000000000000000000000000000000000000000030000000000000000000000000000000000000000000','ovchinnikovis@gmail.com','unchecked'),(25,'Специалист информационной безопасности','000098007000000000600000000000000000000000000500004000000030000002000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000','krohinro@gmail.com','unchecked'),(26,'Тестировщик','900008000000000000000000000000007600000000000000000000000000050000000000000000000000000004000000000000000000000000000000000000000000000000000000000000000000000000','krohinro@gmail.com','unchecked'),(27,'Data Scientist','000900000000000000000000000000800000000000000000000000070000000000000000060000000000000000005000000000000000000000000000000000000000000000000000000000000000000000','krohinro@gmail.com','unchecked'),(28,'Специалист информационной безопасности','000600000005000000400000000020300000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000','ryazanovdv@gmail.com','unchecked'),(29,'Тестировщик','000066079800006000000000000000000000000000000000000000090000000000000070000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000','babushkinam@gmail.com','unchecked'),(30,'Тестировщик','000000000000000000000000005000000000000000000000000000000006070000040030000000000000000000000200000000000000000000000000000000000000000000000000000000000000000000','ryazanovdv@gmail.com','unchecked'),(31,'Data Scientist','000000560400000002003000047000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000','ryazanovdv@gmail.com','unchecked'),(32,'Data Scientist','000000009007000000300000000000000000000008000000000000090070600000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000','babushkinam@gmail.com','unchecked'),(33,'Data Scientist','000008007000008000650000006000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000','vedernikovav@gmail.com','unchecked'),(34,'Тестировщик','900000000000000088900000060800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000','vedernikovav@gmail.com','unchecked'),(35,'Data Scientist','000078008890000060000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000','goninsk@gmail.com','unchecked'),(36,'Специалист информационной безопасности','000206000009000000000000000000000000000000000000000000000080000005000000000000000000000000000000000000000000000000000000000000000100000000000000005400000000000000','goninsk@gmail.com','unchecked'),(37,'Тестировщик','000000008907600000000000000000000000000000000000000000000050000000020000000000000000000000300000000000000000000000000000000000000000000000000000000000000000000000','goninsk@gmail.com','unchecked'),(47,'','','vedernikovav@gmail.com','unchecked'),(48,'','','vedernikovav@gmail.com','unchecked'),(49,'','','babushkinam@gmail.com','unchecked');
+/*!40000 ALTER TABLE `profession_pqs` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `professions`
+--
+
+DROP TABLE IF EXISTS `professions`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `professions` (
+  `name` varchar(50) DEFAULT NULL,
+  `pqs` varchar(500) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `professions`
+--
+
+LOCK TABLES `professions` WRITE;
+/*!40000 ALTER TABLE `professions` DISABLE KEYS */;
+INSERT INTO `professions` VALUES ('Тестировщик','Аккуратность в работе, Самостоятельность, Готовность к защите Родины с оружием в руках, Организованность, самодисциплина, Предусмотрительность'),('Data Scientist','Аккуратность в работе, Самостоятельность, Способность организовывать свою деятельность в условиях большого потока информации и разнообразия поставленных задач, Аналитичность, Предусмотрительность'),('Специалист информационной безопасности','Предусмотрительность, Самостоятельность, Ответственность, Логичность, Зрительная оперативная память на цифры,  даты');
+/*!40000 ALTER TABLE `professions` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `result_of_colortests`
+--
+
+DROP TABLE IF EXISTS `result_of_colortests`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `result_of_colortests` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `describe_of_result` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `result_of_colortests`
+--
+
+LOCK TABLES `result_of_colortests` WRITE;
+/*!40000 ALTER TABLE `result_of_colortests` DISABLE KEYS */;
+INSERT INTO `result_of_colortests` VALUES (1,'100-150, good reaction'),(2,'150-250, normal rection'),(3,'>250, bad reaction');
+/*!40000 ALTER TABLE `result_of_colortests` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `result_of_numbersoundtests`
+--
+
+DROP TABLE IF EXISTS `result_of_numbersoundtests`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `result_of_numbersoundtests` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `describe_of_result` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `result_of_numbersoundtests`
+--
+
+LOCK TABLES `result_of_numbersoundtests` WRITE;
+/*!40000 ALTER TABLE `result_of_numbersoundtests` DISABLE KEYS */;
+INSERT INTO `result_of_numbersoundtests` VALUES (1,'2-5 second, good reaction'),(2,'5-9 second, normal reaction'),(3,'>9 second, bad reaction');
+/*!40000 ALTER TABLE `result_of_numbersoundtests` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `result_of_numbervisualtests`
+--
+
+DROP TABLE IF EXISTS `result_of_numbervisualtests`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `result_of_numbervisualtests` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `describe_of_result` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `result_of_numbervisualtests`
+--
+
+LOCK TABLES `result_of_numbervisualtests` WRITE;
+/*!40000 ALTER TABLE `result_of_numbervisualtests` DISABLE KEYS */;
+INSERT INTO `result_of_numbervisualtests` VALUES (1,'1-3 second, good reaction'),(2,'3-6 second, normal rection'),(3,'>6 second, bad reaction');
+/*!40000 ALTER TABLE `result_of_numbervisualtests` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `result_of_soundtests`
+--
+
+DROP TABLE IF EXISTS `result_of_soundtests`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `result_of_soundtests` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `describe_of_result` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `result_of_soundtests`
+--
+
+LOCK TABLES `result_of_soundtests` WRITE;
+/*!40000 ALTER TABLE `result_of_soundtests` DISABLE KEYS */;
+INSERT INTO `result_of_soundtests` VALUES (1,'120-170, good reaction'),(2,'170-260, normal reaction'),(3,'>260, bad reaction');
+/*!40000 ALTER TABLE `result_of_soundtests` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tests_result_of_users`
+--
+
+DROP TABLE IF EXISTS `tests_result_of_users`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `tests_result_of_users` (
+  `id_of_user` varchar(20) DEFAULT NULL,
+  `result_colortest` int DEFAULT NULL,
+  `result_soundtest` int DEFAULT NULL,
+  `result_threecolortest` int DEFAULT NULL,
+  `result_numbervisualtest` int DEFAULT NULL,
+  `result_numbersoundtest` int DEFAULT NULL,
+  KEY `FK_colour` (`result_colortest`),
+  KEY `FK_sound` (`result_soundtest`),
+  KEY `FK_threecolours` (`result_threecolortest`),
+  KEY `FK_numbervisual` (`result_numbervisualtest`),
+  KEY `FK_numbersound` (`result_numbersoundtest`),
+  CONSTRAINT `FK_colour` FOREIGN KEY (`result_colortest`) REFERENCES `result_of_colortests` (`id`),
+  CONSTRAINT `FK_numbersound` FOREIGN KEY (`result_numbersoundtest`) REFERENCES `result_of_numbersoundtests` (`id`),
+  CONSTRAINT `FK_numbervisual` FOREIGN KEY (`result_numbervisualtest`) REFERENCES `result_of_numbervisualtests` (`id`),
+  CONSTRAINT `FK_sound` FOREIGN KEY (`result_soundtest`) REFERENCES `result_of_soundtests` (`id`),
+  CONSTRAINT `FK_threecolours` FOREIGN KEY (`result_threecolortest`) REFERENCES `result_of_colortests` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tests_result_of_users`
+--
+
+LOCK TABLES `tests_result_of_users` WRITE;
+/*!40000 ALTER TABLE `tests_result_of_users` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tests_result_of_users` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `users`
+--
+
+DROP TABLE IF EXISTS `users`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `users` (
+  `id` varchar(20) NOT NULL,
+  `email` varchar(45) NOT NULL,
+  `password` varchar(45) NOT NULL,
+  `group_admin` tinyint(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`email`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `users`
+--
+
+LOCK TABLES `users` WRITE;
+/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES ('8f9f69f5e6d3','babushkinam@gmail.com','babushkinadmin',1),('257ff8faffe5','goninsk@gmail.com','goninadmin',1),('553d3110f0ed','krohinro@gmail.com','krohinadmin',1),('ac4a76efdec6','ovchinnikovis@gmail.com','ovchinnikovadmin',1),('8942a76df1b9','rodionovaa@gmail.com','rodionovadmin',1),('37c70c40c13b','ryazanovdv@gmail.com','ryazanovadmin',1),('1a66c2a96011','vedernikovav@gmail.com','vedernikovadmin',1);
+/*!40000 ALTER TABLE `users` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2023-03-22 19:20:28
