@@ -1312,6 +1312,7 @@ function CheckForm(el){
     
     var itg = "";
     var fail = "";
+    var counterBlock = 0;
     if (counter < 5 || counter > 10){
         fail = "Выберите от 5 до 10 качеств!";
     }
@@ -1322,10 +1323,19 @@ function CheckForm(el){
     for (let i = 0; i < res.length; i++){
         if (res[i] > 10 || res[i] < 0){
             fail = "Неправильно расставлены рейтинги!"
+        }else{
+            if (res[i] != 0){
+            counterBlock = counterBlock + 1;
+            }
         }
         itg = itg + res[i].toString() + " ";
     }
-
+    
+    if (counterBlock < 5 && counterBlock > 10){
+        fail = "Неверно указаны очки пвк"
+    }
+    
+    
     console.log(itg);
     console.log(res);
 
