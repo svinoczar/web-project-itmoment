@@ -19,17 +19,26 @@
     <p>Нажмите на кнопку, когда будете готовы начать</p>
     <p>Нажмите на пробел, когда круг поменяет свой цвет (круг поменяет цвет 3 раза)</p>
     <button id="startButton">Запуск теста</button>
-    <p id="result"></p>
+    <p id="result1"></p>
+    <p id="result2"></p>
+    <p id="result3"></p>
+    <p id="result4"></p>
 
     <div id="circle"></div>
 
     <script>
       startButton = document.getElementById("startButton");
-      result = document.getElementById("result");
+      result1 = document.getElementById("result1");
+      result2 = document.getElementById("result2");
+      result3 = document.getElementById("result3");
+      result4 = document.getElementById("result4");
       circle = document.getElementById("circle");
 
       let colorChanges = 0;
       let startTime, endTime, sumOfReactionTime = 0;
+      let sumOfReactionTimeBlue = 0;
+      let sumOfReactionTimeRed = 0;
+      let sumOfReactionTimeYellow = 0;
 
       startButton.addEventListener("click", function() {
         startButton.disabled = true;
@@ -39,11 +48,11 @@
       });
 
       function changeColor() {
-        if (colorChanges < 3) {
-          colors = ["red", "yellow", "blue", "green", "brown"];
+        if (colorChanges < 90) {
+          colors = ["red", "yellow", "blue"];
           let randomColor;
 
-          randomColor = colors[colorChanges];
+          randomColor = colors[colorChanges % 3];
 
           circle.style.backgroundColor = randomColor;
 
@@ -58,15 +67,32 @@
           endTime = new Date().getTime();
 
           reactionTime = endTime - startTime;
-          sumOfReactionTime += reactionTime;
-
+          
+          if (circle.style.backgroundColor === "red"){
+            sumOfReactionTimeRed += reactionTime;
+          }
+          if (circle.style.backgroundColor === "yellow"){
+            sumOfReactionTimeYellow += reactionTime;
+          }
+          if (circle.style.backgroundColor === "blue"){
+            sumOfReactionTimeBlue += reactionTime;
+          }
+          
+          console.log(circle.style.backgroundColor); 
+          console.log(sumOfReactionTimeRed);
+          console.log(sumOfReactionTimeYellow);
+          console.log(sumOfReactionTimeBlue);
+          
           startTime = null;
           endTime = null;
 
-          if (colorChanges === 3) {
-            averageReactionTime = sumOfReactionTime / 3;
+          if (colorChanges === 90) {
+            averageReactionTime = (sumOfReactionTimeRed + sumOfReactionTimeYellow + sumOfReactionTimeBlue) / 90;
 
-            result.textContent = `Ваше время реакции: ${averageReactionTime.toFixed(2)} ms`;
+            result1.textContent = `Реакция на красные: ${(sumOfReactionTimeRed / 30).toFixed(2)} ms`;
+            result2.textContent = `Реакция на желтые: ${(sumOfReactionTimeYellow / 30).toFixed(2)} ms`;
+            result3.textContent = `Реакция на синие: ${(sumOfReactionTimeBlue / 30).toFixed(2)} ms`;
+            result4.textContent = `Ваше время реакции: ${averageReactionTime.toFixed(2)} ms`;
             circle.style.backgroundColor = "black";
 
             colorChanges = 0;
