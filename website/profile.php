@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" href="css/profile.css">
-        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/style1.css">
 
         <title>ITMOMENT</title>
     </head>
@@ -22,13 +22,14 @@
                         $entry_value = $_SESSION["admin"];
                         if ($entry_value) {
                             // Entry value is true, show the button
-                            echo '<a class="expertbtn" href="expert-panel.php" >Панель эксперта</a>';
+                            echo '<a class="expertbtn" href="expert-panel.html" >Панель эксперта</a>';
                             // id="expertbtn" name="expert" type="submit"
                           } else {
                             // Entry value is false, hide the button
-                            echo '<a id="expertbtn" name="expert" type="submit" style="visibility: hidden" href="expert-panel.php" >Панель эксперта</a>';
+                            echo '<a id="expertbtn" name="expert" type="submit" style="visibility: hidden" href="expert-panel.html" >Панель эксперта</a>';
                           }
                         ?>
+                    <a class="expertbtn" href="validator.php" >validator test</a>
                           <a class="expertbtn" href="results.php">Статистика</a>
                     </div>
                 </div>

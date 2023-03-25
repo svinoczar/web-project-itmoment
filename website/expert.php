@@ -22,6 +22,8 @@
       print("Error: " . $query . "<br>" . mysqli_error($link));
     }
       }
+  unset($_COOKIE['profession']);
+  unset($_COOKIE['pqs']);
   header('Location: profile.php');
   mysqli_close($link);
 ?> 

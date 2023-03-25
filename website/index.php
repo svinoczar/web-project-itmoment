@@ -2,7 +2,7 @@
 <html lang="ru" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style1.css">
     <title>ITMOMENT</title>
   </head>
   <body>
@@ -96,19 +96,107 @@
         </div>
       </div>
     </header>
+    <div class="page">
 
-    <!-- tests -->
-    <!-- Тесты были разделены на отдельные классы, возможно нужно будет именно это,
-    но можно в дальшейшем соединить в один для укорочения -->
+    <!-- Intro -->
+    <div class="intro" id="intro">
+        <div class="container">
+            <div class="intro__inner">
+                <h1 class="intro__title">Добро пожаловать</h1>
+            </div>
+        </div>
 
-    <div class="test1">
-      <a href="tests/test1.php" class="button test1">Пройти тест №1</a>
-    </div>
-    <div class="test2">
-      <a href="tests/test2.php" class="button test2">Пройти тест №2</a>
-    </div>
-    <div class="test3">
-      <a href="tests/test3.php" class="button test3">Пройти тест №3</a>
-    </div>
+
+    </div><!-- /.intro -->
+
+
+    <!-- About -->
+    <!--<section class="section" id="about">
+        <div class="container">
+
+            <div class="section__header">
+                <h2 class="section__title">О нас</h2>
+                <div class="section__text">
+                  <p>Мы  </p>
+                </div>
+            </div>
+
+
+            </div>
+
+    </section> -->
+    <section class="section">
+      <div class="container">
+        <div class="section__header">
+          <h2 class="section__title">Пройти тесты</h2>
+        </div>
+        <div class="wedo">
+          <div class="wedo__item">
+            <p>Здесь вы сможете пройты тесты подготовленные нашей командой.</p>
+          </div>
+          <div class="wedo__item">
+            <a class="btn" href="tests/tests.html">пройти тесты</a>
+          </div>
+        </div>
+      </div><!-- /.container -->
+
+    </section>
+    <section class="section">
+      <div class="container">
+        <div class="section__header">
+          <h2 class="section__title">Профессии</h2>
+        </div>
+
+        <div class="wedo">
+          <div class="wedo__item">
+            <table>
+
+            <?php
+            $link = mysqli_connect("db4free.net", "itmo_user", "mUhNf!JELM349ii", "itmoment");
+            $query = "SELECT * FROM `professions`";
+            $result = mysqli_query($link, $query) or die(mysqli_error($link));
+            while($row = mysqli_fetch_assoc($result)) {
+              echo "<tr>
+              <td>".$row["name"]."</td>
+              <td> - </td>
+              <td>".$row["pqs"]."</tс
+                  </tr>";
+              }
+              mysqli_close($link);
+              ?>
+            </table>
+          </div>
+          <div class="wedo__item">
+            <p>Специалист, который проверяет, как работает программа или приложение</p>
+            <p><br>Cпециалист, который создаёт инструменты для решения задач бизнеса</p>
+            <p><br></br><br>Специалист, который обеспечивает конфиденциальность данных, предотвращает утечку или несанкционированный доступ к информации, принимает непосредственное участие в создании системы защиты информации</p>
+          </div>
+        </div>
+      </div><!-- /.container -->
+    </section>
+
+    <section class="section">
+      <div class="container">
+
+        <div class="section__header">
+          <h2 class="section__title">Станьте экспетом</h2>
+        </div>
+
+        <div class="wedo">
+          <div class="wedo__item">
+            <p>Для того чтобы стать экспертом, напишите на почту <a href = "mailto: itmoment.contact@yahoo.com">itmoment.contact@yahoo.com</a>
+            В письме напишите почему вы хотите им стать и почему мы должны взять в вас в число экспертов.
+            </p>
+          </div>
+          <div class="wedo__item">
+
+          </div>
+        </div>
+      </div><!-- /.container -->
+    </section>
+
+
+
+
   </body>
 </html>
