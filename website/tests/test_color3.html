@@ -17,7 +17,8 @@
   <body>
     <h1>Тест: "Реакция на цвет(3 цвета)"</h1>
     <p>Нажмите на кнопку, когда будете готовы начать</p>
-    <p>Нажмите на пробел, когда круг поменяет свой цвет (круг поменяет цвет 3 раза)</p>
+    <p>Нажмите на пробел, когда круг поменяет свой цвет (круг поменяет цвет 90 раз)</p>
+    <p>Красный цвет - Z, Желтый цвет - X, Синий цвет - С</p>
     <button id="startButton">Запуск теста</button>
     <p id="result1"></p>
     <p id="result2"></p>
@@ -39,6 +40,12 @@
       let sumOfReactionTimeBlue = 0;
       let sumOfReactionTimeRed = 0;
       let sumOfReactionTimeYellow = 0;
+      let falseRed = 0;
+      let numberRed = 0;
+      let falseYellow = 0;
+      let numberYellow = 0;
+      let falseBlue = 0;
+      let numberBlue = 0;
 
       startButton.addEventListener("click", function() {
         startButton.disabled = true;
@@ -52,7 +59,7 @@
           colors = ["red", "yellow", "blue"];
           let randomColor;
 
-          randomColor = colors[colorChanges % 3];
+          randomColor = colors[Math.floor(Math.random() * 3)];
 
           circle.style.backgroundColor = randomColor;
 
@@ -63,36 +70,55 @@
       }
 
       document.addEventListener("keydown", function(event) {
-        if (event.code === "Space" && startTime) {
+        if ((event.code === "KeyZ" || event.code === "KeyX" || event.code === "KeyC" ) && startTime) {
           endTime = new Date().getTime();
 
           reactionTime = endTime - startTime;
           
           if (circle.style.backgroundColor === "red"){
-            sumOfReactionTimeRed += reactionTime;
+            if (event.code === "KeyZ"){
+              sumOfReactionTimeRed += reactionTime;
+              numberRed = numberRed + 1;
+            }else{
+              falseRed = falseRed + 1;
+            }
           }
           if (circle.style.backgroundColor === "yellow"){
-            sumOfReactionTimeYellow += reactionTime;
+            if (event.code === "KeyX"){
+              sumOfReactionTimeYellow += reactionTime;
+              numberYellow = numberYellow + 1;
+            }else{
+              falseYellow = falseYellow + 1;
+            }
           }
           if (circle.style.backgroundColor === "blue"){
-            sumOfReactionTimeBlue += reactionTime;
+            if (event.code === "KeyC"){
+              sumOfReactionTimeBlue += reactionTime;
+              numberBlue = numberBlue + 1;
+            }else{
+              falseBlue = falseBlue + 1;
+            }
+            
           }
           
+
           console.log(circle.style.backgroundColor); 
           console.log(sumOfReactionTimeRed);
           console.log(sumOfReactionTimeYellow);
           console.log(sumOfReactionTimeBlue);
+
+          circle.style.backgroundColor = "black";
           
           startTime = null;
           endTime = null;
 
           if (colorChanges === 90) {
-            averageReactionTime = (sumOfReactionTimeRed + sumOfReactionTimeYellow + sumOfReactionTimeBlue) / 90;
+            averageReactionTime = (sumOfReactionTimeRed + sumOfReactionTimeYellow + sumOfReactionTimeBlue) / (numberRed + numberYellow + numberBlue);
 
-            result1.textContent = `Реакция на красные: ${(sumOfReactionTimeRed / 30).toFixed(2)} ms`;
-            result2.textContent = `Реакция на желтые: ${(sumOfReactionTimeYellow / 30).toFixed(2)} ms`;
-            result3.textContent = `Реакция на синие: ${(sumOfReactionTimeBlue / 30).toFixed(2)} ms`;
-            result4.textContent = `Ваше время реакции: ${averageReactionTime.toFixed(2)} ms`;
+            result1.textContent = `Реакция на красные: ${(sumOfReactionTimeRed / numberRed).toFixed(2)} ms, количество ошибок: ${(falseRed / (numberRed + falseRed)).toFixed(2)} %`;
+            result2.textContent = `Реакция на желтые: ${(sumOfReactionTimeYellow / numberYellow).toFixed(2)} ms, количество ошибок: ${(falseYellow / (numberYellow + falseYellow)).toFixed(2)} %`;
+            result3.textContent = `Реакция на синие: ${(sumOfReactionTimeBlue / numberBlue).toFixed(2)} ms, количество ошибок: ${(falseBlue / (numberBlue + falseBlue)).toFixed(2)} %`;
+            result4.textContent = `Ваше время реакции: ${averageReactionTime.toFixed(2)} ms, количество ошибок: ${((falseBlue + falseYellow + falseRed) / 90).toFixed(2)} %`;
             circle.style.backgroundColor = "black";
 
             colorChanges = 0;
