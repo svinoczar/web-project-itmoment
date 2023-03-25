@@ -6,10 +6,65 @@ const audioElement = document.getElementById("audio");
 let startTime;
 let a;
 let b;
+let turnCount = 0;
+let totalTime = 0;
+let falseAnswers = 0;
+let audio1184 = new Audio("1184.mp3");
+let audio1255 = new Audio("1255.mp3");
+let audio1766 = new Audio("1766.mp3");
+let audio2891 = new Audio("2891.mp3");
+let audio3476 = new Audio("3476.mp3");
+let audio4994 = new Audio("4994.mp3");
+let audio5533 = new Audio("5533.mp3");
+let audio5610 = new Audio("5610.mp3");
+let audio6789 = new Audio("6789.mp3");
+let audio7388 = new Audio("7388.mp3");
+let sound;
+
 
 function generateNumbers() {
-  a = Math.floor(Math.random() * (max - min)) + min;
-  b = Math.floor(Math.random() * (max - min)) + min;
+  if (turnCount % 10 === 0){
+    a = 11;
+    b = 84;
+    sound = audio1184;
+  }else if(turnCount % 10 === 1){
+    a = 12;
+    b = 55;
+    sound = audio1255;
+  }else if(turnCount % 10 === 2){
+    a = 17;
+    b = 66;
+    sound = audio1766;
+  }else if(turnCount % 10 === 3){
+    a = 28;
+    b = 91;
+    sound = audio2891;
+  }else if(turnCount % 10 === 4){
+    a = 34;
+    b = 76;
+    sound = audio3476;
+  }else if(turnCount % 10 === 5){
+    a = 49;
+    b = 94;
+    sound = audio4994;
+  }else if(turnCount % 10 === 6){
+    a = 55;
+    b = 33;
+    sound = audio5533;
+  }else if(turnCount % 10 === 7){
+    a = 56;
+    b = 10;
+    sound = audio5610;
+  }else if(turnCount % 10 === 8){
+    a = 67;
+    b = 89;
+    sound = audio6789;
+  }else if(turnCount % 10 === 9){
+    a = 73;
+    b = 88;
+    sound = audio7388;
+  }
+  
   return [a, b];
 }
 
@@ -19,8 +74,10 @@ function playAudio(src) {
 }
 
 function startTest() {
-  const [a, b] = generateNumbers();
-  playAudio(`https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&q=${a}+плюс+${b}&tl=ru`);
+  console.log(turnCount);
+  [a, b] = generateNumbers();
+  sound.play();
+  console.log(a, b)
   startTime = performance.now();
   return [a, b];
 }
@@ -31,14 +88,32 @@ function checkAnswer(answer) {
     if ((time - 2500).toFixed(2) < 0){
         resultDiv.innerText = "Дослушайте текст до конца, не пытайтесь обмануть тест!";
     }else{
-        resultDiv.innerText = `Правильно! Ваше время реакции: ${(time - 2600).toFixed(2)} ms.`;
+        resultDiv.innerText = `Правильно! Переходим к следующему выражению.`;
+        totalTime += time - 2500;
+        turnCount++;
+        if (turnCount >= 30) {
+          const averageTime = (totalTime / (30 - falseAnswers)).toFixed(2);
+          resultDiv.innerText += `\nСреднее время реакции: ${averageTime} ms, процент ошибок: ${(falseAnswers / 30).toFixed(2) * 100} %`;
+          totalTime = 0;
+        } else {
+          startTest();
+        }
     }
   } else {
     time = performance.now() - startTime;
     if ((time - 2500).toFixed(2) < 0){
         resultDiv.innerText = "Дослушайте текст до конца, не пытайтесь обмануть тест!";
     }else{
-        resultDiv.innerText = "Неверно!";
+        resultDiv.innerText = "Неверно! Переходим к следующему выражению.";
+        turnCount++;
+        falseAnswers = falseAnswers + 1;
+        if (turnCount >= 30) {
+          const averageTime = (totalTime / (30 - falseAnswers)).toFixed(2);
+          resultDiv.innerText += `\nСреднее время реакции: ${averageTime} ms, процент ошибок: ${(falseAnswers / 30).toFixed(2) * 100} %`;
+          totalTime = 0;
+        } else {
+          startTest();
+        }
     }
   }
 }
