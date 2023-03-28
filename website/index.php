@@ -135,7 +135,7 @@
             <p>Здесь вы сможете пройты тесты подготовленные нашей командой.</p>
           </div>
           <div class="wedo__item">
-            <a class="btn" href="tests/tests.html">пройти тесты</a>
+            <a class="btn" href="tests/html/tests.html">пройти тесты</a>
           </div>
         </div>
       </div><!-- /.container -->
