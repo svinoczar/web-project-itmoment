@@ -1340,7 +1340,7 @@ function CheckForm(el){
     console.log(res);
 
     if(fail != ""){
-        alert(fail);
+        //alert(fail);
         document.getElementById('error').innerHTML = fail;
         return false;
     }else{
