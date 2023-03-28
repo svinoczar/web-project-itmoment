@@ -1,5 +1,7 @@
 function CheckForm(el){
 
+    // УБРАТЬ ИЗ ПРОЕКТА
+
     var front = 0;
     var back = 0;
     var tester = 0;
