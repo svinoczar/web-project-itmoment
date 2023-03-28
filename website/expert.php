@@ -24,6 +24,6 @@
       }
   unset($_COOKIE['profession']);
   unset($_COOKIE['pqs']);
-  header('Location: profile.php');
+  // header('Location: profile.php');
   mysqli_close($link);
 ?> 
