@@ -26,7 +26,7 @@ function startTest() {
     return [a, b];
   } else {
     averageReactionTime = totalReactionTime / (NUM_TRIALS - falseAnswers);
-    resultDiv.innerText = `Тест завершен! Среднее время реакции: ${(averageReactionTime).toFixed(2)} ms, процент ошибок: ${(falseAnswers / 30).toFixed(2)} %`;
+    resultDiv.innerText = `Тест завершен! Среднее время реакции: ${(averageReactionTime).toFixed(2)} ms, процент ошибок: ${(falseAnswers / 30).toFixed(2) * 100} %`;
   }
 }
 
