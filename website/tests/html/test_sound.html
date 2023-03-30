@@ -9,6 +9,7 @@
     <p>Нажмите на кнопку, когда будете готовы начать</p>
     <p>Нажмите на пробел, когда услышите звук</p>
     <p id="progress"></p>
+    <progress id="progress-bar" value="0" max="100"></progress><br></br>
     <button id="startButton">Запуск теста</button>
     <p id="result"></p>
     <div id="resultFalse"></div>
@@ -16,11 +17,13 @@
     <script>
       const startButton = document.getElementById("startButton");
       const result = document.getElementById("result");
+      const progressBar = document.getElementById("progress-bar");
       
       let startTime, endTime, totalReactionTime = 0, counter = 0;
       
       function runTest() {
-        progress.textContent = `Ваш прогресс: ${((counter / 30).toFixed(2) * 100).toFixed(0)} %`;
+        //progress.textContent = `Ваш прогресс: ${((counter / 30).toFixed(2) * 100).toFixed(0)} %`;
+        progressBar.value = ((counter / 30).toFixed(2) * 100).toFixed(0);
         if (counter < 30) {
           startButton.disabled = true;
           counter++;

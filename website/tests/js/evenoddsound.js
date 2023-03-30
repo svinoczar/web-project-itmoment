@@ -4,6 +4,7 @@ const questionDiv = document.getElementById("question");
 const resultDiv = document.getElementById("result");
 const falseDiv = document.getElementById("resultFalse");
 const audioElement = document.getElementById("audio");
+const progressBar = document.getElementById("progress-bar");
 let startTime;
 let a;
 let b;
@@ -85,7 +86,8 @@ function startTest() {
 }
 
 function checkAnswer(answer) {
-  progress.textContent = `Ваш прогресс: ${(((turnCount + 1) / 30).toFixed(2) * 100).toFixed(0)} %`;
+  //progress.textContent = `Ваш прогресс: ${(((turnCount + 1) / 30).toFixed(2) * 100).toFixed(0)} %`;
+  progressBar.value = (((turnCount + 1) / 30).toFixed(2) * 100).toFixed(0);
   if (answer === "even" && (a + b) % 2 === 0 || answer === "odd" && (a + b) % 2 !== 0) {
     time = performance.now() - startTime;
     if ((time - 2500).toFixed(2) < 0){
@@ -96,8 +98,8 @@ function checkAnswer(answer) {
         turnCount++;
         if (turnCount >= 30) {
           const averageTime = (totalTime / (30 - falseAnswers)).toFixed(2);
-          resultDiv.innerText += `\nСреднее время реакции: ${averageTime} ms, процент ошибок: ${(falseAnswers / 30).toFixed(2) * 100} %`;
-          falseDiv.innerText += `\nСреднее время реакции неверных ответов: ${(falseTime / falseAnswers).toFixed(2)} ms`;
+          resultDiv.innerText = `\nСреднее время реакции: ${averageTime} ms, процент ошибок: ${(falseAnswers / 30).toFixed(2) * 100} %`;
+          falseDiv.innerText = `Среднее время реакции неверных ответов: ${(falseTime / falseAnswers).toFixed(2)} ms`;
           totalTime = 0;
         } else {
           startTest();
@@ -114,8 +116,8 @@ function checkAnswer(answer) {
         falseTime += time - 2500;
         if (turnCount >= 30) {
           const averageTime = (totalTime / (30 - falseAnswers)).toFixed(2);
-          resultDiv.innerText += `\nСреднее время реакции: ${averageTime} ms, процент ошибок: ${((falseAnswers / 30).toFixed(2) * 100).toFixed(0)} %`;
-          falseDiv.innerText += `\nСреднее время реакции неверных ответов: ${(falseTime / falseAnswers).toFixed(2)} ms`;
+          resultDiv.innerText = `\nСреднее время реакции: ${averageTime} ms, процент ошибок: ${((falseAnswers / 30).toFixed(2) * 100).toFixed(0)} %`;
+          falseDiv.innerText = `Среднее время реакции неверных ответов: ${(falseTime / falseAnswers).toFixed(2)} ms`;
           totalTime = 0;
         } else {
           startTest();

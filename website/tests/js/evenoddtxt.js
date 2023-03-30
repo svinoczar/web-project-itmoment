@@ -4,6 +4,7 @@ const questionDiv = document.getElementById("question");
 const resultDiv = document.getElementById("result");
 const falseDiv = document.getElementById("resultFalse");
 const expression = document.getElementById("expression");
+const progressBar = document.getElementById("progress-bar");
 const NUM_TRIALS = 30;
 let startTime;
 let falseTime = 0;
@@ -29,20 +30,22 @@ function startTest() {
   } else {
     averageReactionTime = totalReactionTime / (NUM_TRIALS - falseAnswers);
     resultDiv.innerText = `Тест завершен! Среднее время реакции: ${(averageReactionTime).toFixed(2)} ms, процент ошибок: ${((falseAnswers / 30).toFixed(2) * 100).toFixed(0)} %`;
-    falseDiv.innerText += `\nСреднее время реакции неверных ответов: ${(falseTime / falseAnswers).toFixed(2)} ms`;
+    falseDiv.innerText = `\nСреднее время реакции неверных ответов: ${(falseTime / falseAnswers).toFixed(2)} ms`;
   }
 }
 
 function checkAnswer(answer) {
   if (answer === "even" && (a + b) % 2 === 0 || answer === "odd" && (a + b) % 2 !== 0) {
-    progress.textContent = `Ваш прогресс: ${(((trialNum + 1) / 30).toFixed(2) * 100).toFixed(0)} %`;
+    //progress.textContent = `Ваш прогресс: ${(((trialNum + 1) / 30).toFixed(2) * 100).toFixed(0)} %`;
+    progressBar.value = (((trialNum + 1) / 30).toFixed(2) * 100).toFixed(0);
     const time = performance.now() - startTime;
     totalReactionTime += time;
     trialNum++;
     resultDiv.innerText = `Правильно! Переходим к следующему вопросу.`;
     setTimeout(startTest, 1000);
   } else {
-    progress.textContent = `Ваш прогресс: ${(((trialNum + 1) / 30).toFixed(2) * 100).toFixed(0)} %`;
+    //progress.textContent = `Ваш прогресс: ${(((trialNum + 1) / 30).toFixed(2) * 100).toFixed(0)} %`;
+    progressBar.value = (((trialNum + 1) / 30).toFixed(2) * 100).toFixed(0);
     const time = performance.now() - startTime;
     falseAnswers = falseAnswers + 1;
     trialNum++;

@@ -20,6 +20,7 @@
     <p>Нажмите на пробел, когда круг поменяет свой цвет (круг поменяет цвет 90 раз)</p>
     <p>Красный цвет - Z, Желтый цвет - X, Синий цвет - С</p>
     <p id="progress"></p>
+    <progress id="progress-bar" value="0" max="100"></progress><br></br>
     <button id="startButton">Запуск теста</button>
     <p id="result1"></p>
     <p id="result2"></p>
@@ -35,6 +36,7 @@
       result3 = document.getElementById("result3");
       result4 = document.getElementById("result4");
       resultFalse = document.getElementById("resultFalse");
+      const progressBar = document.getElementById("progress-bar");
       let circle = document.getElementById("circle");
 
       let colorChanges = 0;
@@ -118,7 +120,8 @@
           startTime = null;
           endTime = null;
 
-          progress.textContent = `Ваш прогресс: ${((colorChanges / 90).toFixed(2) * 100).toFixed(0)} %`;
+          //progress.textContent = `Ваш прогресс: ${((colorChanges / 90).toFixed(2) * 100).toFixed(0)} %`;
+          progressBar.value = ((colorChanges / 90).toFixed(2) * 100).toFixed(0);
 
           if (colorChanges === 90) {
             averageReactionTime = (sumOfReactionTimeRed + sumOfReactionTimeYellow + sumOfReactionTimeBlue) / (numberRed + numberYellow + numberBlue);
