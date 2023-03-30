@@ -23,7 +23,7 @@
               <label for="email">
                 <b>Почта</b>
               </label>
-              <input type="text" placeholder="Введите почту" name="email" required>
+              <input type="email" placeholder="Введите почту" name="email" required>
               <label for="password">
                 <b>Пароль</b>
               </label>
@@ -42,13 +42,11 @@
             </div>
           </form>
 
-        <!-- Подключение скрипта для входа в систему -->
         <div class="hide">
 
         </div>
         </div>
       <div class="modal" id="registration_window">
-        <form class="modal-content animate"> <!-- action="/action_page.php (if all works good, delete it)-->
 
           <!-- button to close registration panel -->
           <div class="imgcontainer">
@@ -56,7 +54,7 @@
           </div>
 
           <!-- main registration panel -->
-          <form action="registration.php" method="GET">
+          <form class="modal-content animate" action="registration.php" method="POST">
             <div class="container">
               <h1>Регистрация</h1>
               <p>Заполните эти формы, чтобы создать аккаунт</p>
@@ -64,35 +62,15 @@
               <label for="email">
                 <b>Почта</b>
               </label>
-              <input type="text" placeholder="Введите почту" name="email" required>
+              <input type="email" placeholder="Введите почту" name="email" required>
               <label for="password">
                 <b>Пароль</b>
               </label>
               <input type="password" placeholder="Введите пароль" name="password" required>
-
-              <!-- <label for="psw-repeat"><b>Повторите пароль</b></label>
-              <input type="password" placeholder="Введите пароль еще раз" name="psw-repeat" required> -->  <!-- ???????????? -->
-
-              <hr><!--this tag makes line after upper words-->
-              <form class="" action="registration.php" method="GET">
+              <hr>
                 <button class="registrationbtn" name="signup" type="submit" >Зарегистрироваться</button>
-              </form>
             </div>
           </form>
-        </form>
-
-          <!-- Подключение скрипта для регистрации -->
-
-          <?php
-          if (isset($_GET["signup"])) {
-            $data = [
-              'password'=>$_GET['password'],
-              'email'=>$_GET['email']
-          ];
-          extract($data);
-          require 'registration.php';
-        }
-            ?>
         </div>
       </div>
     </header>
