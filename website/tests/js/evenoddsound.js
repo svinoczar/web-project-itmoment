@@ -2,23 +2,26 @@ const min = 10;
 const max = 99;
 const questionDiv = document.getElementById("question");
 const resultDiv = document.getElementById("result");
+const falseDiv = document.getElementById("resultFalse");
 const audioElement = document.getElementById("audio");
+const progressBar = document.getElementById("progress-bar");
 let startTime;
 let a;
 let b;
 let turnCount = 0;
 let totalTime = 0;
+let falseTime = 0;
 let falseAnswers = 0;
-let audio1184 = new Audio("1184.mp3");
-let audio1255 = new Audio("1255.mp3");
-let audio1766 = new Audio("1766.mp3");
-let audio2891 = new Audio("2891.mp3");
-let audio3476 = new Audio("3476.mp3");
-let audio4994 = new Audio("4994.mp3");
-let audio5533 = new Audio("5533.mp3");
-let audio5610 = new Audio("5610.mp3");
-let audio6789 = new Audio("6789.mp3");
-let audio7388 = new Audio("7388.mp3");
+let audio1184 = new Audio("../mp3/1184.mp3");
+let audio1255 = new Audio("../mp3/1255.mp3");
+let audio1766 = new Audio("../mp3/1766.mp3");
+let audio2891 = new Audio("../mp3/2891.mp3");
+let audio3476 = new Audio("../mp3/3476.mp3");
+let audio4994 = new Audio("../mp3/4994.mp3");
+let audio5533 = new Audio("../mp3/5533.mp3");
+let audio5610 = new Audio("../mp3/5610.mp3");
+let audio6789 = new Audio("../mp3/6789.mp3");
+let audio7388 = new Audio("../mp3/7388.mp3");
 let sound;
 
 
@@ -83,6 +86,8 @@ function startTest() {
 }
 
 function checkAnswer(answer) {
+  //progress.textContent = `Ваш прогресс: ${(((turnCount + 1) / 30).toFixed(2) * 100).toFixed(0)} %`;
+  progressBar.value = (((turnCount + 1) / 30).toFixed(2) * 100).toFixed(0);
   if (answer === "even" && (a + b) % 2 === 0 || answer === "odd" && (a + b) % 2 !== 0) {
     time = performance.now() - startTime;
     if ((time - 2500).toFixed(2) < 0){
@@ -93,7 +98,8 @@ function checkAnswer(answer) {
         turnCount++;
         if (turnCount >= 30) {
           const averageTime = (totalTime / (30 - falseAnswers)).toFixed(2);
-          resultDiv.innerText += `\nСреднее время реакции: ${averageTime} ms, процент ошибок: ${(falseAnswers / 30).toFixed(2) * 100} %`;
+          resultDiv.innerText = `\nСреднее время реакции: ${averageTime} ms, процент ошибок: ${(falseAnswers / 30).toFixed(2) * 100} %`;
+          falseDiv.innerText = `Среднее время реакции неверных ответов: ${(falseTime / falseAnswers).toFixed(2)} ms`;
           totalTime = 0;
         } else {
           startTest();
@@ -107,9 +113,11 @@ function checkAnswer(answer) {
         resultDiv.innerText = "Неверно! Переходим к следующему выражению.";
         turnCount++;
         falseAnswers = falseAnswers + 1;
+        falseTime += time - 2500;
         if (turnCount >= 30) {
           const averageTime = (totalTime / (30 - falseAnswers)).toFixed(2);
-          resultDiv.innerText += `\nСреднее время реакции: ${averageTime} ms, процент ошибок: ${(falseAnswers / 30).toFixed(2) * 100} %`;
+          resultDiv.innerText = `\nСреднее время реакции: ${averageTime} ms, процент ошибок: ${((falseAnswers / 30).toFixed(2) * 100).toFixed(0)} %`;
+          falseDiv.innerText = `Среднее время реакции неверных ответов: ${(falseTime / falseAnswers).toFixed(2)} ms`;
           totalTime = 0;
         } else {
           startTest();

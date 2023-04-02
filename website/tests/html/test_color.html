@@ -19,15 +19,18 @@
     <h1>Тест: "Реакция на цвет"</h1>
     <p>Нажмите на кнопку, когда будете готовы начать</p>
     <p>Нажмите на пробел, когда круг поменяет свой цвет</p>
+    <p id="progress"></p>
+    <progress id="progress-bar" value="0" max="100"></progress><br></br>
     <button id="startButton">Запуск теста</button>
     <p id="result"></p>
-
+    <div id="resultFalse"></div>
     <div id="circle"></div>
 
     <script>
       const startButton = document.getElementById("startButton");
       const result = document.getElementById("result");
       const circle = document.getElementById("circle");
+      const progressBar = document.getElementById("progress-bar");
 
       let startTime, endTime, reactionTime, totalReactionTime = 0, count = 0;
 
@@ -60,6 +63,9 @@
             circle.style.backgroundColor = "black";
             startTime = null;
             endTime = null;
+            //progress.textContent = `Ваш прогресс: ${((count / 30).toFixed(2) * 100).toFixed(0)} %`;
+            progressBar.value = ((count / 30).toFixed(2) * 100).toFixed(0);
+
 
             if(count == 30) {
               let averageReactionTime = totalReactionTime / 30;
