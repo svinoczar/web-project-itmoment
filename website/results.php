@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/profile.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style1.css">
     <link rel="stylesheet" href="css/results.css">
 
     <title>ITMOMENT</title>

@@ -1,6 +1,6 @@
 body {
     font-family: Courier New, monospace;
-    background-color: #2f2f2f;
+    background-color: #999;
     margin: 0;
     font-family: 'Montserrat', sans-serif;
 
@@ -9,19 +9,55 @@ body {
     color: #999;
 }
 /* Настройка для блока. в котором находится логотип & topbuttons*/
-header{
-    font-size: 20px;
-    background-color: #232323;
-    /* padding-top: 1em; */
-    padding-bottom: 0.5em;
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: #232323;
+}
 
+.logo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em;
+}
+
+.logo img {
+  height: 60px;
+  width: auto;
+  background-color: #8f0f8e; /* your desired color */
 
 }
-/* лого сайта */
-.logo img{
-  margin-top: 0.5em;
-    /* vertical-align: middle; */
+
+.topbuttons {
+  font-family: Courier New, monospace;
+  background-color: #c92fe8;
+  color: white;
+  padding: 14px 20px;
+  margin: 1em;
+  border: none;
+  cursor: pointer;
 }
+button.topbuttons {
+  margin-right: 1em;
+}
+
+button.topbuttons:last-child {
+  margin-right: 0;
+}
+.header.logo {
+  display: flex;
+  align-items: center;
+}
+
+button.topbuttons {
+  margin-right: 1em;
+}
+
+
 
 /* Full-width input fields */
 input[type=text], input[type=password], input[type=email] {
@@ -197,36 +233,6 @@ span.psw {
 .hide{
   display: none;
 }
-/* sign in and reg buttons */
-.topbuttons{
-  width:auto;
-  float: right;
-  margin-right: 1em;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 a {
@@ -322,14 +328,7 @@ hr {
 
 /* Header */
 .header {
-    width: 100%;
-    padding-top: 30px;
 
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
 }
 
 .header.fixed {

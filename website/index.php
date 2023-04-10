@@ -8,7 +8,7 @@
   <body>
     <!-- ♥-♥ -->
     <header class="header" id="header">
-      <div class="header__inner">
+      <div class="header">
         <div class="header logo">
           <img src="img/ITMOMENT_logo.png">
           <!-- button to autorization -->
@@ -74,6 +74,7 @@
         </div>
       </div>
     </header>
+
     <div class="page">
 
     <!-- Intro -->
