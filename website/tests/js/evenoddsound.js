@@ -98,6 +98,8 @@ function checkAnswer(answer) {
         turnCount++;
         if (turnCount >= 30) {
           const averageTime = (totalTime / (30 - falseAnswers)).toFixed(2); ///1!!!
+          document.cookie = "result=" + averageTime;
+          document.cookie = "table=" ////НАЗВАНИЕ ТАБЛИЦЫ
           resultDiv.innerText = `\nСреднее время реакции: ${averageTime} ms, процент ошибок: ${(falseAnswers / 30).toFixed(2) * 100} %`; 
           falseDiv.innerText = `Среднее время реакции неверных ответов: ${(falseTime / falseAnswers).toFixed(2)} ms`;
           totalTime = 0;

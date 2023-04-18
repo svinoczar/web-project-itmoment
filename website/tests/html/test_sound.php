@@ -38,7 +38,9 @@
         } else {
           startButton.disabled = false;
           averageReactionTime = Math.floor(totalReactionTime / 30);
-          result.textContent = `Среднее время реакции: ${averageReactionTime} ms`;////// asdasdasdasd
+          result.textContent = `Среднее время реакции: ${averageReactionTime} ms`;
+          document.cookie = "result=" + averageReactionTime;
+          document.cookie = "table=" ////НАЗВАНИЕ ТАБЛИЦЫ 
           startTime = null;
           endTime = null;
           totalReactionTime = 0;
@@ -60,5 +62,13 @@
         }
       });
     </script>
+        <?php
+    session_start();
+    if(isset($_SESSION["logged_in"])){
+      if($_SESSION["logged_in"]==true){
+        echo '<button href="test-res.php">Завершить выполнение теста и сохранить результат</button>';
+      }
+    }
+    ?>
   </body>
 </html>

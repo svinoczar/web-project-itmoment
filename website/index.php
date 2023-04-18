@@ -22,7 +22,7 @@
             }
           } else {
             echo '<button class="topbuttons1" onclick="document.getElementById(\'login_window\').style.display=\'block\'" >Войти</button>';
-              echo '<button class="topbuttons2" onclick="document.getElementById(\'registration_window\').style.display=\'block\'" >Зарегистрироваться</button>';
+            echo '<button class="topbuttons2" onclick="document.getElementById(\'registration_window\').style.display=\'block\'" >Зарегистрироваться</button>';
           }
       ?>
 

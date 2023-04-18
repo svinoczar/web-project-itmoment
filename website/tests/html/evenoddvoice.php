@@ -20,5 +20,13 @@
     <div id="resultFalse"></div>
     <audio id="audio"></audio>
     <script src="../js/evenoddsound.js"></script>
+    <?php
+    session_start();
+    if(isset($_SESSION["logged_in"])){
+      if($_SESSION["logged_in"]==true){
+        echo '<button href="test-res.php">Завершить выполнение теста и сохранить результат</button>';
+      }
+    }
+    ?>
   </body>
 </html>
