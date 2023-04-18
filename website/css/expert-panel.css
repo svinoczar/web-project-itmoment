@@ -1,6 +1,16 @@
 /* данный css файл заведует стилями во всех тестах, как в админнских, так и в обычных */
 
-
+.btnn{
+  color: white;
+  background-color: #c92fe8;
+  padding: 1rem 1.5rem; /* Поля вокруг текста */
+  margin: 1em 1em;
+  border: none;
+  font-family: Courier New, monospace;
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none; /* Убираем подчёркивание */
+}
 
 /* цвет текста теста, в данном случаее всей страницы */
 #expert-panel{
@@ -31,8 +41,6 @@ body {
 
 .button {
     font-family: Courier New, monospace;
-    color: white;
-    padding: 14px 20px;
     margin: 1em 1em;
     border: none;
     width: 100%;

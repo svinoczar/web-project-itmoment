@@ -27,14 +27,14 @@ header {
     z-index: 1000;
     background-color: #232323;
   }
-  
+
 .logo {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1em;
 }
-  
+
 .logo img {
     height: 60px;
     width: auto;
@@ -65,7 +65,7 @@ input[type=text], input[type=password] {
 .expertbtn{
     margin: 1em;
     display: inline-block; /* Строчно-блочный элемент */
-    background-color: #2fe867; /* корпоративный цвет фона (фиолетовый)*/
+    background-color: #c92fe8; /* корпоративный цвет фона (фиолетовый)*/
     color: #000000; /* Белый цвет текста */
     padding: 1rem 1.5rem; /* Поля вокруг текста */
     text-decoration: none; /* Убираем подчёркивание */

@@ -1,6 +1,6 @@
 body {
     font-family: Courier New, monospace;
-    background-color: #999;
+    background-color: #2f2f2f;
     margin: 0;
     font-family: 'Montserrat', sans-serif;
 
@@ -437,7 +437,7 @@ hr {
 
 .section__text {
     font-size: 15px;
-    color: #999; 
+    color: #999;
 }
 
 
@@ -460,7 +460,7 @@ hr {
 }
 
 p{
-    color: #000;
+    color: #white;
     font-family: Georgia;
 }
 
