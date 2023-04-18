@@ -15,15 +15,12 @@
 
     //mysqli_query и делает запрос
     if (mysqli_query($link, $query)) {
-      //ЭТО УДАЛИТЬ ПОТОМ  
-      print("New profession created successfully");
-      
+      header('Location: profile.php');
     } else {
       print("Error: " . $query . "<br>" . mysqli_error($link));
     }
       }
   unset($_COOKIE['profession']);
   unset($_COOKIE['pqs']);
-  // header('Location: profile.php');
   mysqli_close($link);
 ?> 

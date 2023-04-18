@@ -18,10 +18,10 @@
         <p>Выберите от 5 до 10 самых важных качеств для профессии</p>
         <p>Проставьте им баллы по важности (от 1 до 9)</p>
 
-        <label for="prof">Профессия:</label>
+        <!-- <label for="prof">Профессия:</label>
         <div class="prof">
           <input class="prof "type="text" name="prof" placeholder="" value=""><br></br>
-        </div>
+        </div> -->
         <div class="prof">
             <select class="prof" name="prof">
                 <option value="" selected disabled>Выберите профессию</option>
