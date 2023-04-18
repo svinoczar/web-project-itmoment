@@ -12,9 +12,9 @@
         <div class="header logo">
           <img src="img/ITMOMENT_logo.png">
           <!-- button to autorization -->
-          <button class="topbuttons" onclick="document.getElementById('login_window').style.display='block'" >Войти</button>
+          <button class="topbuttons1" onclick="document.getElementById('login_window').style.display='block'" >Войти</button>
           <!-- button to register -->
-          <button class="topbuttons" onclick="document.getElementById('registration_window').style.display='block'" >Зарегистрироваться</button>
+          <button class="topbuttons2" onclick="document.getElementById('registration_window').style.display='block'" >Зарегистрироваться</button>
         </div>
         <!-- sign in window -->
         <div class="modal" id="login_window">

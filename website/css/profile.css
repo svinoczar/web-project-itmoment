@@ -3,18 +3,54 @@ body {
     font-family: Courier New, monospace;
     background-color: #2f2f2f;
 }
+
+
 /* шапка сайта */
-header{
+/* header{
     font-size: 20px;
-}
+} */
 /* лого сайта */
-.logo{
+/* .logo{
     background-color: #232323;
-}
+} */
 /* лого сайта(снова) */
-.logo img{
+/* .logo img{
     vertical-align: middle;
+}  */
+
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: #232323;
+  }
+  
+.logo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
 }
+  
+.logo img {
+    height: 60px;
+    width: auto;
+    background-color: #232323; /* your desired color */
+}
+
+a{
+  font-family: Courier New, monospace;
+  background-color: #c92fe8;
+  color: white;
+  padding: 14px 20px;
+  margin: 1em;
+  border: none;
+  cursor: pointer;
+}
+
 
 /* Full-width input fields */
 input[type=text], input[type=password] {
@@ -27,11 +63,12 @@ input[type=text], input[type=password] {
 }
 /* кнопка для перехода в экспертную панель */
 .expertbtn{
-    margin-top: 1em;
+    margin: 1em;
     display: inline-block; /* Строчно-блочный элемент */
-    background-color: #c92fe8; /* корпоративный цвет фона (фиолетовый)*/
-    color: #fff; /* Белый цвет текста */
+    background-color: #2fe867; /* корпоративный цвет фона (фиолетовый)*/
+    color: #000000; /* Белый цвет текста */
     padding: 1rem 1.5rem; /* Поля вокруг текста */
     text-decoration: none; /* Убираем подчёркивание */
     border-radius: 3px; /* Скругляем уголки */
+    /* #c92fe8 */
 }

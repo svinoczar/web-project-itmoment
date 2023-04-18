@@ -28,11 +28,11 @@ header {
 .logo img {
   height: 60px;
   width: auto;
-  background-color: #8f0f8e; /* your desired color */
+  background-color: #232323; /* your desired color */
 
 }
 
-.topbuttons {
+.topbuttons1 {
   font-family: Courier New, monospace;
   background-color: #c92fe8;
   color: white;
@@ -40,9 +40,27 @@ header {
   margin: 1em;
   border: none;
   cursor: pointer;
+
 }
-button.topbuttons {
+
+.topbuttons2 {
+    font-family: Courier New, monospace;
+    background-color: #c92fe8;
+    color: white;
+    padding: 14px 20px;
+    margin: 1em;
+    border: none;
+    cursor: pointer;
+}
+
+button.topbuttons1 {
   margin-right: 1em;
+  margin-left: 70em;
+}
+
+button.topbuttons2 {
+    margin-right: 1em;
+    margin-left: 1em;
 }
 
 button.topbuttons:last-child {
@@ -52,12 +70,6 @@ button.topbuttons:last-child {
   display: flex;
   align-items: center;
 }
-
-button.topbuttons {
-  margin-right: 1em;
-}
-
-
 
 /* Full-width input fields */
 input[type=text], input[type=password], input[type=email] {
@@ -425,7 +437,7 @@ hr {
 
 .section__text {
     font-size: 15px;
-    color: #999;
+    color: #999; 
 }
 
 
@@ -447,7 +459,10 @@ hr {
     height: auto;
 }
 
-
+p{
+    color: #000;
+    font-family: Georgia;
+}
 
 @media (max-width: 1230px) {
 
