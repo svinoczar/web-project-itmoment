@@ -38,7 +38,7 @@
         } else {
           startButton.disabled = false;
           averageReactionTime = Math.floor(totalReactionTime / 30);
-          result.textContent = `Среднее время реакции: ${averageReactionTime} ms`;
+          result.textContent = `Среднее время реакции: ${averageReactionTime} ms`;////// asdasdasdasd
           startTime = null;
           endTime = null;
           totalReactionTime = 0;
@@ -54,7 +54,7 @@
         if (event.code === "Space" && startTime > 1000) {
           endTime = new Date().getTime();
           reactionTime = endTime - startTime;
-          totalReactionTime += reactionTime;
+          totalReactionTime += reactionTime; 
           startTime = 0;
           runTest();
         }

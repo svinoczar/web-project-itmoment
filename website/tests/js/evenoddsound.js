@@ -97,8 +97,8 @@ function checkAnswer(answer) {
         totalTime += time - 2500;
         turnCount++;
         if (turnCount >= 30) {
-          const averageTime = (totalTime / (30 - falseAnswers)).toFixed(2);
-          resultDiv.innerText = `\nСреднее время реакции: ${averageTime} ms, процент ошибок: ${(falseAnswers / 30).toFixed(2) * 100} %`;
+          const averageTime = (totalTime / (30 - falseAnswers)).toFixed(2); ///1!!!
+          resultDiv.innerText = `\nСреднее время реакции: ${averageTime} ms, процент ошибок: ${(falseAnswers / 30).toFixed(2) * 100} %`; 
           falseDiv.innerText = `Среднее время реакции неверных ответов: ${(falseTime / falseAnswers).toFixed(2)} ms`;
           totalTime = 0;
         } else {
@@ -115,7 +115,7 @@ function checkAnswer(answer) {
         falseAnswers = falseAnswers + 1;
         falseTime += time - 2500;
         if (turnCount >= 30) {
-          const averageTime = (totalTime / (30 - falseAnswers)).toFixed(2);
+          const averageTime = (totalTime / (30 - falseAnswers)).toFixed(2); /// or это
           resultDiv.innerText = `\nСреднее время реакции: ${averageTime} ms, процент ошибок: ${((falseAnswers / 30).toFixed(2) * 100).toFixed(0)} %`;
           falseDiv.innerText = `Среднее время реакции неверных ответов: ${(falseTime / falseAnswers).toFixed(2)} ms`;
           totalTime = 0;
