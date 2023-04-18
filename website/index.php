@@ -11,10 +11,16 @@
       <div class="header">
         <div class="header logo">
           <img src="img/ITMOMENT_logo.png">
-          <!-- button to autorization -->
-          <button class="topbuttons1" onclick="document.getElementById('login_window').style.display='block'" >Войти</button>
-          <!-- button to register -->
-          <button class="topbuttons2" onclick="document.getElementById('registration_window').style.display='block'" >Зарегистрироваться</button>
+          <?php
+      session_start();
+      if ($_SESSION["logged_in"] == false){
+        echo '<button class="topbuttons1" onclick="document.getElementById(\'login_window\').style.display=\'block\'" >Войти</button>';
+        echo '<button class="topbuttons2" onclick="document.getElementById(\'registration_window\').style.display=\'block\'" >Зарегистрироваться</button>';
+      } else {
+        echo '<a class="profilebtn" href="profile.php">Перейти в профиль</a>';
+      }
+      ?>
+
         </div>
         <!-- sign in window -->
         <div class="modal" id="login_window">
@@ -138,7 +144,7 @@
               echo "<tr>
               <td>".$row["name"]."</td>
               <td> - </td>
-              <td>".$row["pqs"]."</tс
+              <td>".$row["pqs"]."</td>
                   </tr>";
               }
               mysqli_close($link);

@@ -42,7 +42,7 @@ while ($i = 0 < $depth) {
 
 
     // ПРОВЕРКА НА КОЛИЧЕСТВО НАБОРОВ ПВК ДЛЯ ПРОФЕССИИ
-    if (count($id_array) != $EXPERTS_COUNT) {
+    if (count($id_array) >= $EXPERTS_COUNT) {
         break;
     }
 

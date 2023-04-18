@@ -29,8 +29,10 @@
                             echo '<a id="expertbtn" name="expert" type="submit" style="visibility: hidden" href="expert-panel.html" >Панель эксперта</a>';
                           }
                         ?>
-                    <a class="expertbtn" href="validator.php" >Validator Test</a>
+                    <a class="expertbtn" href="/tests/html/tests.html" >Пройти тесты</a>
                     <a class="expertbtn" href="results.php">Статистика</a>
+                    <a class="expertbtn" href="index.php">Вернуться на главную</a>
+                    <a class="expertbtn" href="logout.php">Выйти из аккаунта</a>
                     <!-- </div> -->
                     <!-- </div> -->
 

@@ -20,6 +20,7 @@
         $_SESSION['email'] = $email;
         $_SESSION['password'] = $password;
         $_SESSION['admin'] = $my_row["group_admin"];
+        $_SESSION['logged_in'] = true;
         header('Location: profile.php');
     }
 
