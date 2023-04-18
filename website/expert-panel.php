@@ -22,7 +22,19 @@
         <div class="prof">
           <input class="prof "type="text" name="prof" placeholder="" value=""><br></br>
         </div>
-
+        <div class="prof">
+            <select class="prof" name="prof">
+                <option value="" selected disabled>Выберите профессию</option>
+                    <?php
+                        $link = mysqli_connect("db4free.net", "itmo_user", "mUhNf!JELM349ii", "itmoment");
+                        $query = "SELECT name_of_profession FROM profession_describe";
+                        $result = mysqli_query($link, $query) or die(mysqli_error($link));
+                        while($row = mysqli_fetch_assoc($result)) {
+                            echo '<option value="' . $row['name_of_profession'] . '">' . $row['name_of_profession'] . '</option>';
+                        }
+                    ?>
+            </select>
+        </div>
 
           <div class = "checkbox">
 					<span>1) Готовность к защите Родины с оружием в руках </span><br></br>
