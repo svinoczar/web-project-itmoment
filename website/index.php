@@ -12,13 +12,15 @@
         <div class="header logo">
           <img src="img/ITMOMENT_logo.png">
           <?php
-      session_start();
-      if ($_SESSION["logged_in"] == false){
-        echo '<button class="topbuttons1" onclick="document.getElementById(\'login_window\').style.display=\'block\'" >Войти</button>';
-        echo '<button class="topbuttons2" onclick="document.getElementById(\'registration_window\').style.display=\'block\'" >Зарегистрироваться</button>';
-      } else {
-        echo '<a class="topbuttons1" href="profile.php">Перейти в профиль</a>';
-      }
+          session_start();
+          if(isset($_SESSION["logged_in"])){
+            if ($_SESSION["logged_in"] == false){
+              echo '<button class="topbutto ns1" onclick="document.getElementById(\'login_window\').style.display=\'block\'" >Войти</button>';
+              echo '<button class="topbuttons2" onclick="document.getElementById(\'registration_window\').style.display=\'block\'" >Зарегистрироваться</button>';
+            } else {
+              echo '<a class="topbuttons1" href="profile.php">Перейти в профиль</a>';
+            }
+          }
       ?>
 
         </div>
