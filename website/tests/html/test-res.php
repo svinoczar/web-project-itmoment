@@ -4,7 +4,7 @@
     session_start();
     $email = $_SESSION["email"];
      
-    $link = mysqli_connect("db4free.net", "itmo_user", "mUhNf!JELM349ii", "itmoment");
+    $link = mysqli_connect("VH297.spaceweb.ru", "hogdaw1gma", "mUhNf!JELM349ii", "hogdaw1gma");
 
     $query = "INSERT INTO `test_results` (email, result, test)
      VALUES ('$email', '$data', '$test')";
