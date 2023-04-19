@@ -91,12 +91,15 @@
     function drawCircle() {
         context1.beginPath();
         context1.arc(circleX1, circleY1, circleRadius, 0, Math.PI * 2);
+        context1.strokeStyle="#6a5acd";
         context1.stroke();
         context2.beginPath();
         context2.arc(circleX2, circleY2, circleRadius, 0, Math.PI * 2);
+        context2.strokeStyle="#6a5acd";
         context2.stroke();
         context3.beginPath();
         context3.arc(circleX3, circleY3, circleRadius, 0, Math.PI * 2);
+        context3.strokeStyle="#6a5acd";
         context3.stroke();
     }
 
