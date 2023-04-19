@@ -52,12 +52,14 @@
     function drawCircle() {
         context.beginPath();
         context.arc(circleX, circleY, circleRadius, 0, Math.PI * 2);
+        context.strokeStyle="#6a5acd";
         context.stroke();
     }
 
     function drawPoint() {
         context.beginPath();
         context.arc(point.x, point.y, pointRadius, 0, Math.PI * 2);
+        context.fillStyle="#ff0000";
         context.fill();
     }
 
