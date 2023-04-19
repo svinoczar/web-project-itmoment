@@ -3,13 +3,13 @@
 .btnn{
   color: white;
   background-color: #c92fe8;
-  padding: 1rem 1.5rem; /* Поля вокруг текста */
   margin: 1em 1em;
   border: none;
   font-family: Courier New, monospace;
   cursor: pointer;
   display: inline-block;
   text-decoration: none; /* Убираем подчёркивание */
+  left: 100px;
 }
 
 /* цвет текста теста, в данном случаее всей страницы */

@@ -7,9 +7,16 @@
  </head>
  <body>
     <!-- Обратботка ренетерна -->
-    <h1>Тест: "Профессии и качества"</h1>
-      <a href="/../profile.php" class="btnn"><button class="btnn">profile</button></a>
-
+    <header class="header">
+        <div class="header name">
+            <h1>Тест: "Профессии и качества"
+                <a href="/../profile.php" class="btnn"><button class="btnn">Вернуться в профиль</button></a>
+            </h1>
+        </div>
+        <!-- <div class="header btn">
+            <a href="/../profile.php" class="btnn"><button class="btnn">Вернуться в профиль</button></a>
+        </div> -->
+    </header>
 
     <form id="test1" onsubmit="return CheckForm(this)" action="expert.php">
 
