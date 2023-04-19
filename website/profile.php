@@ -11,7 +11,11 @@
         <header class="header" id="header">
             <div class="header__inner">
                 <div class="header logo" style="text-align:center">
-                    <img src="img/ITMOMENT_logo.png">
+                    <!-- <a class="homepagebtn" href="/index.php" ><img src="img/ITMOMENT_logo.png"></a> -->
+
+                    <!-- <img src="img/ITMOMENT_logo.png"> -->
+
+                    <input type="image" src="img/ITMOMENT_logo.png" alt="Кнопка «input»">
 
                     <!-- <div class="panel" id="expert-panel"> -->
                     <!-- <div class="container"> -->
