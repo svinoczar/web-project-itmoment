@@ -26,7 +26,9 @@
 <button id="startButton">Запуск теста</button>
 <br></br>
 <canvas id="canvas" width="1200" height="400"></canvas>
-<div id="result"></div>
+<div id="result1"></div>
+<div id="result2"></div>
+<div id="result3"></div>
 <script>
     const canvas = document.getElementById('canvas');
     const context1 = canvas.getContext('2d');
@@ -75,6 +77,9 @@
     let count3 = 0;
     let totalDistance3 = 0;
     let theResult3 = 0;
+    let theBest1 = 0;
+    let theBest2 = 0;
+    let theBest3 = 0;
 
     function calculateFixedPoint() {
         const angle1 = Math.random() * Math.PI * 2;
@@ -131,8 +136,8 @@
     }
 
     function updatePointPosition() {
-        const angle1 = performance.now() / 1000;
-        const angle2 = performance.now() / 1000;
+        const angle1 = performance.now() / 500;
+        const angle2 = performance.now() / 800;
         const angle3 = performance.now() / 1000;
         point1.x = circleX1 + Math.cos(angle1) * circleRadius;
         point1.y = circleY1 + Math.sin(angle1) * circleRadius;
@@ -174,10 +179,35 @@
         if (accuracy < 0) {
             accuracy = 0;
         }
+        var oppoX1 = 400 - fixedPointX1;
+        var oppoY1 = 400 - fixedPointY1;
+        if (fixedPointX1 < 200 && fixedPointY1 < 200){
+            if (point1.x > fixedPointX1 && point1.y < oppoY1){
+                accuracy = accuracy * -1
+            }
+        }else if(fixedPointX1 > 200 && fixedPointY1 < 200){
+            if (point1.y > fixedPointY1 && point1.x > oppoX1){
+                accuracy = accuracy * -1
+            }
+        }else if(fixedPointX1 > 200 && fixedPointY1 > 200){
+            if (point1.x < fixedPointX1 && point1.y > oppoY1){
+                accuracy = accuracy * -1
+            }
+        }else if(fixedPointX1 < 200 && fixedPointY1 > 200){
+            if (point1.y < fixedPointY1 && point1.x < oppoX1){
+                accuracy = accuracy * -1
+            }
+        }
         theResult1 = theResult1 + accuracy;
+
+        if (Math.abs(theBest1) < Math.abs(accuracy)){
+            theBest1 = accuracy;
+        }
         if (count1 == 30 && count2 == 30 && count3 == 30){
             theAnswer = ((theResult1 + theResult2 + theResult3) / 90).toFixed(0)
-            document.getElementById('result').innerText = `Ваш итоговый процент реакции: ${theAnswer}%`;
+            document.getElementById('result1').innerText = `Лучший результат для первого круга: ${theBest1.toFixed(2)}%`;
+            document.getElementById('result2').innerText = `Лучший результат для второго круга: ${theBest2.toFixed(2)}%`;
+            document.getElementById('result3').innerText = `Лучший результат для третьего круга: ${theBest3.toFixed(2)}%`;
             document.cookie = "result=" + theAnswer;
             document.cookie = "test=circle_pro"
             startButton.disabled = false;
@@ -192,10 +222,35 @@
         if (accuracy < 0) {
             accuracy = 0;
         }
+        var oppoX2 = 800 - fixedPointX2;
+        var oppoY2 = 400 - fixedPointY2;
+        if (fixedPointX2 < 600 && fixedPointY2 < 200){
+            if (point2.x > fixedPointX2 && point2.y < oppoY2){
+                accuracy = accuracy * -1
+            }
+        }else if(fixedPointX2 > 600 && fixedPointY2 < 200){
+            if (point2.y > fixedPointY2 && point2.x > oppoX2){
+                accuracy = accuracy * -1
+            }
+        }else if(fixedPointX2 > 600 && fixedPointY2 > 200){
+            if (point2.x < fixedPointX2 && point2.y > oppoY2){
+                accuracy = accuracy * -1
+            }
+        }else if(fixedPointX2 < 600 && fixedPointY2 > 200){
+            if (point2.y < fixedPointY2 && point2.x < oppoX2){
+                accuracy = accuracy * -1
+            }
+        }
         theResult2 = theResult2 + accuracy;
+
+        if (Math.abs(theBest2) < Math.abs(accuracy)){
+            theBest2 = accuracy;
+        }
         if (count1 == 30 && count2 == 30 && count3 == 30){
             theAnswer = ((theResult1 + theResult2 + theResult3) / 90).toFixed(0)
-            document.getElementById('result').innerText = `Ваш итоговый процент реакции: ${theAnswer}%`;
+            document.getElementById('result1').innerText = `Лучший результат для первого круга: ${theBest1.toFixed(2)}%`;
+            document.getElementById('result2').innerText = `Лучший результат для второго круга: ${theBest2.toFixed(2)}%`;
+            document.getElementById('result3').innerText = `Лучший результат для третьего круга: ${theBest3.toFixed(2)}%`;
             document.cookie = "result=" + theAnswer;
             document.cookie = "test=circle_pro"
             startButton.disabled = false;
@@ -203,17 +258,42 @@
     }
 
     function showResult3() {
-        const averageDistance1 = totalDistance3;
+        const averageDistance3 = totalDistance3;
         totalDistance3 = 0;
         var accuracy;
-        accuracy = 100 - (averageDistance1 / circleRadius * 100);
+        accuracy = 100 - (averageDistance3 / circleRadius * 100);
         if (accuracy < 0) {
             accuracy = 0;
         }
+        var oppoX3 = 1200 - fixedPointX3;
+        var oppoY3 = 400 - fixedPointY3;
+        if (fixedPointX3 < 1000 && fixedPointY3 < 200){
+            if (point3.x > fixedPointX3 && point3.y < oppoY3){
+                accuracy = accuracy * -1
+            }
+        }else if(fixedPointX3 > 1000 && fixedPointY3 < 200){
+            if (point3.y > fixedPointY3 && point3.x > oppoX3){
+                accuracy = accuracy * -1
+            }
+        }else if(fixedPointX3 > 1000 && fixedPointY3 > 200){
+            if (point3.x < fixedPointX3 && point3.y > oppoY3){
+                accuracy = accuracy * -1
+            }
+        }else if(fixedPointX3 < 1000 && fixedPointY3 > 200){
+            if (point3.y < fixedPointY3 && point3.x < oppoX3){
+                accuracy = accuracy * -1
+            }
+        }
         theResult3 = theResult3 + accuracy;
+
+        if (Math.abs(theBest3) < Math.abs(accuracy)){
+            theBest3 = accuracy;
+        }
         if (count1 == 30 && count2 == 30 && count3 == 30){
             theAnswer = ((theResult1 + theResult2 + theResult3) / 90).toFixed(0)
-            document.getElementById('result').innerText = `Ваш итоговый процент реакции: ${theAnswer}%`;
+            document.getElementById('result1').innerText = `Лучший результат для первого круга: ${theBest1.toFixed(2)}%`;
+            document.getElementById('result2').innerText = `Лучший результат для второго круга: ${theBest2.toFixed(2)}%`;
+            document.getElementById('result3').innerText = `Лучший результат для третьего круга: ${theBest3.toFixed(2)}%`;
             document.cookie = "result=" + theAnswer;
             document.cookie = "test=circle_pro"
             startButton.disabled = false;
