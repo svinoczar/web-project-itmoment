@@ -1,13 +1,13 @@
 <?php
     $data = $_COOKIE["result"];
-    $table = $_COOKIE["table"];
+    $test = $_COOKIE["test"];
     session_start();
     $email = $_SESSION["email"];
      
     $link = mysqli_connect("db4free.net", "itmo_user", "mUhNf!JELM349ii", "itmoment");
 
-    $query = "INSERT INTO `{$table}` (email, result)
-     VALUES ('$email', '$data')";
+    $query = "INSERT INTO `test_results` (email, result, test)
+     VALUES ('$email', '$data', '$test')";
 
 if (mysqli_query($link, $query)) {
     //ЭТО УДАЛИТЬ ПОТОМ  

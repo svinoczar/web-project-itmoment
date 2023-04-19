@@ -179,7 +179,7 @@
             theAnswer = ((theResult1 + theResult2 + theResult3) / 90).toFixed(0)
             document.getElementById('result').innerText = `Ваш итоговый процент реакции: ${theAnswer}%`;
             document.cookie = "result=" + theAnswer;
-            document.cookie = "table=result_circle_pro"
+            document.cookie = "test=circle_pro"
             startButton.disabled = false;
         }
     }
@@ -197,7 +197,7 @@
             theAnswer = ((theResult1 + theResult2 + theResult3) / 90).toFixed(0)
             document.getElementById('result').innerText = `Ваш итоговый процент реакции: ${theAnswer}%`;
             document.cookie = "result=" + theAnswer;
-            document.cookie = "table=result_circle_pro"
+            document.cookie = "test=circle_pro"
             startButton.disabled = false;
         }
     }
@@ -215,7 +215,7 @@
             theAnswer = ((theResult1 + theResult2 + theResult3) / 90).toFixed(0)
             document.getElementById('result').innerText = `Ваш итоговый процент реакции: ${theAnswer}%`;
             document.cookie = "result=" + theAnswer;
-            document.cookie = "table=result_circle_pro"
+            document.cookie = "test=circle_pro"
             startButton.disabled = false;
         }
     }

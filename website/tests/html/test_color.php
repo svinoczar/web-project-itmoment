@@ -71,7 +71,7 @@
               let averageReactionTime = totalReactionTime / 30;
               result.textContent = `Среднее время реакции: ${averageReactionTime.toFixed(2)} ms`;
               document.cookie = "result=" + averageReactionTime;
-            document.cookie = "table=result_color"
+            document.cookie = "test=color"
               startButton.disabled = false;
             } else {
               runTest();

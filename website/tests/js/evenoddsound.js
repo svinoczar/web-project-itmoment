@@ -99,7 +99,7 @@ function checkAnswer(answer) {
         if (turnCount >= 30) {
           const averageTime = (totalTime / (30 - falseAnswers)).toFixed(2);
           document.cookie = "result=" + averageTime;
-          document.cookie = "table=result_even_odd_voice"
+          document.cookie = "test=even_odd_sound"
           resultDiv.innerText = `\nСреднее время реакции: ${averageTime} ms, процент ошибок: ${(falseAnswers / 30).toFixed(2) * 100} %`; 
           falseDiv.innerText = `Среднее время реакции неверных ответов: ${(falseTime / falseAnswers).toFixed(2)} ms`;
           totalTime = 0;

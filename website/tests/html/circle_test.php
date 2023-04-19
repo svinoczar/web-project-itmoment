@@ -100,7 +100,7 @@
             theAnswer = (theResult / 30).toFixed(0)
             document.getElementById('result').innerText = `Ваш итоговый результат: ${theAnswer}%`;
             document.cookie = "result=" + theAnswer;
-            document.cookie = "table=result_circle"
+            document.cookie = "test=circle"
             startButton.disabled = false;
         }
     }

@@ -40,7 +40,7 @@
           averageReactionTime = Math.floor(totalReactionTime / 30);
           result.textContent = `Среднее время реакции: ${averageReactionTime} ms`;
           document.cookie = "result=" + averageReactionTime;
-          document.cookie = "table=result_sound"
+          document.cookie = "test=sound"
           startTime = null;
           endTime = null;
           totalReactionTime = 0;
