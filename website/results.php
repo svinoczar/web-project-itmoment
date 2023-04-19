@@ -17,7 +17,7 @@
   <th>ПВК</th>
  </tr>
     <?php
-    $link = mysqli_connect("db4free.net", "itmo_user", "mUhNf!JELM349ii", "itmoment");
+    $link = mysqli_connect("VH297.spaceweb.ru", "hogdaw1gma", "mUhNf!JELM349ii", "hogdaw1gma");
     $query = "SELECT * FROM `profession_pqs`";
     $result = mysqli_query($link, $query) or die(mysqli_error($link));
     //$pqs_query = "SELECT * FROM `PQ`";
