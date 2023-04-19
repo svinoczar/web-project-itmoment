@@ -52,12 +52,14 @@
     function drawCircle() {
         context.beginPath();
         context.arc(circleX, circleY, circleRadius, 0, Math.PI * 2);
+        context.strokeStyle="#6a5acd";
         context.stroke();
     }
 
     function drawPoint() {
         context.beginPath();
         context.arc(point.x, point.y, pointRadius, 0, Math.PI * 2);
+        context.fillStyle="#ff0000";
         context.fill();
     }
 
@@ -88,15 +90,15 @@
         accuracy = 100 - (averageDistance / circleRadius * 100);
         if (accuracy < 0) {
             accuracy = 0;
-            document.getElementById('result').innerText = `Last attempt accuracy: ${accuracy.toFixed(2)}%`;
+            document.getElementById('result').innerText = `Результат последней попытки: ${accuracy.toFixed(2)}%`;
             theResult = theResult + accuracy;
         }else{
-            document.getElementById('result').innerText = `Last attempt accuracy: ${accuracy.toFixed(2)}%`;
+            document.getElementById('result').innerText = `Результат последней попытки: ${accuracy.toFixed(2)}%`;
             theResult = theResult + accuracy;
         }
         if (count == 30){
             theAnswer = (theResult / 30).toFixed(0)
-            document.getElementById('result').innerText = `Your result accuracy: ${theAnswer}%`;
+            document.getElementById('result').innerText = `Ваш итоговый результат: ${theAnswer}%`;
             document.cookie = "result=" + theAnswer;
             document.cookie = "table=" ////НАЗВАНИЕ ТАБЛИЦЫ  //!!!!!!!!!!
             startButton.disabled = false;
