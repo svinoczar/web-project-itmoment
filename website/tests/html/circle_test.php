@@ -42,6 +42,7 @@
     let count = 0;
     let totalDistance = 0;
     let theResult = 0;
+    let theBest = 0;
 
     function calculateFixedPoint() {
         const angle = Math.random() * Math.PI * 2;
@@ -84,26 +85,47 @@
     }
 
     function showResult() {
-        const averageDistance = totalDistance;
-        totalDistance = 0;
-        var accuracy;
-        accuracy = 100 - (averageDistance / circleRadius * 100);
-        if (accuracy < 0) {
-            accuracy = 0;
+            const averageDistance = totalDistance;
+            totalDistance = 0;
+            var accuracy;
+            accuracy = 100 - (averageDistance / circleRadius * 100);
+            if (accuracy < 0){
+                accuracy = 0
+            }
+            var oppoX = 400 - fixedPointX;
+            var oppoY = 400 - fixedPointY;
+            if (fixedPointX < 200 && fixedPointY < 200){
+                if (point.x > fixedPointX && point.y < oppoY){
+                    accuracy = accuracy * -1
+                }
+            }else if(fixedPointX > 200 && fixedPointY < 200){
+                if (point.y > fixedPointY && point.x > oppoX){
+                    accuracy = accuracy * -1
+                }
+            }else if(fixedPointX > 200 && fixedPointY > 200){
+                if (point.x < fixedPointX && point.y > oppoY){
+                    accuracy = accuracy * -1
+                }
+            }else if(fixedPointX < 200 && fixedPointY > 200){
+                if (point.y < fixedPointY && point.x < oppoX){
+                    accuracy = accuracy * -1
+                }
+            }
             document.getElementById('result').innerText = `Результат последней попытки: ${accuracy.toFixed(2)}%`;
             theResult = theResult + accuracy;
-        }else{
-            document.getElementById('result').innerText = `Результат последней попытки: ${accuracy.toFixed(2)}%`;
-            theResult = theResult + accuracy;
+            if (Math.abs(theBest) < Math.abs(accuracy)){
+                theBest = accuracy;
+            }
+
+            if (count == 30){
+                //theAnswer = (theResult / 30).toFixed(0)
+                theAnswer = theBest
+                document.getElementById('result').innerText = `Ваш лучший результат: ${theAnswer.toFixed(2)}%`;
+                document.cookie = "result=" + theAnswer;
+                document.cookie = "test=circle"
+                startButton.disabled = false;
+            }
         }
-        if (count == 30){
-            theAnswer = (theResult / 30).toFixed(0)
-            document.getElementById('result').innerText = `Ваш итоговый результат: ${theAnswer}%`;
-            document.cookie = "result=" + theAnswer;
-            document.cookie = "test=circle"
-            startButton.disabled = false;
-        }
-    }
 
     function loop() {
         context.clearRect(0, 0, canvas.width, canvas.height);
