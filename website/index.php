@@ -144,19 +144,21 @@
 
             <?php
             $link = mysqli_connect("VH297.spaceweb.ru", "hogdaw1gma", "mUhNf!JELM349ii", "hogdaw1gma");
-            $query = "SELECT * FROM `professions`";
+            $query = "SELECT * FROM `professions` ";
             $result = mysqli_query($link, $query) or die(mysqli_error($link));
 
-            $query = "SELECT `describe_of_profession` FROM `profession_describe` WHERE `name_of_profession` = '$row[name]'";
-            $description = mysqli_query($link, $query) or die(mysqli_error($link));
-            mysqli_close($link);
+            // $query = "SELECT `describe_of_profession` FROM `profession_describe` WHERE `name_of_profession` = '$row[name]'";
+            // $description = mysqli_query($link, $query) or die(mysqli_error($link));
+            // mysqli_close($link);
             while($row = mysqli_fetch_assoc($result)) {
+              $query = "SELECT `describe_of_profession` FROM `profession_describe` WHERE `name_of_profession` = '$row[name]'";
+              $description = mysqli_query($link, $query) or die(mysqli_error($link));
               $desc = mysqli_fetch_assoc($description);
               echo "<tr>
               <td>".$row["name"]."</td>
               <td> - </td>
               <td>".$row["pqs"]."</td>
-              <td>".$desc."</td>
+              <td>".$desc["describe_of_profession"]."</td>
                 </tr>";
               }
               
