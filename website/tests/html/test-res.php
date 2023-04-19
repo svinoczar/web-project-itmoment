@@ -6,8 +6,8 @@
      
     $link = mysqli_connect("db4free.net", "itmo_user", "mUhNf!JELM349ii", "itmoment");
 
-    $query = "INSERT INTO $table (email, result)
-     VALUES ('$email', '$result')";
+    $query = "INSERT INTO `{$table}` (email, result)
+     VALUES ('$email', '$data')";
 
 if (mysqli_query($link, $query)) {
     //ЭТО УДАЛИТЬ ПОТОМ  

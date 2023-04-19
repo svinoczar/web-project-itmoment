@@ -97,9 +97,9 @@ function checkAnswer(answer) {
         totalTime += time - 2500;
         turnCount++;
         if (turnCount >= 30) {
-          const averageTime = (totalTime / (30 - falseAnswers)).toFixed(2); ///1!!!
+          const averageTime = (totalTime / (30 - falseAnswers)).toFixed(2);
           document.cookie = "result=" + averageTime;
-          document.cookie = "table=" ////НАЗВАНИЕ ТАБЛИЦЫ
+          document.cookie = "table=result_even_odd_voice"
           resultDiv.innerText = `\nСреднее время реакции: ${averageTime} ms, процент ошибок: ${(falseAnswers / 30).toFixed(2) * 100} %`; 
           falseDiv.innerText = `Среднее время реакции неверных ответов: ${(falseTime / falseAnswers).toFixed(2)} ms`;
           totalTime = 0;

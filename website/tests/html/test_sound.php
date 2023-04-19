@@ -40,7 +40,7 @@
           averageReactionTime = Math.floor(totalReactionTime / 30);
           result.textContent = `Среднее время реакции: ${averageReactionTime} ms`;
           document.cookie = "result=" + averageReactionTime;
-          document.cookie = "table=" ////НАЗВАНИЕ ТАБЛИЦЫ 
+          document.cookie = "table=result_sound"
           startTime = null;
           endTime = null;
           totalReactionTime = 0;
@@ -66,7 +66,7 @@
     session_start();
     if(isset($_SESSION["logged_in"])){
       if($_SESSION["logged_in"]==true){
-        echo '<button href="test-res.php">Завершить выполнение теста и сохранить результат</button>';
+        echo '<a href="test-res.php">Завершить выполнение теста и сохранить результат</a>';
       }
     }
     ?>

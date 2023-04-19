@@ -131,7 +131,7 @@
             result3.textContent = `Реакция на синие: ${(sumOfReactionTimeBlue / numberBlue).toFixed(2)} ms, количество ошибок: ${((falseBlue / (numberBlue + falseBlue)).toFixed(2) * 100).toFixed(0)} %`;
             result4.textContent = `Ваше время реакции: ${averageReactionTime.toFixed(2)} ms, количество ошибок: ${(((falseBlue + falseYellow + falseRed) / 90).toFixed(2) * 100).toFixed(0)} %`;
             document.cookie = "result=" + averageReactionTime;
-            document.cookie = "table=" ////НАЗВАНИЕ ТАБЛИЦЫ 
+            document.cookie = "table=result_color3"
             resultFalse.textContent = `Ваше время реакции на неверные ответы: ${(sumOfReactionTimeFalse / (falseBlue + falseYellow + falseRed)).toFixed(2)} ms`;
             circle.style.backgroundColor = "black";
 
@@ -150,7 +150,7 @@
     session_start();
     if(isset($_SESSION["logged_in"])){
       if($_SESSION["logged_in"]==true){
-        echo '<button href="test-res.php">Завершить выполнение теста и сохранить результат</button>';
+        echo '<a href="test-res.php">Завершить выполнение теста и сохранить результат</a>';
       }
     }
     ?>
