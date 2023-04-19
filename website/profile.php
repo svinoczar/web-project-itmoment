@@ -45,5 +45,24 @@
                 <!--  -->
             </div>
         </header>
+        <section class="section">
+          <div class="container">
+            <div class="wedo">
+              <div class="wedo__item">
+                <p>Здесь вы сможете увидеть фото Алиночки</p>
+              </div>
+              <div class="wedo__item">
+                <table>
+                  <tr>
+                    <td>fghj</td>
+                    <td>dfgh</td>
+                    <td>cvbhnj</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div><!-- /.container -->
+
+        </section>
     </body>
 </html>

@@ -72,3 +72,75 @@ input[type=text], input[type=password] {
     border-radius: 3px; /* Скругляем уголки */
     /* #c92fe8 */
 }
+/* Section */
+.section {
+    padding: 80px 0;
+}
+
+
+
+
+
+
+.section__header {
+    width: 100%;
+    max-width: 950px;
+    margin: 0 auto 50px;
+
+    text-align: center;
+}
+
+
+
+.section__title {
+    font-size: 30px;
+    font-weight: 700;
+    color: #e5e5e5;
+    text-transform: uppercase;
+}
+
+.section__title:after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    margin: 30px auto;
+
+    background-color: #f38181;
+}
+
+.section__text {
+    font-size: 15px;
+    color: #999;
+}
+
+
+/* We do */
+.wedo {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+}
+
+.wedo__item {
+    width: 50%;
+    padding: 0 15px;
+}
+
+.wedo__img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+p{
+    color: #white;
+    font-family: Georgia;
+}
+
+.container {
+    width: 100%;
+    max-width: 1230px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
