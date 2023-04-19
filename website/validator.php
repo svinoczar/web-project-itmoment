@@ -9,14 +9,14 @@ $query = "SELECT `id` FROM `profession_pqs`";
 $result = mysqli_query($link, $query);
 $expert_quantity = mysqli_num_rows(mysqli_query($link, "SELECT `id` FROM `users` WHERE `group_admin` = 1"));
 $EXPERTS_COUNT = $expert_quantity;
-$PRIMARY_ID = 55; // айдишник с которого начинается проверка таблицы с профессиями из панели эксперта.
+// $PRIMARY_ID = 55; // айдишник с которого начинается проверка таблицы с профессиями из панели эксперта.
 $checked_professions = array();
 $depth = (mysqli_num_rows($result));
 
 while ($i = 0 < $depth) {
     $i++;
     // 1 запрос (получаем имя первой профессии)
-    $query = "SELECT `profession_name` FROM `profession_pqs` WHERE `id` = '$PRIMARY_ID'";
+    $query = "SELECT `profession_name` FROM `profession_pqs` LIMIT 1";
     $PRIMARY_ID++;
     $result = mysqli_query($link, $query);
 
