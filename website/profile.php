@@ -52,12 +52,24 @@
               </div>
               <div class="wedo__item">
                 <table>
-                  <tr>
-                    <td>fghj</td>
-                    <td>dfgh</td>
-                    <td>cvbhnj</td>
-                  </tr>
-                </table>
+            <tr>
+<td>Тест</td>
+<th>Средняя оценка</th>
+                    </tr>
+<?php
+$link = mysqli_connect("VH297.spaceweb.ru", "hogdaw1gma", "mUhNf!JELM349ii", "hogdaw1gma");
+$user_email = $_SESSION["email"];
+$query = "SELECT T.name_of_test, avg(R.result) as avg from result_of_test as R join test_type as T on T.id = R.type_of_test where R.user_email = 'test@mail.ru' group by R.type_of_test, T.id";
+$result = mysqli_query($link, $query) or die(mysqli_error($link));
+while($row = mysqli_fetch_assoc($result)) {
+  echo "<tr>
+  <td>".$row["avg"]. " мс</td>
+  <td>".$row["name_of_test"]."</td>
+       </tr>";
+}
+mysqli_close($link);
+?>
+            </table>
               </div>
             </div>
           </div><!-- /.container -->
