@@ -146,22 +146,27 @@
             $link = mysqli_connect("db4free.net", "itmo_user", "mUhNf!JELM349ii", "itmoment");
             $query = "SELECT * FROM `professions`";
             $result = mysqli_query($link, $query) or die(mysqli_error($link));
+            mysqli_close($link);
+            $query = "SELECT `describe_of_profession` FROM `profession_describe` WHERE `name_of_profession` = '$row[name]'";
+            $description = mysqli_query($link, $query) or die(mysqli_error($link));
+            mysqli_close($link);
             while($row = mysqli_fetch_assoc($result)) {
               echo "<tr>
               <td>".$row["name"]."</td>
               <td> - </td>
               <td>".$row["pqs"]."</td>
-                  </tr>";
+              <td>".$description."</td>
+                </tr>";
               }
-              mysqli_close($link);
+              
               ?>
             </table>
           </div>
-          <div class="wedo__item">
+          <!-- <div class="wedo__item">
             <p>Специалист, который проверяет, как работает программа или приложение</p>
             <p><br>Cпециалист, который создаёт инструменты для решения задач бизнеса</p>
             <p><br></br><br>Специалист, который обеспечивает конфиденциальность данных, предотвращает утечку или несанкционированный доступ к информации, принимает непосредственное участие в создании системы защиты информации</p>
-          </div>
+          </div> -->
         </div>
       </div><!-- /.container -->
     </section>

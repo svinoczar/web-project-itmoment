@@ -9,13 +9,12 @@ $query = "SELECT `id` FROM `profession_pqs`";
 $result = mysqli_query($link, $query);
 $expert_quantity = mysqli_num_rows(mysqli_query($link, "SELECT `id` FROM `users` WHERE `group_admin` = 1"));
 $EXPERTS_COUNT = $expert_quantity;
-$PRIMARY_ID = 1; // айдишник с которого начинается проверка таблицы с профессиями из панели эксперта.
+$PRIMARY_ID = 55; // айдишник с которого начинается проверка таблицы с профессиями из панели эксперта.
 $checked_professions = array();
 $depth = (mysqli_num_rows($result));
 
 while ($i = 0 < $depth) {
     $depth++;
-
     // 1 запрос (получаем имя первой профессии)
     $query = "SELECT `profession_name` FROM `profession_pqs` WHERE `id` = '$PRIMARY_ID'";
     $PRIMARY_ID++;
@@ -99,17 +98,23 @@ while ($i = 0 < $depth) {
         }
     }
 
-    // int to string
-    session_start();
-    $_SESSION["pqs_id"] = $sorted_array;
-    $_SESSION["profession_name"] = $primary_name;
-    print_r($_SESSION["pqs_id"]);
-    array_push($checked_professions, $primary_name);
+    $query = "UPDATE profession_pqs SET status='checked' WHERE profession_name='$primary_name'";
+    $stmt = mysqli_prepare($link, $query);
 
-    $checked_professions[] = $primary_name;
-    require("nums-to-strings.php");
-    $query = "UPDATE profession_pqs SET condition = 'checked' WHERE profession_name = '$primary_name'";
+    $query = "SELECT `status` FROM `profession_pqs` WHERE `profession_name` = '$primary_name'";
     $result = mysqli_query($link, $query);
+    $row = mysqli_fetch_assoc($result);
+    // int to string
+    if ($row["status"] == 'checked'){
+        session_start();
+        $_SESSION["pqs_id"] = $sorted_array;
+        $_SESSION["profession_name"] = $primary_name;
+        print_r($_SESSION["pqs_id"]);
+        array_push($checked_professions, $primary_name);
+
+        $checked_professions[] = $primary_name;
+        require("nums-to-strings.php");
+    }
 }
 
 mysqli_close($link);

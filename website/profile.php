@@ -34,6 +34,7 @@
                           }
                         ?>
                     <a class="expertbtn" href="/tests/html/tests.html" >Пройти тесты</a>
+                    <a class="expertbtn" href="validator.php">Валидация</a>
                     <a class="expertbtn" href="results.php">Статистика</a>
                     <a class="expertbtn" href="index.php">Вернуться на главную</a>
                     <a class="expertbtn" href="logout.php">Выйти из аккаунта</a>
