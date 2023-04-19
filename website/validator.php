@@ -14,7 +14,7 @@ $checked_professions = array();
 $depth = (mysqli_num_rows($result));
 
 while ($i = 0 < $depth) {
-    $depth++;
+    $i++;
     // 1 запрос (получаем имя первой профессии)
     $query = "SELECT `profession_name` FROM `profession_pqs` WHERE `id` = '$PRIMARY_ID'";
     $PRIMARY_ID++;
@@ -24,6 +24,7 @@ while ($i = 0 < $depth) {
     $row = mysqli_fetch_array($result);
     $primary_name = $row["profession_name"];
     }
+    echo($primary_name);
 
     if (in_array($primary_name, $checked_professions)){
         break;
