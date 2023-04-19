@@ -144,3 +144,28 @@ p{
     padding: 0 15px;
     margin: 0 auto;
 }
+table {
+    margin: 2rem auto;
+    border-collapse: collapse;
+    background-color: var(--overlay-color);
+}
+
+th,
+td {
+    padding: 0.5rem 1rem;
+    text-align: center;
+    border: 1px solid white;
+    font-weight: 500;
+    letter-spacing: 0.15rem;
+}
+
+th {
+    background-color: var(--overlay-color);
+    color: white;
+}
+caption{
+    letter-spacing: 0.4rem;
+    margin-bottom: 1.8em;
+    font-size: 1.6em;
+    text-align: center;
+}
