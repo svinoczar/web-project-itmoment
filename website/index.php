@@ -8,13 +8,25 @@
   <body>
     <!-- ♥-♥ -->
     <header class="header" id="header">
-      <div class="header__inner">
+      <div class="header">
         <div class="header logo">
-          <img src="img/ITMOMENT_logo.png">
-          <!-- button to autorization -->
-          <button class="topbuttons" onclick="document.getElementById('login_window').style.display='block'" >Войти</button>
-          <!-- button to register -->
-          <button class="topbuttons" onclick="document.getElementById('registration_window').style.display='block'" >Зарегистрироваться</button>
+		      <input type="image" src="img/ITMOMENT_logo.png" alt="Кнопка «input»">
+          <!-- <img src="img/ITMOMENT_logo.png"> -->
+          <?php
+          session_start();
+          if(isset($_SESSION["logged_in"])){
+            if ($_SESSION["logged_in"] == false){
+              echo '<button class="topbuttons1" onclick="document.getElementById(\'login_window\').style.display=\'block\'" >Войти</button>';
+              echo '<button class="topbuttons2" onclick="document.getElementById(\'registration_window\').style.display=\'block\'" >Зарегистрироваться</button>';
+            } else {
+              echo '<a class="topbuttons1" href="profile.php">Перейти в профиль</a>';
+            }
+          } else {
+            echo '<button class="topbuttons1" onclick="document.getElementById(\'login_window\').style.display=\'block\'" >Войти</button>';
+              echo '<button class="topbuttons2" onclick="document.getElementById(\'registration_window\').style.display=\'block\'" >Зарегистрироваться</button>';
+          }
+      ?>
+
         </div>
         <!-- sign in window -->
         <div class="modal" id="login_window">
@@ -23,7 +35,7 @@
               <label for="email">
                 <b>Почта</b>
               </label>
-              <input type="text" placeholder="Введите почту" name="email" required>
+              <input type="email" placeholder="Введите почту" name="email" required>
               <label for="password">
                 <b>Пароль</b>
               </label>
@@ -42,13 +54,11 @@
             </div>
           </form>
 
-        <!-- Подключение скрипта для входа в систему -->
         <div class="hide">
 
         </div>
         </div>
       <div class="modal" id="registration_window">
-        <form class="modal-content animate"> <!-- action="/action_page.php (if all works good, delete it)-->
 
           <!-- button to close registration panel -->
           <div class="imgcontainer">
@@ -56,7 +66,7 @@
           </div>
 
           <!-- main registration panel -->
-          <form action="registration.php" method="GET">
+          <form class="modal-content animate" action="registration.php" method="POST">
             <div class="container">
               <h1>Регистрация</h1>
               <p>Заполните эти формы, чтобы создать аккаунт</p>
@@ -64,38 +74,19 @@
               <label for="email">
                 <b>Почта</b>
               </label>
-              <input type="text" placeholder="Введите почту" name="email" required>
+              <input type="email" placeholder="Введите почту" name="email" required>
               <label for="password">
                 <b>Пароль</b>
               </label>
               <input type="password" placeholder="Введите пароль" name="password" required>
-
-              <!-- <label for="psw-repeat"><b>Повторите пароль</b></label>
-              <input type="password" placeholder="Введите пароль еще раз" name="psw-repeat" required> -->  <!-- ???????????? -->
-
-              <hr><!--this tag makes line after upper words-->
-              <form class="" action="registration.php" method="GET">
+              <hr>
                 <button class="registrationbtn" name="signup" type="submit" >Зарегистрироваться</button>
-              </form>
             </div>
           </form>
-        </form>
-
-          <!-- Подключение скрипта для регистрации -->
-
-          <?php
-          if (isset($_GET["signup"])) {
-            $data = [
-              'password'=>$_GET['password'],
-              'email'=>$_GET['email']
-          ];
-          extract($data);
-          require 'registration.php';
-        }
-            ?>
         </div>
       </div>
     </header>
+
     <div class="page">
 
     <!-- Intro -->
@@ -135,7 +126,7 @@
             <p>Здесь вы сможете пройты тесты подготовленные нашей командой.</p>
           </div>
           <div class="wedo__item">
-            <a class="btn" href="tests/tests.html">пройти тесты</a>
+            <a class="btn" href="tests/html/tests.html">пройти тесты</a>
           </div>
         </div>
       </div><!-- /.container -->
@@ -152,25 +143,33 @@
             <table>
 
             <?php
-            $link = mysqli_connect("db4free.net", "itmo_user", "mUhNf!JELM349ii", "itmoment");
-            $query = "SELECT * FROM `professions`";
+            $link = mysqli_connect("VH297.spaceweb.ru", "hogdaw1gma", "mUhNf!JELM349ii", "hogdaw1gma");
+            $query = "SELECT * FROM `professions` ";
             $result = mysqli_query($link, $query) or die(mysqli_error($link));
+
+            // $query = "SELECT `describe_of_profession` FROM `profession_describe` WHERE `name_of_profession` = '$row[name]'";
+            // $description = mysqli_query($link, $query) or die(mysqli_error($link));
+            // mysqli_close($link);
             while($row = mysqli_fetch_assoc($result)) {
+              $query = "SELECT `describe_of_profession` FROM `profession_describe` WHERE `name_of_profession` = '$row[name]'";
+              $description = mysqli_query($link, $query) or die(mysqli_error($link));
+              $desc = mysqli_fetch_assoc($description);
               echo "<tr>
               <td>".$row["name"]."</td>
               <td> - </td>
-              <td>".$row["pqs"]."</tс
-                  </tr>";
+              <td>".$row["pqs"]."</td>
+              <td>".$desc["describe_of_profession"]."</td>
+                </tr>";
               }
-              mysqli_close($link);
+              
               ?>
             </table>
           </div>
-          <div class="wedo__item">
+          <!-- <div class="wedo__item">
             <p>Специалист, который проверяет, как работает программа или приложение</p>
             <p><br>Cпециалист, который создаёт инструменты для решения задач бизнеса</p>
             <p><br></br><br>Специалист, который обеспечивает конфиденциальность данных, предотвращает утечку или несанкционированный доступ к информации, принимает непосредственное участие в создании системы защиты информации</p>
-          </div>
+          </div> -->
         </div>
       </div><!-- /.container -->
     </section>

@@ -4,22 +4,44 @@
   <meta charset="utf-8" />
   <link rel="stylesheet" href="css/expert-panel.css">
   <title>ITMO.TEST</title>
-  <style>
-   article, aside, details, figcaption, figure, footer,header,
-   hgroup, menu, nav, section { display: block; }
-  </style>
  </head>
  <body>
-    <form id="test1" onsubmit="return CheckForm(this)" method="GET" action="expert.php">
+    <!-- Обратботка ренетерна -->
+    <header class="header">
+        <div class="header name">
+            <h1>Тест: "Профессии и качества"
+                <a href="/../profile.php" class="btnn"><button class="btnn">Вернуться в профиль</button></a>
+            </h1>
+        </div>
+        <!-- <div class="header btn">
+            <a href="/../profile.php" class="btnn"><button class="btnn">Вернуться в профиль</button></a>
+        </div> -->
+    </header>
+
+    <form id="test1" onsubmit="return CheckForm(this)" action="expert.php">
 
 
-					<span>Профессии и качества (Выберите от 5 до 10 самых важных качеств для профессии).</span><br></br>
 
-        <label for="prof">Профессия:</label>
+        <p>Выберите от 5 до 10 самых важных качеств для профессии</p>
+        <p>Проставьте им баллы по важности (от 1 до 9)</p>
+
+        <!-- <label for="prof">Профессия:</label>
         <div class="prof">
           <input class="prof "type="text" name="prof" placeholder="" value=""><br></br>
+        </div> -->
+        <div class="prof">
+            <select class="prof" name="prof">
+                <option value="" selected disabled>Выберите профессию</option>
+                    <?php
+                        $link = mysqli_connect("VH297.spaceweb.ru", "hogdaw1gma", "mUhNf!JELM349ii", "hogdaw1gma");
+                        $query = "SELECT name_of_profession FROM profession_describe";
+                        $result = mysqli_query($link, $query) or die(mysqli_error($link));
+                        while($row = mysqli_fetch_assoc($result)) {
+                            echo '<option value="' . $row['name_of_profession'] . '">' . $row['name_of_profession'] . '</option>';
+                        }
+                    ?>
+            </select>
         </div>
-
 
           <div class = "checkbox">
 					<span>1) Готовность к защите Родины с оружием в руках </span><br></br>
@@ -1498,8 +1520,8 @@
         </script>
 
 
-
-          <button class="button" name="submit" type="submit" value="Готово">Готово</button>
+        <div id="error" style="color:crimson"></div>
+        <button class="button" name="submit" type="submit" value="Готово">Готово</button>
 
 
     </form>

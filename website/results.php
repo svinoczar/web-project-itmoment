@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/profile.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style1.css">
     <link rel="stylesheet" href="css/results.css">
 
     <title>ITMOMENT</title>
@@ -17,18 +17,12 @@
   <th>ПВК</th>
  </tr>
     <?php
-    $link = mysqli_connect("db4free.net", "itmo_user", "mUhNf!JELM349ii", "itmoment");
+    $link = mysqli_connect("VH297.spaceweb.ru", "hogdaw1gma", "mUhNf!JELM349ii", "hogdaw1gma");
     $query = "SELECT * FROM `profession_pqs`";
     $result = mysqli_query($link, $query) or die(mysqli_error($link));
     //$pqs_query = "SELECT * FROM `PQ`";
     //$pqs_result = mysqli_query($link, $pqs_query);
     while($row = mysqli_fetch_assoc($result)) {
-      //$pqs_new = "";
-      // while($pqs_row = mysqli_fetch_assoc($pqs_result)){
-      // if((string) $row["pqs"][$my_row["id"]-1] = "1" && $my_row["kind"]!=null){
-      //     $pqs_new+=$my_row["kind"] + ", ";
-      //   }
-      // }
       echo "<tr>
       <td>".$row["expert_email"]."</td>
       <td>".$row["profession_name"]."</td>

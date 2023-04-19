@@ -1,6 +1,6 @@
 <?php
   //ПОДКЛЮЧАЕМСЯ И ОТКЛЮЧАЕМСЯ В КАЖДОМ СКРИПТЕ(НЕ ЗАБЫВАЕМ!)
-  $link = mysqli_connect("db4free.net", "itmo_user", "mUhNf!JELM349ii", "itmoment");
+  $link = mysqli_connect("VH297.spaceweb.ru", "hogdaw1gma", "mUhNf!JELM349ii", "hogdaw1gma");
   
   //ПРОВЕРКА НА ТО БЫЛА НАЖАТА ЛИ КНОПКА, ЕСЛИ ЕЕ НЕ БУДЕТ ТО БУДЕТ ЕРРОР. ЭТО НЕ ФОРМАЛЬНОСТЬ КОРОЧЕ
   //СТРУКТУРА БД(users) id|email|password|create_datetime
@@ -15,15 +15,12 @@
 
     //mysqli_query и делает запрос
     if (mysqli_query($link, $query)) {
-      //ЭТО УДАЛИТЬ ПОТОМ  
-      print("New profession created successfully");
-      
+      header('Location: profile.php');
     } else {
       print("Error: " . $query . "<br>" . mysqli_error($link));
     }
       }
   unset($_COOKIE['profession']);
   unset($_COOKIE['pqs']);
-  header('Location: profile.php');
   mysqli_close($link);
 ?> 

@@ -1,5 +1,5 @@
 <?php
-$link = mysqli_connect("db4free.net", "itmo_user", "mUhNf!JELM349ii", "itmoment");
+$link = mysqli_connect("VH297.spaceweb.ru", "hogdaw1gma", "mUhNf!JELM349ii", "hogdaw1gma");
 
 if (!$link) {
   die("Connection failed: " . mysqli_connect_error());
@@ -9,22 +9,20 @@ $query = "SELECT `id` FROM `profession_pqs`";
 $result = mysqli_query($link, $query);
 $expert_quantity = mysqli_num_rows(mysqli_query($link, "SELECT `id` FROM `users` WHERE `group_admin` = 1"));
 $EXPERTS_COUNT = $expert_quantity;
-$PRIMARY_ID = 19; // айдишник с которого начинается проверка таблицы с профессиями из панели эксперта.
 $checked_professions = array();
 $depth = (mysqli_num_rows($result));
 
 while ($i = 0 < $depth) {
-    $depth++;
-
+    $i++;
     // 1 запрос (получаем имя первой профессии)
-    $query = "SELECT `profession_name` FROM `profession_pqs` WHERE `id` = '$PRIMARY_ID'";
-    $PRIMARY_ID++;
+    $query = "SELECT `profession_name` FROM `profession_pqs` WHERE `condition` = 'unchecked'";
     $result = mysqli_query($link, $query);
 
     if (mysqli_num_rows($result) > 0) {
     $row = mysqli_fetch_array($result);
     $primary_name = $row["profession_name"];
     }
+    echo($primary_name);
 
     if (in_array($primary_name, $checked_professions)){
         break;
@@ -42,9 +40,9 @@ while ($i = 0 < $depth) {
 
 
     // ПРОВЕРКА НА КОЛИЧЕСТВО НАБОРОВ ПВК ДЛЯ ПРОФЕССИИ
-    if (count($id_array) != $EXPERTS_COUNT) {
-        break;
-    }
+    // if (count($id_array) != $EXPERTS_COUNT) {
+    //     break;
+    // }
 
     // 3 запрос (получаем список email профессии)
     $email_array = array();
@@ -98,16 +96,24 @@ while ($i = 0 < $depth) {
             unset($first_array[$max_index]);
         }
     }
+    echo($primary_name);
 
+    $query = "SELECT `condition` FROM `profession_pqs` WHERE `profession_name` = '$primary_name'";
+    $result = mysqli_query($link, $query);
+    // echo($result);
+    $row = mysqli_fetch_assoc($result);
     // int to string
-    session_start();
-    $_SESSION["pqs_id"] = $sorted_array;
-    $_SESSION["profession_name"] = $primary_name;
-    print_r($_SESSION["pqs_id"]);
-    array_push($checked_professions, $primary_name);
-
-    $checked_professions[] = $primary_name;
-    require("nums-to-strings.php");
+    if ($row["condition"] == 'unchecked'){
+        session_start();
+        $_SESSION["pqs_id"] = $sorted_array;
+        $_SESSION["profession_name"] = $primary_name;
+        print_r($_SESSION["pqs_id"]);
+        array_push($checked_professions, $primary_name);
+        $query = "UPDATE profession_pqs SET `condition`='checked' WHERE profession_name='$primary_name'";
+        $res = mysqli_query($link, $query);
+        $checked_professions[] = $primary_name;
+        require("nums-to-strings.php");
+    }
 }
 
 mysqli_close($link);
