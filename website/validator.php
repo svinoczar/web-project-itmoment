@@ -15,7 +15,7 @@ $depth = (mysqli_num_rows($result));
 while ($i = 0 < $depth) {
     $i++;
     // 1 запрос (получаем имя первой профессии)
-    $query = "SELECT `profession_name` FROM `profession_pqs` LIMIT 1";
+    $query = "SELECT `profession_name` FROM `profession_pqs` WHERE `condition` = 'unchecked'";
     $result = mysqli_query($link, $query);
 
     if (mysqli_num_rows($result) > 0) {
@@ -97,8 +97,6 @@ while ($i = 0 < $depth) {
         }
     }
     echo($primary_name);
-    $query = "UPDATE profession_pqs SET `condition`='checked' WHERE profession_name='$primary_name'";
-    $res = mysqli_query($link, $query);
 
     $query = "SELECT `condition` FROM `profession_pqs` WHERE `profession_name` = '$primary_name'";
     $result = mysqli_query($link, $query);
@@ -111,7 +109,8 @@ while ($i = 0 < $depth) {
         $_SESSION["profession_name"] = $primary_name;
         print_r($_SESSION["pqs_id"]);
         array_push($checked_professions, $primary_name);
-
+        $query = "UPDATE profession_pqs SET `condition`='checked' WHERE profession_name='$primary_name'";
+        $res = mysqli_query($link, $query);
         $checked_professions[] = $primary_name;
         require("nums-to-strings.php");
     }
