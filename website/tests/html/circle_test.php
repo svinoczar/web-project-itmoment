@@ -98,7 +98,9 @@
         }
         if (count == 30){
             theAnswer = (theResult / 30).toFixed(0)
-            document.getElementById('result').innerText = `Ваш итоговый результат: ${theAnswer}%`; //!!!!!!!!!!
+            document.getElementById('result').innerText = `Ваш итоговый результат: ${theAnswer}%`;
+            document.cookie = "result=" + theAnswer;
+            document.cookie = "table=" ////НАЗВАНИЕ ТАБЛИЦЫ  //!!!!!!!!!!
             startButton.disabled = false;
         }
     }
@@ -127,5 +129,13 @@
         }
     });
 </script>
+<?php
+session_start();
+if(isset($_SESSION["logged_in"])){
+  if($_SESSION["logged_in"]==true){
+    echo '<button href="test-res.php">Завершить выполнение теста и сохранить результат</button>';
+  }
+}
+?>
 </body>
 </html>

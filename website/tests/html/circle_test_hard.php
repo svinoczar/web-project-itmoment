@@ -177,7 +177,9 @@
         theResult1 = theResult1 + accuracy;
         if (count1 == 30 && count2 == 30 && count3 == 30){
             theAnswer = ((theResult1 + theResult2 + theResult3) / 90).toFixed(0)
-            document.getElementById('result').innerText = `Ваш итоговый процент реакции: ${theAnswer}%`; //!!!!!!!!
+            document.getElementById('result').innerText = `Ваш итоговый процент реакции: ${theAnswer}%`;
+            document.cookie = "result=" + theAnswer;
+            document.cookie = "table=" ////НАЗВАНИЕ ТАБЛИЦЫ 
             startButton.disabled = false;
         }
     }
@@ -193,7 +195,9 @@
         theResult2 = theResult2 + accuracy;
         if (count1 == 30 && count2 == 30 && count3 == 30){
             theAnswer = ((theResult1 + theResult2 + theResult3) / 90).toFixed(0)
-            document.getElementById('result').innerText = `Ваш итоговый процент реакции: ${theAnswer}%`; //!!!!!!!!!!
+            document.getElementById('result').innerText = `Ваш итоговый процент реакции: ${theAnswer}%`;
+            document.cookie = "result=" + theAnswer;
+            document.cookie = "table=" ////НАЗВАНИЕ ТАБЛИЦЫ //!!!!!!!!!!
             startButton.disabled = false;
         }
     }
@@ -209,7 +213,9 @@
         theResult3 = theResult3 + accuracy;
         if (count1 == 30 && count2 == 30 && count3 == 30){
             theAnswer = ((theResult1 + theResult2 + theResult3) / 90).toFixed(0)
-            document.getElementById('result').innerText = `Ваш итоговый процент реакции: ${theAnswer}%`; //!!!!!!!!!
+            document.getElementById('result').innerText = `Ваш итоговый процент реакции: ${theAnswer}%`;
+            document.cookie = "result=" + theAnswer;
+            document.cookie = "table=" ////НАЗВАНИЕ ТАБЛИЦЫ  //!!!!!!!!!
             startButton.disabled = false;
         }
     }
@@ -246,5 +252,13 @@
         }
     });
 </script>
+<?php
+    session_start();
+    if(isset($_SESSION["logged_in"])){
+      if($_SESSION["logged_in"]==true){
+        echo '<button href="test-res.php">Завершить выполнение теста и сохранить результат</button>';
+      }
+    }
+    ?>
 </body>
 </html>

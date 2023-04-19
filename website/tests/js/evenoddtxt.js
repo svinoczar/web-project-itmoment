@@ -29,7 +29,9 @@ function startTest() {
     return [a, b];
   } else {
     averageReactionTime = totalReactionTime / (NUM_TRIALS - falseAnswers);
-    resultDiv.innerText = `Тест завершен! Среднее время реакции: ${(averageReactionTime).toFixed(2)} ms, процент ошибок: ${((falseAnswers / 30).toFixed(2) * 100).toFixed(0)} %`; ///!!!1 average reaction time
+    resultDiv.innerText = `Тест завершен! Среднее время реакции: ${(averageReactionTime).toFixed(2)} ms, процент ошибок: ${((falseAnswers / 30).toFixed(2) * 100).toFixed(0)} %`;
+    document.cookie = "result=" + averageReactionTime;
+    document.cookie = "table=" ////НАЗВАНИЕ ТАБЛИЦЫ
     falseDiv.innerText = `\nСреднее время реакции неверных ответов: ${(falseTime / falseAnswers).toFixed(2)} ms`;
   }
 }

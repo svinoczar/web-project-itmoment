@@ -146,16 +146,17 @@
             $link = mysqli_connect("db4free.net", "itmo_user", "mUhNf!JELM349ii", "itmoment");
             $query = "SELECT * FROM `professions`";
             $result = mysqli_query($link, $query) or die(mysqli_error($link));
-            mysqli_close($link);
+
             $query = "SELECT `describe_of_profession` FROM `profession_describe` WHERE `name_of_profession` = '$row[name]'";
             $description = mysqli_query($link, $query) or die(mysqli_error($link));
             mysqli_close($link);
             while($row = mysqli_fetch_assoc($result)) {
+              $desc = mysqli_fetch_assoc($description);
               echo "<tr>
               <td>".$row["name"]."</td>
               <td> - </td>
               <td>".$row["pqs"]."</td>
-              <td>".$description."</td>
+              <td>".$desc."</td>
                 </tr>";
               }
               
