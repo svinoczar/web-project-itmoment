@@ -6,7 +6,7 @@
      
     $link = mysqli_connect("VH297.spaceweb.ru", "hogdaw1gma", "mUhNf!JELM349ii", "hogdaw1gma");
 
-    $query = "INSERT INTO `test_results` (email, result, test)
+    $query = "INSERT INTO `result_of_test` (user_email, result, type_of_test)
      VALUES ('$email', '$data', '$test')";
 
 if (mysqli_query($link, $query)) {
