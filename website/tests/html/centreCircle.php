@@ -17,6 +17,14 @@
 <p>Для запуска теста нажмите кнопку.</p>
 <progress id="progress-bar" value="0" max="30"></progress><br></br>
 <button id="startButton">Запуск теста</button>
+<?php
+session_start();
+if(isset($_SESSION["logged_in"])){
+  if($_SESSION["logged_in"]==true){
+    echo '<a href="test-res.php">Завершить выполнение теста и сохранить результат</a>';
+  }
+}
+?>
 <br></br>
 <canvas id="canvas" width="400" height="200"></canvas>
 <div id="result1"></div>
@@ -110,6 +118,8 @@
         progressBar.value = count;
         if (count === 30){
             document.getElementById('result1').innerText = `Процент отклонения от средней линии: ${((avgDistance / pressCounter) / 180 * 100).toFixed(2)}%`;
+            document.cookie = "result=" + ((avgDistance / pressCounter) / 180 * 100).toFixed(2);
+            document.cookie = "test=8";
             document.getElementById('result2').innerText = `Ваше среднее время реакции на отклонения: ${(allTime / 30).toFixed(2)} ms.`;
             startButton.disabled = false;
             count = 0;
@@ -130,7 +140,9 @@
         }
         progressBar.value = count;
         if (count === 30){
-            document.getElementById('result1').innerText = `Процент отклонения от средней линии: ${((avgDistance / pressCounter) / 180 * 100).toFixed(2)}%`; // как по мне более важный параметр
+            document.getElementById('result1').innerText = `Процент отклонения от средней линии: ${((avgDistance / pressCounter) / 180 * 100).toFixed(2)}%`;
+            document.cookie = "result=" + ((avgDistance / pressCounter) / 180 * 100).toFixed(2);
+            document.cookie = "test=8";
             document.getElementById('result2').innerText = `Ваше среднее время реакции на отклонения: ${(allTime / 30).toFixed(2)} ms.`;
             startButton.disabled = false;
             count = 0;
@@ -167,5 +179,6 @@
         }
     });
 </script>
+
 </body>
 </html>

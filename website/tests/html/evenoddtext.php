@@ -14,7 +14,7 @@
     <progress id="progress-bar" value="0" max="100"></progress><br></br>
     <button onclick="startTest()">Начать тест</button>
     <div id="question"></div>
-    <div id="expression"></div>
+    <h2><div id="expression"></div></h2>
     <button onclick="checkAnswer('even')">Четное</button>
     <button onclick="checkAnswer('odd')">Нечетное</button>
     <div id="result"></div>

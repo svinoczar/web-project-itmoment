@@ -18,6 +18,14 @@
 <progress id="progress-bar" value="0" max="30"></progress><br></br>
 <button id="startButton">Запуск теста</button>
 <br></br>
+<?php
+session_start();
+if(isset($_SESSION["logged_in"])){
+  if($_SESSION["logged_in"]==true){
+    echo '<a href="test-res.php">Завершить выполнение теста и сохранить результат</a>';
+  }
+}
+?>
 <canvas id="canvas" width="400" height="140"></canvas>
 <div id="result1"></div>
 <div id="result2"></div>
@@ -125,6 +133,8 @@
     progressBar.value = count;
     if (count === 30){
       document.getElementById('result1').innerText = `Процент отклонения от зеленого шарика: ${((avgDistance / pressCounter) / 360 * 100).toFixed(2)}%`;
+      document.cookie = "result=" + ((avgDistance / pressCounter) / 360 * 100).toFixed(2);
+      document.cookie = "test=9";
       document.getElementById('result2').innerText = `Ваше среднее время реакции на отклонения: ${(allTime / 30).toFixed(2)} ms.`;
       startButton.disabled = false;
       count = 0;
@@ -146,6 +156,8 @@
     progressBar.value = count;
     if (count === 30){
       document.getElementById('result1').innerText = `Процент отклонения от зеленого шарика: ${((avgDistance / pressCounter) / 360 * 100).toFixed(2)}%`;
+      document.cookie = "result=" + ((avgDistance / pressCounter) / 360 * 100).toFixed(2);
+      document.cookie = "test=9";
       document.getElementById('result2').innerText = `Ваше среднее время реакции на отклонения: ${(allTime / 30).toFixed(2)} ms.`;
       startButton.disabled = false;
       count = 0;
