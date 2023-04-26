@@ -34,6 +34,7 @@
                             // Entry value is false, hide the button
                             echo '<a id="expertbtn" name="expert" type="submit" style="visibility: hidden" href="expert-panel.php" >Панель эксперта</a>';
                           }
+                          session_abort();
                         ?>
                     <a class="expertbtn" href="/tests/html/tests.html" >Пройти тесты</a>
                     <a class="expertbtn" href="validator.php">Валидация</a>

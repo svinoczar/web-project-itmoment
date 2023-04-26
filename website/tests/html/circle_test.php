@@ -18,6 +18,14 @@
 <progress id="progress-bar" value="0" max="100"></progress><br></br>
 <button id="startButton">Запуск теста</button>
 <br></br>
+<?php
+session_start();
+if(isset($_SESSION["logged_in"])){
+  if($_SESSION["logged_in"]==true){
+    echo '<a href="test-res.php">Завершить выполнение теста и сохранить результат</a>';
+  }
+}
+?>
 <canvas id="canvas" width="400" height="400"></canvas>
 <div id="result"></div>
 <script>
@@ -152,13 +160,6 @@
     });
     
 </script>
-<?php
-session_start();
-if(isset($_SESSION["logged_in"])){
-  if($_SESSION["logged_in"]==true){
-    echo '<a href="test-res.php">Завершить выполнение теста и сохранить результат</a>';
-  }
-}
-?>
+
 </body>
 </html>

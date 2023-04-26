@@ -3,6 +3,16 @@
 <head>
   <title>Мышление</title>
   <meta charset="UTF-8">
+  <head>
+    <title>Память</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../../css/styletest.css">
+
+<style>
+  canvas {
+    border: 0px solid black;
+  }
+</style>
 </head>
 <body>
 <h1>Тест: "Оценка мышления"</h1>
@@ -72,6 +82,7 @@
   </ol>
 </form>
 <button id="checkButton">Проверить ответы</button>
+<a href="test-res.php">Завершить выполнение теста и сохранить результат</a>
 <div id="result"></div>
 <script>
   function onSubmit() {
@@ -165,6 +176,8 @@
       return false;
     }else{
       document.getElementById('result').innerText =`Ваш процент правильных ответов: ${((checkRight / 10) * 100).toFixed(2)}%`;
+      document.cookie = "result=" + ((checkRight / 10) * 100).toFixed(2);
+                document.cookie = "test=12"
       startButton.disabled = true;
       return true;
     }

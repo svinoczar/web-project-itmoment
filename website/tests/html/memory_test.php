@@ -3,6 +3,13 @@
 <head>
     <title>Память</title>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="../../css/styletest.css">
+
+<style>
+  canvas {
+    border: 0px solid black;
+  }
+</style>
 </head>
 <body>
 <h1>Тест: "Оценка памяти"</h1>
@@ -126,6 +133,7 @@
         </p>
         <p>
             <button type="submit">Проверить ответы</button>
+            <a href="test-res.php">Завершить выполнение теста и сохранить результат</a>
         </p>
     </form>
 
@@ -217,6 +225,8 @@
         //alert(`Ваш процент правильных ответов: ${((countRightAnswers / 8) * 100).toFixed(2)}%`);
         document.getElementById('result').innerText =`Ваш процент правильных ответов: ${((countRightAnswers / 8) * 100).toFixed(2)}%`;
         //startButton.disabled = false
+        document.cookie = "result=" + ((countRightAnswers / 8) * 100).toFixed(2);
+                document.cookie = "test=11"
 
         const submitButton = form.getElementsByTagName('button')[0];
         disableButton(submitButton);

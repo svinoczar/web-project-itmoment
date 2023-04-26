@@ -17,6 +17,14 @@
 <progress id="progress-bar" value="0" max="30"></progress>
 <button id="startButton">Запуск теста</button>
 <br></br>
+<?php
+    session_start();
+    if(isset($_SESSION["logged_in"])){
+      if($_SESSION["logged_in"]==true){
+        echo '<a href="test-res.php">Завершить выполнение теста и сохранить результат</a>';
+      }
+    }
+    ?>
 <canvas id="canvas" width="500" height="500"></canvas>
 <div id="result1"></div>
 <div id="result2"></div>
@@ -154,6 +162,8 @@
     progressBar.value = count;
     if (count === 30){
       document.getElementById('result1').innerText = `Ваш процент внимательности: ${(100 -((((point1.y - 20) + Math.abs(point2.x - 480) + Math.abs(point3.y - 480) + (point4.x - 20) ) / 1840) * 100)).toFixed(2)}%`;
+      document.cookie = "result=" + (100 -((((point1.y - 20) + Math.abs(point2.x - 480) + Math.abs(point3.y - 480) + (point4.x - 20) ) / 1840) * 100)).toFixed(2);
+      document.cookie = "test=10"
       console.log(point1.y);
       console.log(point2.x);
       console.log(point3.y);
@@ -171,6 +181,8 @@
     progressBar.value = count;
     if (count === 30){
       document.getElementById('result1').innerText = `Ваш процент внимательности: ${(100 -((((point1.y - 20) + Math.abs(point2.x - 480) + Math.abs(point3.y - 480) + (point4.x - 20) ) / 1840) * 100)).toFixed(2)}%`;
+      document.cookie = "result=" + (100 -((((point1.y - 20) + Math.abs(point2.x - 480) + Math.abs(point3.y - 480) + (point4.x - 20) ) / 1840) * 100)).toFixed(2);
+      document.cookie = "test=10"
       console.log(point1.y);
       console.log(point2.x);
       console.log(point3.y);
@@ -188,6 +200,8 @@
     progressBar.value = count;
     if (count === 30){
       document.getElementById('result1').innerText = `Ваш процент внимательности: ${(100 -((((point1.y - 20) + Math.abs(point2.x - 480) + Math.abs(point3.y - 480) + (point4.x - 20) ) / 1840) * 100)).toFixed(2)}%`;
+      document.cookie = "result=" + (100 -((((point1.y - 20) + Math.abs(point2.x - 480) + Math.abs(point3.y - 480) + (point4.x - 20) ) / 1840) * 100)).toFixed(2);
+      document.cookie = "test=10"
       console.log(point1.y);
       console.log(point2.x);
       console.log(point3.y);
@@ -205,6 +219,8 @@
     progressBar.value = count;
     if (count === 30){
       document.getElementById('result1').innerText = `Ваш процент внимательности: ${(100 -((((point1.y - 20) + Math.abs(point2.x - 480) + Math.abs(point3.y - 480) + (point4.x - 20) ) / 1840) * 100)).toFixed(2)}%`;
+      document.cookie = "result=" + (100 -((((point1.y - 20) + Math.abs(point2.x - 480) + Math.abs(point3.y - 480) + (point4.x - 20) ) / 1840) * 100)).toFixed(2);
+      document.cookie = "test=10"
       console.log(point1.y);
       console.log(point2.x);
       console.log(point3.y);
