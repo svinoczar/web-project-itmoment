@@ -1,12 +1,146 @@
-<!DOCTYPE html>
-<html lang="ru" dir="ltr">
-    <head>
+<html lang="ru" dir="ltr" data-darkreader-mode="dynamic" data-darkreader-scheme="dark"><head><style class="darkreader darkreader--fallback" media="screen"></style><style class="darkreader darkreader--text" media="screen"></style><style class="darkreader darkreader--invert" media="screen">.jfk-bubble.gtx-bubble, .captcheck_answer_label > input + img, span#closed_text > img[src^="https://www.gstatic.com/images/branding/googlelogo"], span[data-href^="https://www.hcaptcha.com/"] > #icon, #bit-notification-bar-iframe, ::-webkit-calendar-picker-indicator {
+    filter: invert(100%) hue-rotate(180deg) contrast(90%) !important;
+}</style><style class="darkreader darkreader--inline" media="screen">[data-darkreader-inline-bgcolor] {
+  background-color: var(--darkreader-inline-bgcolor) !important;
+}
+[data-darkreader-inline-bgimage] {
+  background-image: var(--darkreader-inline-bgimage) !important;
+}
+[data-darkreader-inline-border] {
+  border-color: var(--darkreader-inline-border) !important;
+}
+[data-darkreader-inline-border-bottom] {
+  border-bottom-color: var(--darkreader-inline-border-bottom) !important;
+}
+[data-darkreader-inline-border-left] {
+  border-left-color: var(--darkreader-inline-border-left) !important;
+}
+[data-darkreader-inline-border-right] {
+  border-right-color: var(--darkreader-inline-border-right) !important;
+}
+[data-darkreader-inline-border-top] {
+  border-top-color: var(--darkreader-inline-border-top) !important;
+}
+[data-darkreader-inline-boxshadow] {
+  box-shadow: var(--darkreader-inline-boxshadow) !important;
+}
+[data-darkreader-inline-color] {
+  color: var(--darkreader-inline-color) !important;
+}
+[data-darkreader-inline-fill] {
+  fill: var(--darkreader-inline-fill) !important;
+}
+[data-darkreader-inline-stroke] {
+  stroke: var(--darkreader-inline-stroke) !important;
+}
+[data-darkreader-inline-outline] {
+  outline-color: var(--darkreader-inline-outline) !important;
+}
+[data-darkreader-inline-stopcolor] {
+  stop-color: var(--darkreader-inline-stopcolor) !important;
+}</style><style class="darkreader darkreader--variables" media="screen">:root {
+   --darkreader-neutral-background: #131516;
+   --darkreader-neutral-text: #d8d4cf;
+   --darkreader-selection-background: #004daa;
+   --darkreader-selection-text: #e8e6e3;
+}</style><style class="darkreader darkreader--root-vars" media="screen"></style><style class="darkreader darkreader--user-agent" media="screen">html {
+    background-color: #181a1b !important;
+}
+html {
+    color-scheme: dark !important;
+}
+html, body {
+    background-color: #181a1b;
+}
+html, body {
+    border-color: #736b5e;
+    color: #e8e6e3;
+}
+a {
+    color: #3391ff;
+}
+table {
+    border-color: #545b5e;
+}
+::placeholder {
+    color: #b2aba1;
+}
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+    background-color: #404400 !important;
+    color: #e8e6e3 !important;
+}
+::-webkit-scrollbar {
+    background-color: #202324;
+    color: #aba499;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #454a4d;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: #575e62;
+}
+::-webkit-scrollbar-thumb:active {
+    background-color: #484e51;
+}
+::-webkit-scrollbar-corner {
+    background-color: #181a1b;
+}
+::selection {
+    background-color: #004daa !important;
+    color: #e8e6e3 !important;
+}
+::-moz-selection {
+    background-color: #004daa !important;
+    color: #e8e6e3 !important;
+}</style>
         <meta charset="utf-8">
         <!-- <link rel="stylesheet" href="css/style1.css"> -->
-        <link rel="stylesheet" href="css/profile.css">
+        <link rel="stylesheet" href="css/profile.css"><style class="darkreader darkreader--sync" media="screen"></style>
 
         <title>ITMOMENT</title>
-    </head>
+    <meta name="darkreader" content="761191534ce54629b0263413c3c1958e"><style class="darkreader darkreader--override" media="screen">.vimvixen-hint {
+    background-color: #7b5300 !important;
+    border-color: #d8b013 !important;
+    color: #f3e8c8 !important;
+}
+::placeholder {
+    opacity: 0.5 !important;
+}
+#edge-translate-panel-body,
+.MuiTypography-body1,
+.nfe-quote-text {
+    color: var(--darkreader-neutral-text) !important;
+}
+gr-main-header {
+    background-color: #0f3a48 !important;
+}
+.tou-z65h9k,
+.tou-mignzq,
+.tou-1b6i2ox,
+.tou-lnqlqk {
+    background-color: var(--darkreader-neutral-background) !important;
+}
+.tou-75mvi {
+    background-color: #032029 !important;
+}
+.tou-ta9e87,
+.tou-1w3fhi0,
+.tou-1b8t2us,
+.tou-py7lfi,
+.tou-1lpmd9d,
+.tou-1frrtv8,
+.tou-17ezmgn {
+    background-color: #0a0a0a !important;
+}
+.tou-uknfeu {
+    background-color: #231603 !important;
+}
+.tou-6i3zyv {
+    background-color: #19576c !important;
+}
+embed[type="application/pdf"][src="about:blank"] { filter: invert(100%) contrast(90%); }</style></head>
     <body>
         <header class="header" id="header">
             <div class="header__inner">
@@ -15,27 +149,13 @@
 
                     <!-- <img src="img/ITMOMENT_logo.png"> -->
 
-                    <a href="index.php">
+                    <a href="index.php" class="logo">
                     <img src="img/ITMOMENT_logo.png" alt="Кнопка «input»">
                     </a>
 
                     <!-- <div class="panel" id="expert-panel"> -->
                     <!-- <div class="container"> -->
-                    <?php
-                        if (session_status() == PHP_SESSION_NONE) {
-                            session_start();
-                        }
-                        $entry_value = $_SESSION["admin"];
-                        if ($entry_value) {
-                            // Entry value is true, show the button
-                            echo '<a class="expertbtn" href="expert-panel.php" >Панель эксперта</a>';
-                            // id="expertbtn" name="expert" type="submit"
-                          } else {
-                            // Entry value is false, hide the button
-                            echo '<a id="expertbtn" name="expert" type="submit" style="visibility: hidden" href="expert-panel.php" >Панель эксперта</a>';
-                          }
-                        ?>
-                    <a class="expertbtn" href="/tests/html/tests.html" >Пройти тесты</a>
+                    <a class="expertbtn" href="expert-panel.php">Панель эксперта</a>                    <a class="expertbtn" href="/tests/html/tests.html">Пройти тесты</a>
                     <a class="expertbtn" href="validator.php">Валидация</a>
                     <a class="expertbtn" href="results.php">Статистика</a>
                     <a class="expertbtn" href="index.php">Вернуться на главную</a>
@@ -53,35 +173,24 @@
               <div class="wedo__item">
               </div>
               <div class="wedo__item">
-                <table>
-                  <br>
-                  <br>
-                  <br>
-                  <br>
-                  <br>
-            <tr>
+                <br><br><br><br><br><br><b>Notice</b>:  session_start(): Ignoring session_start() because a session is already active in <b>D:\ITMO\2nd-semester\web-project-itmoment\website\profile.php</b> on line <b>68</b><br><table>
+                  
+                  
+                  
+                  
+                  
+            <tbody><tr>
 <td>Средняя оценка</td>
 <th>Тест</th>
                     </tr>
-<?php
-$link = mysqli_connect("VH297.spaceweb.ru", "hogdaw1gma", "mUhNf!JELM349ii", "hogdaw1gma");
-session_start();
-$user_email = $_SESSION["email"];
-$query = "SELECT T.name_of_test, T.type_of_data , avg(R.result) as avg from result_of_test as R join test_type as T on T.id = R.type_of_test where R.email = '$user_email' group by R.type_of_test, T.id";
-$result = mysqli_query($link, $query) or die(mysqli_error($link));
-while($row = mysqli_fetch_assoc($result)) {
-  echo "<tr>
-  <td>".$row["avg"]." ".$row["type_of_data"]." </td>
-  <td>".$row["name_of_test"]."</td>
-       </tr>";
-}
-mysqli_close($link);
-?>
-            </table>
+
+
+            </tbody></table>
               </div>
             </div>
           </div><!-- /.container -->
 
         </section>
-    </body>
-</html>
+    
+
+</body></html>
