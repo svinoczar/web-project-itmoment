@@ -54,19 +54,24 @@
               </div>
               <div class="wedo__item">
                 <table>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
             <tr>
-<td>Тест</td>
-<th>Средняя оценка</th>
+<td>Средняя оценка</td>
+<th>Тест</th>
                     </tr>
 <?php
 $link = mysqli_connect("VH297.spaceweb.ru", "hogdaw1gma", "mUhNf!JELM349ii", "hogdaw1gma");
 session_start();
 $user_email = $_SESSION["email"];
-$query = "SELECT T.name_of_test, avg(R.result) as avg from result_of_test as R join test_type as T on T.id = R.type_of_test where R.email = '$user_email' group by R.type_of_test, T.id";
+$query = "SELECT T.name_of_test, T.type_of_data , avg(R.result) as avg from result_of_test as R join test_type as T on T.id = R.type_of_test where R.email = '$user_email' group by R.type_of_test, T.id";
 $result = mysqli_query($link, $query) or die(mysqli_error($link));
 while($row = mysqli_fetch_assoc($result)) {
   echo "<tr>
-  <td>".$row["avg"]. " мс</td>
+  <td>".$row["avg"]." ".$row["type_of_data"]." </td>
   <td>".$row["name_of_test"]."</td>
        </tr>";
 }

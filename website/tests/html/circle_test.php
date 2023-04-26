@@ -150,6 +150,7 @@
             handleSpacebarPress();
         }
     });
+    
 </script>
 <?php
 session_start();
