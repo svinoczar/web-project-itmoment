@@ -131,7 +131,7 @@
             result3.textContent = `Реакция на синие: ${(sumOfReactionTimeBlue / numberBlue).toFixed(2)} ms, количество ошибок: ${((falseBlue / (numberBlue + falseBlue)).toFixed(2) * 100).toFixed(0)} %`;
             result4.textContent = `Ваше время реакции: ${averageReactionTime.toFixed(2)} ms, количество ошибок: ${(((falseBlue + falseYellow + falseRed) / 90).toFixed(2) * 100).toFixed(0)} %`;
             document.cookie = "result=" + averageReactionTime;
-            document.cookie = "test=color3"
+            document.cookie = "test=5"
             resultFalse.textContent = `Ваше время реакции на неверные ответы: ${(sumOfReactionTimeFalse / (falseBlue + falseYellow + falseRed)).toFixed(2)} ms`;
             circle.style.backgroundColor = "black";
 

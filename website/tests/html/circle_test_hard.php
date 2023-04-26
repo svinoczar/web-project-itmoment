@@ -209,7 +209,7 @@
             document.getElementById('result2').innerText = `Лучший результат для второго круга: ${theBest2.toFixed(2)}%`;
             document.getElementById('result3').innerText = `Лучший результат для третьего круга: ${theBest3.toFixed(2)}%`;
             document.cookie = "result=" + theAnswer;
-            document.cookie = "test=circle_pro"
+            document.cookie = "test=7"
             startButton.disabled = false;
         }
     }

@@ -122,7 +122,7 @@
                 theAnswer = theBest
                 document.getElementById('result').innerText = `Ваш лучший результат: ${theAnswer.toFixed(2)}%`;
                 document.cookie = "result=" + theAnswer;
-                document.cookie = "test=circle"
+                document.cookie = "test=6"
                 startButton.disabled = false;
             }
         }
