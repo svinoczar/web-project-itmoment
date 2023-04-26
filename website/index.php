@@ -10,8 +10,9 @@
     <header class="header" id="header">
       <div class="header">
         <div class="header logo">
-		      <input type="image" src="img/ITMOMENT_logo.png" alt="Кнопка «input»">
-          <!-- <img src="img/ITMOMENT_logo.png"> -->
+        <a href="index.php">
+          <img src="img/ITMOMENT_logo.png" alt="Кнопка «input»">
+        </a>
           <?php
           session_start();
           if(isset($_SESSION["logged_in"])){

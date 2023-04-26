@@ -15,7 +15,9 @@
 
                     <!-- <img src="img/ITMOMENT_logo.png"> -->
 
-                    <input type="image" src="img/ITMOMENT_logo.png" alt="Кнопка «input»">
+                    <a href="index.php">
+                    <img src="img/ITMOMENT_logo.png" alt="Кнопка «input»">
+                    </a>
 
                     <!-- <div class="panel" id="expert-panel"> -->
                     <!-- <div class="container"> -->
