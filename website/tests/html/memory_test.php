@@ -151,6 +151,45 @@
     let whiteTree = new Audio('../mp3/white_tree.mp3');
     let yellowBuilding = new Audio('../mp3/yellow_building.mp3');
 
+    let startTime;
+        let endTime;
+
+        const blockBlack = document.getElementById('blackInput');
+        const blackLabel = document.querySelector("label[for='blackInput']");
+        const blockBlue = document.getElementById('blueInput');
+        const blueLabel = document.querySelector("label[for='blueInput']");
+        const blockBrown = document.getElementById('brownInput');
+        const brownLabel = document.querySelector("label[for='brownInput']");
+        const blockGreen = document.getElementById('greenInput');
+        const greenLabel = document.querySelector("label[for='greenInput']");
+        const blockPurple = document.getElementById('purpleInput');
+        const purpleLabel = document.querySelector("label[for='purpleInput']");
+        const blockRed = document.getElementById('redInput');
+        const redLabel = document.querySelector("label[for='redInput']");
+        const blockWhite = document.getElementById('whiteInput');
+        const whiteLabel = document.querySelector("label[for='whiteInput']");
+        const blockYellow = document.getElementById('yellowInput');
+        const yellowLabel = document.querySelector("label[for='yellowInput']");
+
+        blockBlack.style.display = "none";
+        blackLabel.style.display = "none";
+        blockBlack.style.display = "block";
+        blackLabel.style.display = "block";
+        blockBlue.style.display = "none";
+        blueLabel.style.display = "none";
+        blockBrown.style.display = "none";
+        brownLabel.style.display = "none";
+        blockGreen.style.display = "none";
+        greenLabel.style.display = "none";
+        blockPurple.style.display = "none";
+        purpleLabel.style.display = "none";
+        blockRed.style.display = "none";
+        redLabel.style.display = "none";
+        blockWhite.style.display = "none";
+        whiteLabel.style.display = "none";
+        blockYellow.style.display = "none";
+        yellowLabel.style.display = "none";
+
     let mp3Files = [
         blackDog,
         blueSun,
@@ -182,7 +221,8 @@
         const form = event.target;
         const selects = form.getElementsByTagName('select');
         var countRightAnswers = 0;
-
+        endTime = new Date().getTime();
+        const timeDiff = endTime - startTime;
         const answers = [];
         for (let i = 0; i < selects.length; i++) {
             const select = selects[i];
@@ -193,6 +233,10 @@
             }
             if (answers.includes(answer)) {
                 alert('Пожалуйста, выберите уникальные ответы!');
+                return;
+            }
+            if (timeDiff > 100000){
+                alert('Скорее всего вы нечестно решали тест, ваш результат аннулирован');
                 return;
             }
             answers.push(answer);
@@ -239,12 +283,49 @@
             await sleep(2300);
         }
 
+        startTime = new Date().getTime();
+
         const startButton = document.getElementById('startButton');
         disableButton(startButton);
 
         const questionContainer = document.getElementById('questionContainer');
         questionContainer.style.display = 'block';
     }
+
+    function loop() {
+            if (blockBlack.value != ""){
+                blockBlue.style.display = "block";
+                blueLabel.style.display = "block";
+            }
+            if (blockBlue.value != ""){
+                blockBrown.style.display = "block";
+                brownLabel.style.display = "block";
+            }
+            if (blockBrown.value != ""){
+                blockGreen.style.display = "block";
+                greenLabel.style.display = "block";
+            }
+            if (blockGreen.value != ""){
+                blockPurple.style.display = "block";
+                purpleLabel.style.display = "block";
+            }
+            if (blockPurple.value != ""){
+                blockRed.style.display = "block";
+                redLabel.style.display = "block";
+            }
+            if (blockRed.value != ""){
+                blockWhite.style.display = "block";
+                whiteLabel.style.display = "block";
+            }
+            if (blockWhite.value != ""){
+                blockYellow.style.display = "block";
+                yellowLabel.style.display = "block";
+            }
+
+            requestAnimationFrame(loop);
+        }
+
+    loop();
 
     const startButton = document.getElementById('startButton');
     startButton.addEventListener('click', onStartClick);
