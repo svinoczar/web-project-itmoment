@@ -12,6 +12,13 @@
     </style>
 </head>
 <body>
+      <div class="header">
+        <div class="header logo">
+          <a href="../../index.php">
+            <img src="./../../img/ITMOMENT_logo.png" alt="Кнопка «input»">
+          </a>  
+        </div>
+      </div>
 <h1>Тест: "Аналоговое слежение"</h1>
 <p>Нажимайте на стрелочки, пытайтесь удержать шар в центре.</p>
 <p>Для запуска теста нажмите кнопку.</p>

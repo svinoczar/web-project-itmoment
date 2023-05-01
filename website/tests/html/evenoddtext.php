@@ -7,6 +7,13 @@
     <meta charset="UTF-8">
   </head>
   <body>
+      <div class="header">
+        <div class="header logo">
+          <a href="../../index.php">
+            <img src="./../../img/ITMOMENT_logo.png" alt="Кнопка «input»">
+          </a>  
+        </div>
+      </div>
     <h1>Тест: "Четная или нечетная сумма (текстовой)"</h1>
     <p>Нажмите на кнопку, когда будете готовы начать</p>
     <p>Вы увидите выражение, сложите ее в голове, и нажмите на правильный вариант</p>

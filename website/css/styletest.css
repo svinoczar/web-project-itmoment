@@ -1,7 +1,31 @@
 body {
-  background-color: #1f1f1f; /* set the background color to a dark shade */
+  background-color: #232323; /* set the background color to a dark shade */
   color: #fff; /* set the font color to white */
 }
+
+header {
+  /* position: fixed; */
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: #232323;
+}
+
+.logo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em;
+}
+
+.logo img {
+  height: 60px;
+  width: auto;
+  background-color: #232323; /* your desired color */
+
+}
+
 .a{
   background-color: #6a5acd; /* set the button background color to purple */
   color: #fff; /* set the button font color to white */

@@ -12,6 +12,13 @@
 </style>
 </head>
 <body>
+      <div class="header">
+        <div class="header logo">
+          <a href="../../index.php">
+            <img src="./../../img/ITMOMENT_logo.png" alt="Кнопка «input»">
+          </a>  
+        </div>
+      </div>
 <h1>Тест: "Оценка мышления"</h1>
 <p>Пройдите небольшой тест на мышление(состоит из 10 вопросов).</p>
 <button id="startButton">Начать</button>

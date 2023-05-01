@@ -15,6 +15,13 @@
     </style>
   </head>
   <body>
+      <div class="header">
+        <div class="header logo">
+          <a href="../../index.php">
+            <img src="./../../img/ITMOMENT_logo.png" alt="Кнопка «input»">
+          </a>  
+        </div>
+      </div>
     <h1>Тест: "Реакция на цвет(3 цвета)"</h1>
     <p>Нажмите на кнопку, когда будете готовы начать</p>
     <p>Нажмите на пробел, когда круг поменяет свой цвет (круг поменяет цвет 90 раз)</p>

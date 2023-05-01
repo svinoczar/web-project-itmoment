@@ -12,6 +12,13 @@
     </style>
 </head>
 <body>
+      <div class="header">
+        <div class="header logo">
+          <a href="../../index.php">
+            <img src="./../../img/ITMOMENT_logo.png" alt="Кнопка «input»">
+          </a>  
+        </div>
+      </div>
 <h1>Тест: "Оценка реакции на движущиеся объекты (осложненная версия)"</h1>
 <span>
     Нажмите Z, когда красный кружок зайдет в область (30 раз).<br>

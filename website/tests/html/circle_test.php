@@ -12,6 +12,13 @@
     </style>
 </head>
 <body>
+      <div class="header">
+        <div class="header logo">
+          <a href="../../index.php">
+            <img src="./../../img/ITMOMENT_logo.png" alt="Кнопка «input»">
+          </a>  
+        </div>
+      </div>
 <h1>Тест: "Оценка реакции на движущийся объект"</h1>
 <p>Нажмите пробел, когда черный шар зайдет в область (30 раз).</p>
 <p>Для запуска теста нажмите кнопку.</p>

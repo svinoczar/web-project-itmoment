@@ -12,6 +12,13 @@
   </style>
 </head>
 <body>
+    <div class="header">
+      <div class="header logo">
+        <a href="../../index.php">
+          <img src="./../../img/ITMOMENT_logo.png" alt="Кнопка «input»">
+        </a>  
+      </div>
+    </div>
 <h1>Тест: "Внимание"</h1>
 <p>Нажимайте на стрелочки, пытайтесь удержать шарики(красный - вверх, зеленый - вправо, синий - вниз, фиолетовый - влево).</p>
 <progress id="progress-bar" value="0" max="30"></progress>

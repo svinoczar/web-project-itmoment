@@ -6,6 +6,7 @@
 
     <title>Цвет</title>
     <style>
+      
       #circle {
         width: 300px;
         height: 300px;
@@ -16,6 +17,13 @@
     </style>
   </head>
   <body>
+      <div class="header">
+        <div class="header logo">
+          <a href="../../index.php">
+            <img src="./../../img/ITMOMENT_logo.png" alt="Кнопка «input»">
+          </a>  
+        </div>
+      </div>
     <h1>Тест: "Реакция на цвет"</h1>
     <p>Нажмите на кнопку, когда будете готовы начать</p>
     <p>Нажмите на пробел, когда круг поменяет свой цвет</p>

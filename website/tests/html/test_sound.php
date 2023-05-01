@@ -6,6 +6,15 @@
     <meta charset="UTF-8" />
   </head>
   <body>
+
+      <div class="header">
+        <div class="header logo">
+          <a href="../../index.php">
+            <img src="./../../img/ITMOMENT_logo.png" alt="Кнопка «input»">
+          </a>  
+        </div>
+      </div>
+ 
     <h1>Тест: "Реакция на звук"</h1>
     <p>Нажмите на кнопку, когда будете готовы начать</p>
     <p>Нажмите на пробел, когда услышите звук</p>
