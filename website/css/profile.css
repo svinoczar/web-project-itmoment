@@ -42,16 +42,6 @@ header {
     background-color: #232323; /* your desired color */
 }
 
-a{
-  font-family: Courier New, monospace;
-  background-color: #c92fe8;
-  color: white;
-  padding: 14px 20px;
-  margin: 1em;
-  border: none;
-  cursor: pointer;
-}
-
 /* Full-width input fields */
 input[type=text], input[type=password] {
     width: 100%;
@@ -77,7 +67,9 @@ input[type=text], input[type=password] {
     padding: 80px 0;
 }
 
-
+.aLink {
+    background-color:#2f2f2f;
+}
 
 
 
@@ -131,11 +123,6 @@ input[type=text], input[type=password] {
     display: block;
     max-width: 100%;
     height: auto;
-}
-
-p{
-    color: #white;
-    font-family: Georgia;
 }
 
 .container {

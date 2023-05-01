@@ -5,6 +5,12 @@
         <!-- <link rel="stylesheet" href="css/style1.css"> -->
         <link rel="stylesheet" href="css/profile.css">
 
+        <style>
+          .aLink {
+            background-color: #232323;
+          }
+        </style>
+
         <title>ITMOMENT</title>
     </head>
     <body>
@@ -15,8 +21,8 @@
 
                     <!-- <img src="img/ITMOMENT_logo.png"> -->
 
-                    <a href="index.php">
-                    <img src="img/ITMOMENT_logo.png" alt="Кнопка «input»">
+                    <a href="index.php" class="aLink">
+                      <img src="img/ITMOMENT_logo.png" alt="Кнопка «input»">
                     </a>
 
                     <!-- <div class="panel" id="expert-panel"> -->
