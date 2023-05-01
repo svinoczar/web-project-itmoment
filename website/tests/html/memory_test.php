@@ -133,7 +133,10 @@
         </p>
         <p>
             <button type="submit">Проверить ответы</button>
-            <a href="test-res.php">Завершить выполнение теста и сохранить результат</a>
+        </p>
+        <!-- FIX -->
+        <p>
+            <button onclick="document.location=\'test-res.php\'" class="btnSnE">Завершить выполнение теста и сохранить результат</button>
         </p>
     </form>
 

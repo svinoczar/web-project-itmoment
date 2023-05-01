@@ -24,7 +24,7 @@
     session_start();
     if(isset($_SESSION["logged_in"])){
       if($_SESSION["logged_in"]==true){
-        echo '<a href="test-res.php">Завершить выполнение теста и сохранить результат</a>';
+        echo '<button onclick="document.location=\'test-res.php\'" class="btnSnE">Завершить выполнение теста и сохранить результат</button>';
       }
     }
     ?>

@@ -3,7 +3,6 @@
   <head>
     <title>Звук</title>
     <link rel="stylesheet" href="../../css/styletest.css">
-
     <meta charset="UTF-8" />
   </head>
   <body>
@@ -66,7 +65,7 @@
     session_start();
     if(isset($_SESSION["logged_in"])){
       if($_SESSION["logged_in"]==true){
-        echo '<a href="test-res.php">Завершить выполнение теста и сохранить результат</a>';
+        echo ' <button onclick="document.location=\'test-res.php\'" class="btnSnE">Завершить выполнение теста и сохранить результат</button> ';
       }
     }
     ?>

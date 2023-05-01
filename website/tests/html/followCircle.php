@@ -22,7 +22,7 @@
 session_start();
 if(isset($_SESSION["logged_in"])){
   if($_SESSION["logged_in"]==true){
-    echo '<br><br><br><br><a href="test-res.php">Завершить выполнение теста и сохранить результат</a>';
+    echo '<br><br><br><br><button onclick="document.location=\'test-res.php\'" class="btnSnE">Завершить выполнение теста и сохранить результат</button>';
   }
 }
 ?>
