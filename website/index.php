@@ -140,7 +140,7 @@
         </div>
 
         <div class="wedo">
-          <div class="wedo__item">
+
             <table>
 
             <?php
@@ -162,10 +162,10 @@
               <td>".$desc["describe_of_profession"]."</td>
                 </tr>";
               }
-              
+
               ?>
             </table>
-      </div><!-- /.container -->
+      </div>
     </section>
 
     <section class="section">
