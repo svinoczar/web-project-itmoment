@@ -8,6 +8,11 @@
  <body>
     <!-- Обратботка ренетерна -->
     <header class="header">
+        <div class="header logo">
+            <a href="../../index.php">
+                <img src="./../../img/ITMOMENT_logo.png" alt="Кнопка «input»">
+            </a>
+        </div>
         <div class="header name">
             <h1>Тест: "Профессии и качества"
                 <a href="/../profile.php" class="btnn"><button class="btnn">Вернуться в профиль</button></a>
@@ -36,6 +41,21 @@
                     ?>
             </select>
         </div>
+
+        <!-- Скрипт-счётчик чекбоксов, нужно добавить визуальную часть. @Awwac PLEASE!!!!!!!! -->
+
+        <script>
+            function checkboxes(){
+                var inputElems = document.getElementsByTagName("input"),
+                count = 0;
+                for (var i=0; i<inputElems.length; i++) {
+                    if (inputElems[i].type === "checkbox" && inputElems[i].checked === true){
+                        count++;
+                        alert(count);
+                    }
+                }
+            }
+        </script>
 
           <div class = "checkbox">
 					<span>1) Готовность к защите Родины с оружием в руках </span><br></br>

@@ -12,6 +12,29 @@
   left: 100px;
 }
 
+header {
+  /* position: fixed; */
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: #232323;
+}
+
+.logo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em;
+}
+
+.logo img {
+  height: 60px;
+  width: auto;
+  background-color: #232323; /* your desired color */
+
+}
+
 /* цвет текста теста, в данном случаее всей страницы */
 #expert-panel{
   color: #e3e3e3;
