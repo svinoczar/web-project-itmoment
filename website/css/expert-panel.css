@@ -10,30 +10,39 @@
   display: inline-block;
   text-decoration: none; /* Убираем подчёркивание */
   left: 100px;
+
 }
 
 header {
-  /* position: fixed; */
   top: 0;
   left: 0;
   right: 0;
   z-index: 1000;
   background-color: #232323;
+  display: flex; /* add flex display to the header */
+  justify-content: space-between; /* align the child elements at the beginning and end of the header */
+  align-items: center; /* align the child elements vertically at the center of the header */
 }
 
 .logo {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  display: block;
+  align-items: center; /* align the child elements vertically at the center */
   padding: 1em;
 }
 
 .logo img {
   height: 60px;
   width: auto;
-  background-color: #232323; /* your desired color */
-
+  margin-right: 1em; /* add margin to the right to create space between the logo and text */
 }
+
+.header name {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* center the child elements horizontally */
+  flex-grow: 1; /* make the text element grow to fill the available space */
+}
+
 
 /* цвет текста теста, в данном случаее всей страницы */
 #expert-panel{
