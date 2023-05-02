@@ -520,10 +520,9 @@ table {
 }
 
 tr {
-  padding: 0.5em 0; /* add vertical padding */
+  padding: 3em 0; /* add vertical padding */
 }
 
 td {
-  padding: 0.5em; /* add padding to all sides of the cell */
-  border: 1px solid black;
+  padding: 3em; /* add padding to all sides of the cell */
 }
