@@ -14,10 +14,6 @@
 }
 
 header {
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
   background-color: #232323;
   display: flex; /* add flex display to the header */
   justify-content: space-between; /* align the child elements at the beginning and end of the header */
@@ -27,7 +23,7 @@ header {
 .logo {
   display: block;
   align-items: center; /* align the child elements vertically at the center */
-  padding: 1em;
+  /* padding: 1em; */
 }
 
 .logo img {
@@ -80,7 +76,7 @@ body {
     display: inline-block; /* Строчно-блочный элемент */
     background-color: #c92fe8; /* корпоративный цвет фона (фиолетовый)*/
     color: #fff; /* Белый цвет текста */
-    padding: 1rem 1.5rem; /* Поля вокруг текста */
+    /* padding: 1rem 1.5rem; /* Поля вокруг текста */ */
     text-decoration: none; /* Убираем подчёркивание */
     border-radius: 3px; /* Скругляем уголки */
     -webkit-appearance: button;

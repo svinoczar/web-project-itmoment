@@ -14,10 +14,9 @@
             </a>
         </div>
         <div class="header name">
-            <h1>Тест: "Профессии и качества"
-                <a href="/../profile.php" class="btnn"><button class="btnn">Вернуться в профиль</button></a>
-            </h1>
+            <h1>Тест: "Профессии и качества"</h1>
         </div>
+        <a href="/../profile.php" class="btnn"><button class="btnn">Вернуться в профиль</button></a>
     </header>
 
     <form id="test1" onsubmit="return CheckForm(this)" action="expert.php">
@@ -53,7 +52,7 @@
                 }
             }
         </script>
-
+          <br><br>
           <div class = "checkbox">
 					<span>1) Готовность к защите Родины с оружием в руках </span><br></br>
           <input type="checkbox" id="que1" name="checkbox" value="no" onclick="toggleInput1(this, 'inputContainer1')">
