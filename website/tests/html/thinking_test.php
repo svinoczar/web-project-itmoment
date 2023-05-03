@@ -22,6 +22,14 @@
 <h1>Тест: "Оценка мышления"</h1>
 <p>Пройдите небольшой тест на мышление(состоит из 10 вопросов).</p>
 <button id="startButton">Начать</button>
+<?php
+        session_start();
+        if(isset($_SESSION["logged_in"])){
+          if($_SESSION["logged_in"]==true){
+            echo ' <button onclick="document.location=\'test-res.php\'" class="btnSnE">Завершить выполнение теста и сохранить результат</button> ';
+          }
+        }
+        ?>
 <form id="testForm1" style="display: none;">
     <ol>
         <li>
@@ -468,6 +476,8 @@
             return false;
         }else{
             document.getElementById('result').innerText =`Ваш процент правильных ответов: ${((checkRight / 10) * 100).toFixed(2)}%`;
+            document.cookie = "result=" + ((checkRight / 10) * 100).toFixed(2);
+            document.cookie = "test=12"
             startButton.disabled = true;
             return true;
         }

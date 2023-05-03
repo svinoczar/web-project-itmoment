@@ -23,6 +23,14 @@
 <p>Постарайтесь запомнить цвет предметов, которые вам озвучит сайт. После этого пройдите небольшое тестирование.</p>
 <p>Для запуска теста нажмите кнопку.</p>
 <button id="startButton">Запуск теста</button>
+<?php
+        session_start();
+        if(isset($_SESSION["logged_in"])){
+          if($_SESSION["logged_in"]==true){
+            echo ' <button onclick="document.location=\'test-res.php\'" class="btnSnE">Завершить выполнение теста и сохранить результат</button> ';
+          }
+        }
+        ?>
 <div id="questionContainer" style="display: none;">
     <h2>Выберите цвет и объект:</h2>
     <form id="questionForm">
@@ -280,7 +288,7 @@
         document.getElementById('result').innerText =`Ваш процент правильных ответов: ${((countRightAnswers / 8) * 100).toFixed(2)}%`;
         //startButton.disabled = false
         document.cookie = "result=" + ((countRightAnswers / 8) * 100).toFixed(2);
-                document.cookie = "test=11"
+        document.cookie = "test=11"
 
         const submitButton = form.getElementsByTagName('button')[0];
         disableButton(submitButton);
@@ -344,5 +352,6 @@
     questionForm.addEventListener('submit', onSubmit);
 
 </script>
+
 </body>
 </html>
