@@ -12,12 +12,27 @@
     </style>
 </head>
 <body>
+      <div class="header">
+        <div class="header logo">
+          <a href="../../index.php">
+            <img src="./../../img/ITMOMENT_logo.png" alt="Кнопка «input»">
+          </a>  
+        </div>
+      </div>
 <h1>Тест: "Оценка реакции на движущийся объект"</h1>
 <p>Нажмите пробел, когда черный шар зайдет в область (30 раз).</p>
 <p>Для запуска теста нажмите кнопку.</p>
 <progress id="progress-bar" value="0" max="100"></progress><br></br>
 <button id="startButton">Запуск теста</button>
 <br></br>
+<?php
+session_start();
+if(isset($_SESSION["logged_in"])){
+  if($_SESSION["logged_in"]==true){
+    echo '<button onclick="document.location=\'test-res.php\'" class="btnSnE">Завершить выполнение теста и сохранить результат</button>';
+  }
+}
+?>
 <canvas id="canvas" width="400" height="400"></canvas>
 <div id="result"></div>
 <script>
@@ -122,7 +137,7 @@
                 theAnswer = theBest
                 document.getElementById('result').innerText = `Ваш лучший результат: ${theAnswer.toFixed(2)}%`;
                 document.cookie = "result=" + theAnswer;
-                document.cookie = "test=circle"
+                document.cookie = "test=6"
                 startButton.disabled = false;
             }
         }
@@ -150,14 +165,8 @@
             handleSpacebarPress();
         }
     });
+    
 </script>
-<?php
-session_start();
-if(isset($_SESSION["logged_in"])){
-  if($_SESSION["logged_in"]==true){
-    echo '<a href="test-res.php">Завершить выполнение теста и сохранить результат</a>';
-  }
-}
-?>
+
 </body>
 </html>

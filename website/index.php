@@ -10,8 +10,9 @@
     <header class="header" id="header">
       <div class="header">
         <div class="header logo">
-		      <input type="image" src="img/ITMOMENT_logo.png" alt="Кнопка «input»">
-          <!-- <img src="img/ITMOMENT_logo.png"> -->
+        <a href="index.php">
+          <img src="img/ITMOMENT_logo.png" alt="Кнопка «input»">
+        </a>
           <?php
           session_start();
           if(isset($_SESSION["logged_in"])){
@@ -139,7 +140,7 @@
         </div>
 
         <div class="wedo">
-          <div class="wedo__item">
+
             <table>
 
             <?php
@@ -161,17 +162,10 @@
               <td>".$desc["describe_of_profession"]."</td>
                 </tr>";
               }
-              
+
               ?>
             </table>
-          </div>
-          <!-- <div class="wedo__item">
-            <p>Специалист, который проверяет, как работает программа или приложение</p>
-            <p><br>Cпециалист, который создаёт инструменты для решения задач бизнеса</p>
-            <p><br></br><br>Специалист, который обеспечивает конфиденциальность данных, предотвращает утечку или несанкционированный доступ к информации, принимает непосредственное участие в создании системы защиты информации</p>
-          </div> -->
-        </div>
-      </div><!-- /.container -->
+      </div>
     </section>
 
     <section class="section">

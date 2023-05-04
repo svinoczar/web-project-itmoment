@@ -7,6 +7,13 @@
     <meta charset="UTF-8">
   </head>
   <body>
+      <div class="header">
+        <div class="header logo">
+          <a href="../../index.php">
+            <img src="./../../img/ITMOMENT_logo.png" alt="Кнопка «input»">
+          </a>  
+        </div>
+      </div>
     <h1>Тест: "Четная или нечетная сумма (звуковой)"</h1>
     <p>Нажмите на кнопку, когда будете готовы начать</p>
     <p>Вы услышите запись, сложите ее в голове, и нажмите на правильный вариант, всего вы услышите 30 выражений</p>
@@ -24,7 +31,7 @@
     session_start();
     if(isset($_SESSION["logged_in"])){
       if($_SESSION["logged_in"]==true){
-        echo '<a href="test-res.php">Завершить выполнение теста и сохранить результат</a>';
+        echo '<button onclick="document.location=\'test-res.php\'" class="btnSnE">Завершить выполнение теста и сохранить результат</button>';
       }
     }
     ?>

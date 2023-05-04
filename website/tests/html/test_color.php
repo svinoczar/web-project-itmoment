@@ -6,6 +6,7 @@
 
     <title>Цвет</title>
     <style>
+      
       #circle {
         width: 300px;
         height: 300px;
@@ -16,6 +17,13 @@
     </style>
   </head>
   <body>
+      <div class="header">
+        <div class="header logo">
+          <a href="../../index.php">
+            <img src="./../../img/ITMOMENT_logo.png" alt="Кнопка «input»">
+          </a>  
+        </div>
+      </div>
     <h1>Тест: "Реакция на цвет"</h1>
     <p>Нажмите на кнопку, когда будете готовы начать</p>
     <p>Нажмите на пробел, когда круг поменяет свой цвет</p>
@@ -71,7 +79,7 @@
               let averageReactionTime = totalReactionTime / 30;
               result.textContent = `Среднее время реакции: ${averageReactionTime.toFixed(2)} ms`;
               document.cookie = "result=" + averageReactionTime;
-            document.cookie = "test=color"
+            document.cookie = "test=4"
               startButton.disabled = false;
             } else {
               runTest();
@@ -83,7 +91,7 @@
         session_start();
         if(isset($_SESSION["logged_in"])){
           if($_SESSION["logged_in"]==true){
-            echo '<a href="test-res.php">Завершить выполнение теста и сохранить результат</a>';
+            echo ' <button onclick="document.location=\'test-res.php\'" class="btnSnE">Завершить выполнение теста и сохранить результат</button> ';
           }
         }
         ?>

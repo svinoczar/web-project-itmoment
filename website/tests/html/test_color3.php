@@ -15,6 +15,13 @@
     </style>
   </head>
   <body>
+      <div class="header">
+        <div class="header logo">
+          <a href="../../index.php">
+            <img src="./../../img/ITMOMENT_logo.png" alt="Кнопка «input»">
+          </a>  
+        </div>
+      </div>
     <h1>Тест: "Реакция на цвет(3 цвета)"</h1>
     <p>Нажмите на кнопку, когда будете готовы начать</p>
     <p>Нажмите на пробел, когда круг поменяет свой цвет (круг поменяет цвет 90 раз)</p>
@@ -131,7 +138,7 @@
             result3.textContent = `Реакция на синие: ${(sumOfReactionTimeBlue / numberBlue).toFixed(2)} ms, количество ошибок: ${((falseBlue / (numberBlue + falseBlue)).toFixed(2) * 100).toFixed(0)} %`;
             result4.textContent = `Ваше время реакции: ${averageReactionTime.toFixed(2)} ms, количество ошибок: ${(((falseBlue + falseYellow + falseRed) / 90).toFixed(2) * 100).toFixed(0)} %`;
             document.cookie = "result=" + averageReactionTime;
-            document.cookie = "test=color3"
+            document.cookie = "test=5"
             resultFalse.textContent = `Ваше время реакции на неверные ответы: ${(sumOfReactionTimeFalse / (falseBlue + falseYellow + falseRed)).toFixed(2)} ms`;
             circle.style.backgroundColor = "black";
 
@@ -150,7 +157,7 @@
     session_start();
     if(isset($_SESSION["logged_in"])){
       if($_SESSION["logged_in"]==true){
-        echo '<a href="test-res.php">Завершить выполнение теста и сохранить результат</a>';
+        echo ' <button onclick="document.location=\'test-res.php\'" class="btnSnE">Завершить выполнение теста и сохранить результат</button> ';
       }
     }
     ?>

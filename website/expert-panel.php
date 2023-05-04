@@ -8,27 +8,22 @@
  <body>
     <!-- Обратботка ренетерна -->
     <header class="header">
-        <div class="header name">
-            <h1>Тест: "Профессии и качества"
-                <a href="/../profile.php" class="btnn"><button class="btnn">Вернуться в профиль</button></a>
-            </h1>
+        <div class="header logo">
+            <a href="../../index.php">
+                <img src="./../../img/ITMOMENT_logo.png" alt="Кнопка «input»">
+            </a>
         </div>
-        <!-- <div class="header btn">
-            <a href="/../profile.php" class="btnn"><button class="btnn">Вернуться в профиль</button></a>
-        </div> -->
+        <div class="header name">
+            <h1>Тест: "Профессии и качества"</h1>
+        </div>
+        <a href="/../profile.php" class="btnn"><button class="btnn">Вернуться в профиль</button></a>
     </header>
 
     <form id="test1" onsubmit="return CheckForm(this)" action="expert.php">
 
-
-
         <p>Выберите от 5 до 10 самых важных качеств для профессии</p>
         <p>Проставьте им баллы по важности (от 1 до 9)</p>
 
-        <!-- <label for="prof">Профессия:</label>
-        <div class="prof">
-          <input class="prof "type="text" name="prof" placeholder="" value=""><br></br>
-        </div> -->
         <div class="prof">
             <select class="prof" name="prof">
                 <option value="" selected disabled>Выберите профессию</option>
@@ -43,6 +38,21 @@
             </select>
         </div>
 
+        <!-- Скрипт-счётчик чекбоксов, нужно добавить визуальную часть. @Awwac PLEASE!!!!!!!! -->
+
+        <script>
+            function checkboxes(){
+                var inputElems = document.getElementsByTagName("input"),
+                count = 0;
+                for (var i=0; i<inputElems.length; i++) {
+                    if (inputElems[i].type === "checkbox" && inputElems[i].checked === true){
+                        count++;
+                        alert(count);
+                    }
+                }
+            }
+        </script>
+          <br><br>
           <div class = "checkbox">
 					<span>1) Готовность к защите Родины с оружием в руках </span><br></br>
           <input type="checkbox" id="que1" name="checkbox" value="no" onclick="toggleInput1(this, 'inputContainer1')">

@@ -513,3 +513,16 @@ p{
     .section--devices {
         padding-bottom: 0;
     }
+
+/*table*/
+table {
+  border-collapse: collapse;
+}
+
+tr {
+  padding: 3em 0; /* add vertical padding */
+}
+
+td {
+  padding: 3em; /* add padding to all sides of the cell */
+}

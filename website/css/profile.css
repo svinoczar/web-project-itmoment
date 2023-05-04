@@ -21,35 +21,22 @@ body {
 
 
 header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    background-color: #232323;
-  }
+  background-color: #232323;
+  display: flex; /* add flex display to the header */
+  justify-content: space-between; /* align the child elements at the beginning and end of the header */
+  align-items: center; /* align the child elements vertically at the center of the header */
+}
 
 .logo {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1em;
+  display: block;
+  align-items: center; /* align the child elements vertically at the center */
+  /* padding: 1em; */
 }
 
 .logo img {
-    height: 60px;
-    width: auto;
-    background-color: #232323; /* your desired color */
-}
-
-a{
-  font-family: Courier New, monospace;
-  background-color: #c92fe8;
-  color: white;
-  padding: 14px 20px;
-  margin: 1em;
-  border: none;
-  cursor: pointer;
+  height: 60px;
+  width: auto;
+  margin-right: 1em; /* add margin to the right to create space between the logo and text */
 }
 
 /* Full-width input fields */
@@ -77,7 +64,9 @@ input[type=text], input[type=password] {
     padding: 80px 0;
 }
 
-
+.aLink {
+    background-color:#2f2f2f;
+}
 
 
 
@@ -131,11 +120,6 @@ input[type=text], input[type=password] {
     display: block;
     max-width: 100%;
     height: auto;
-}
-
-p{
-    color: #white;
-    font-family: Georgia;
 }
 
 .container {

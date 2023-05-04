@@ -12,6 +12,13 @@
     </style>
 </head>
 <body>
+      <div class="header">
+        <div class="header logo">
+          <a href="../../index.php">
+            <img src="./../../img/ITMOMENT_logo.png" alt="Кнопка «input»">
+          </a>  
+        </div>
+      </div>
 <h1>Тест: "Оценка реакции на движущиеся объекты (осложненная версия)"</h1>
 <span>
     Нажмите Z, когда красный кружок зайдет в область (30 раз).<br>
@@ -25,6 +32,14 @@
 <nobr>Прогресс для синего кружочка: </nobr><progress id="progress-bar3" value="0" max="100"></progress><br></br>
 <button id="startButton">Запуск теста</button>
 <br></br>
+<?php
+    session_start();
+    if(isset($_SESSION["logged_in"])){
+      if($_SESSION["logged_in"]==true){
+        echo '<button onclick="document.location=\'test-res.php\'" class="btnSnE">Завершить выполнение теста и сохранить результат</button>';
+      }
+    }
+    ?>
 <canvas id="canvas" width="1200" height="400"></canvas>
 <div id="result1"></div>
 <div id="result2"></div>
@@ -209,7 +224,7 @@
             document.getElementById('result2').innerText = `Лучший результат для второго круга: ${theBest2.toFixed(2)}%`;
             document.getElementById('result3').innerText = `Лучший результат для третьего круга: ${theBest3.toFixed(2)}%`;
             document.cookie = "result=" + theAnswer;
-            document.cookie = "test=circle_pro"
+            document.cookie = "test=7"
             startButton.disabled = false;
         }
     }
@@ -332,13 +347,6 @@
         }
     });
 </script>
-<?php
-    session_start();
-    if(isset($_SESSION["logged_in"])){
-      if($_SESSION["logged_in"]==true){
-        echo '<a href="test-res.php">Завершить выполнение теста и сохранить результат</a>';
-      }
-    }
-    ?>
+
 </body>
 </html>

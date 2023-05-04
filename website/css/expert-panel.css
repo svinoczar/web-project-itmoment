@@ -10,7 +10,35 @@
   display: inline-block;
   text-decoration: none; /* Убираем подчёркивание */
   left: 100px;
+
 }
+
+header {
+  background-color: #232323;
+  display: flex; /* add flex display to the header */
+  justify-content: space-between; /* align the child elements at the beginning and end of the header */
+  align-items: center; /* align the child elements vertically at the center of the header */
+}
+
+.logo {
+  display: block;
+  align-items: center; /* align the child elements vertically at the center */
+  /* padding: 1em; */
+}
+
+.logo img {
+  height: 60px;
+  width: auto;
+  margin-right: 1em; /* add margin to the right to create space between the logo and text */
+}
+
+.header name {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* center the child elements horizontally */
+  flex-grow: 1; /* make the text element grow to fill the available space */
+}
+
 
 /* цвет текста теста, в данном случаее всей страницы */
 #expert-panel{
@@ -48,7 +76,7 @@ body {
     display: inline-block; /* Строчно-блочный элемент */
     background-color: #c92fe8; /* корпоративный цвет фона (фиолетовый)*/
     color: #fff; /* Белый цвет текста */
-    padding: 1rem 1.5rem; /* Поля вокруг текста */
+    /* padding: 1rem 1.5rem; /* Поля вокруг текста */ */
     text-decoration: none; /* Убираем подчёркивание */
     border-radius: 3px; /* Скругляем уголки */
     -webkit-appearance: button;

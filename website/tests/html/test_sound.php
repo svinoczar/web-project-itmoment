@@ -3,10 +3,18 @@
   <head>
     <title>Звук</title>
     <link rel="stylesheet" href="../../css/styletest.css">
-
     <meta charset="UTF-8" />
   </head>
   <body>
+
+      <div class="header">
+        <div class="header logo">
+          <a href="../../index.php">
+            <img src="./../../img/ITMOMENT_logo.png" alt="Кнопка «input»">
+          </a>  
+        </div>
+      </div>
+ 
     <h1>Тест: "Реакция на звук"</h1>
     <p>Нажмите на кнопку, когда будете готовы начать</p>
     <p>Нажмите на пробел, когда услышите звук</p>
@@ -40,7 +48,7 @@
           averageReactionTime = Math.floor(totalReactionTime / 30);
           result.textContent = `Среднее время реакции: ${averageReactionTime} ms`;
           document.cookie = "result=" + averageReactionTime;
-          document.cookie = "test=sound"
+          document.cookie = "test=3"
           startTime = null;
           endTime = null;
           totalReactionTime = 0;
@@ -66,7 +74,7 @@
     session_start();
     if(isset($_SESSION["logged_in"])){
       if($_SESSION["logged_in"]==true){
-        echo '<a href="test-res.php">Завершить выполнение теста и сохранить результат</a>';
+        echo ' <button onclick="document.location=\'test-res.php\'" class="btnSnE">Завершить выполнение теста и сохранить результат</button> ';
       }
     }
     ?>

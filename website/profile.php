@@ -5,6 +5,12 @@
         <!-- <link rel="stylesheet" href="css/style1.css"> -->
         <link rel="stylesheet" href="css/profile.css">
 
+        <style>
+          .aLink {
+            background-color: #232323;
+          }
+        </style>
+
         <title>ITMOMENT</title>
     </head>
     <body>
@@ -15,7 +21,9 @@
 
                     <!-- <img src="img/ITMOMENT_logo.png"> -->
 
-                    <input type="image" src="img/ITMOMENT_logo.png" alt="Кнопка «input»">
+                    <a href="index.php" class="aLink">
+                      <img src="img/ITMOMENT_logo.png" alt="Кнопка «input»">
+                    </a>
 
                     <!-- <div class="panel" id="expert-panel"> -->
                     <!-- <div class="container"> -->
@@ -32,6 +40,7 @@
                             // Entry value is false, hide the button
                             echo '<a id="expertbtn" name="expert" type="submit" style="visibility: hidden" href="expert-panel.php" >Панель эксперта</a>';
                           }
+                          session_abort();
                         ?>
                     <a class="expertbtn" href="/tests/html/tests.html" >Пройти тесты</a>
                     <a class="expertbtn" href="validator.php">Валидация</a>
@@ -52,18 +61,24 @@
               </div>
               <div class="wedo__item">
                 <table>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
             <tr>
-<td>Тест</td>
-<th>Средняя оценка</th>
+<td>Средняя оценка</td>
+<th>Тест</th>
                     </tr>
 <?php
 $link = mysqli_connect("VH297.spaceweb.ru", "hogdaw1gma", "mUhNf!JELM349ii", "hogdaw1gma");
+session_start();
 $user_email = $_SESSION["email"];
-$query = "SELECT T.name_of_test, avg(R.result) as avg from result_of_test as R join test_type as T on T.id = R.type_of_test where R.user_email = 'test@mail.ru' group by R.type_of_test, T.id";
+$query = "SELECT T.name_of_test, T.type_of_data , avg(R.result) as avg from result_of_test as R join test_type as T on T.id = R.type_of_test where R.email = '$user_email' group by R.type_of_test, T.id";
 $result = mysqli_query($link, $query) or die(mysqli_error($link));
 while($row = mysqli_fetch_assoc($result)) {
   echo "<tr>
-  <td>".$row["avg"]. " мс</td>
+  <td>".$row["avg"]." ".$row["type_of_data"]." </td>
   <td>".$row["name_of_test"]."</td>
        </tr>";
 }
