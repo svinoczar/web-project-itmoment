@@ -86,7 +86,10 @@ mysqli_close($link);
 ?>
             </table>
               </div>
-              <a class="expertbtn" href="best_profession.php" >balls</a>
+              <?php
+              include("best_profession.php");
+              echo "ПОДХОДЯЩАЯ ВАМ ПРОФЕССИЯ: ".$_SESSION["best_profession"].""
+              ?>
             </div>
           </div><!-- /.container -->
 

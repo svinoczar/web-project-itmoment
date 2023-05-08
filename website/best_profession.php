@@ -24,7 +24,6 @@ while($row = mysqli_fetch_assoc($result)) {
         $arr[$row["PQ_id"]] += $normalized;
         $div_arr[$row["PQ_id"]] += 1;
     }
-
   }
 
   $new = [];
@@ -33,9 +32,44 @@ while($row = mysqli_fetch_assoc($result)) {
         $new[$i] = $arr[$i]/$div_arr[$i];
     }
 }
-for ($i = 0; $i < 162; $i++){
-    if($new[$i] != null){
-        echo "".strval($i)." => ".strval($new[$i])."<br>";
+// ДЛЯ КАЙФА ↓↓↓
+// for ($i = 0; $i < 162; $i++){
+//     if($new[$i] != null){
+//         echo "".strval($i)." => ".strval($new[$i])."<br>";
+//     }
+// }
+    
+$query = "SELECT * FROM `PQ_to_professions`";
+$result = mysqli_query($link, $query) or die(mysqli_error($link));
+
+$professions = [];
+$pqs = [];
+while($row = mysqli_fetch_assoc($result)) {
+    if (!in_array($row["profession_name"], $professions)) {
+        array_push($professions, $row["profession_name"]);
     }
 }
+
+foreach ($professions as $prof) {
+    $pqs[$prof] = 0;
+}
+
+foreach ($professions as $prof) {
+    $query = "SeLeCt PQ.id from PQ_to_professions as ptp left join PQ on PQ.id = ptp.PQ_id where profession_name = '$prof'";
+    $result = mysqli_query($link, $query) or die(mysqli_error($link));
+    while($row = mysqli_fetch_assoc($result)) {
+        $pqs[$prof] += $new[$row["id"]];
+    }
+}
+
+$weight_of_the_best_proffesion_in_the_world = 0;
+$name_of_the_best_proffesion_in_the_world = "";
+foreach ($professions as $prof) {
+    if ($pqs[$prof] > $the_best_proffesion_in_the_world) {
+        $the_best_proffesion_in_the_world = $pqs[$prof];
+        $name_of_the_best_proffesion_in_the_world = $prof;
+    }
+}
+
+$_SESSION["best_profession"] = $name_of_the_best_proffesion_in_the_world;
 ?>
