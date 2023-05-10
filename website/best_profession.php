@@ -68,12 +68,12 @@ foreach ($professions as $prof) {
 $weight = 0;
 $name = "";
 foreach ($professions as $prof) { 
-    if ($pqs[$prof] > $weight) {
-        $weight = $pqs[$prof];
+    if ($pqs[$prof] / $div_arr[$name] > $weight) {
         $name = $prof;
+        $weight = $pqs[$prof] / $div_arr[$name];
     }
 }
 
 $_SESSION["best_profession"] = $name;
-$_SESSION["percentage"] = $weight / $div_arr[$name];
+$_SESSION["percentage"] = $weight;
 ?>
