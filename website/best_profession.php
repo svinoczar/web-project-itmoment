@@ -31,6 +31,8 @@ while($row = mysqli_fetch_assoc($result)) {
   for ($i = 0; $i < 162; $i++){
     if($div_arr[$i] != null){
         $new[$i] = $arr[$i]/$div_arr[$i];
+    } else {
+        $new[$i] = 0;
     }
 }
 // ДЛЯ КАЙФА ↓↓↓
@@ -74,11 +76,25 @@ foreach ($professions as $prof) {
 //     }
 // }
 
-foreach ($professions as $prof) {
-    echo $prof; echo " ";
-    echo round(($pqs[$prof] / $div_arr[$prof])*100);
-    echo "<br>";
-}
+    foreach ($professions as $prof) {
+        // for ($i = 0; $i < 162; $i++){
+        //     $ans = "";
+        $ans = "";
+        $query = "SeLeCt PQ.id, PQ.kind from PQ_to_professions as ptp left join PQ on PQ.id = ptp.PQ_id where profession_name = '$prof'";
+        $result = mysqli_query($link, $query) or die(mysqli_error($link));
+        while($row = mysqli_fetch_assoc($result)) {
+            $ans .= "<br>" . $row["kind"] . "-" . round($new[$row["id"]] * 100) . "%";
+        }
+        //     $result = mysqli_query($link, $query) or die(mysqli_error($link));
+        //     while($row = mysqli_fetch_assoc($result)){
+        //         if ($new[$i]!=0){
+        //             $ans .= ".$row[$i].";
+        //         }
+        //     }
+        
+        echo "<br><h1>".$prof." ".round(($pqs[$prof] / $div_arr[$prof])*100)."% ".$ans."<br> ";
+    }
+
 
 // $_SESSION["best_profession"] = $name;
 // $_SESSION["percentage"] = $weight;
