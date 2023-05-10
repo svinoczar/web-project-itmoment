@@ -89,6 +89,16 @@ mysqli_close($link);
               <?php
               include("best_profession.php");
               // echo "<h1>Наиболее подходящая профессия: ".$_SESSION["best_profession"]."(".round($_SESSION["percentage"] * 100)."%)<>"
+              if (session_status() == PHP_SESSION_NONE) {
+                session_start();
+            }
+            $entry_value = $_SESSION["admin"];
+            if ($entry_value) {
+                // Entry value is true, show the button
+                echo '<a class="expertbtn" href="extras.html" >Панель эксперта</a>';
+                // id="expertbtn" name="expert" type="submit"
+              }
+              session_abort();
               ?>
             </div>
           </div><!-- /.container -->
