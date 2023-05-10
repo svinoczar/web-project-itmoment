@@ -88,7 +88,7 @@ mysqli_close($link);
               </div>
               <?php
               include("best_profession.php");
-              echo "Наиболее подходящая профессия: ".$_SESSION["best_profession"]."(".round($_SESSION["percentage"] * 100)."%)"
+              echo "<h1>Наиболее подходящая профессия: ".$_SESSION["best_profession"]."(".round($_SESSION["percentage"] * 100)."%)</h1>"
               ?>
             </div>
           </div><!-- /.container -->

@@ -68,9 +68,9 @@ foreach ($professions as $prof) {
 $weight = 0;
 $name = "";
 foreach ($professions as $prof) { 
-    if ($pqs[$prof] / $div_arr[$name] > $weight) {
+    if ($pqs[$prof] / $div_arr[$prof] > $weight) {
         $name = $prof;
-        $weight = $pqs[$prof] / $div_arr[$name];
+        $weight = $pqs[$prof] / $div_arr[$prof];
     }
 }
 
