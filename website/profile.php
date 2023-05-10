@@ -78,7 +78,7 @@ $query = "SELECT T.name_of_test, T.type_of_data , avg(R.result) as avg from resu
 $result = mysqli_query($link, $query) or die(mysqli_error($link));
 while($row = mysqli_fetch_assoc($result)) {
   echo "<tr>
-  <td>".$row["avg"]." ".$row["type_of_data"]." </td>
+  <td>".abs(round($row["avg"]))." ".$row["type_of_data"]." </td>
   <td>".$row["name_of_test"]."</td>
        </tr>";
 }
@@ -88,7 +88,7 @@ mysqli_close($link);
               </div>
               <?php
               include("best_profession.php");
-              echo "<h1>Наиболее подходящая профессия: ".$_SESSION["best_profession"]."(".round($_SESSION["percentage"] * 100)."%)</h1>"
+              echo "<h1>Наиболее подходящая профессия: ".$_SESSION["best_profession"]."(".round($_SESSION["percentage"] * 100)."%)<>"
               ?>
             </div>
           </div><!-- /.container -->
