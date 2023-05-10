@@ -114,6 +114,10 @@ while ($i = 0 < $depth) {
         $checked_professions[] = $primary_name;
         require("nums-to-strings.php");
     }
+    foreach ($sorted_array as $pq) {
+        $query = "insert into PQ_to_professions values ('$primary_name', '$pq')";
+        mysqli_query($link, $query);
+    }
 }
 
 mysqli_close($link);

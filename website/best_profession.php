@@ -1,5 +1,5 @@
 <?php
-error_reporting(E_ALL ^ E_WARNING); 
+error_reporting(0); 
 $link = mysqli_connect("VH297.spaceweb.ru", "hogdaw1gma", "mUhNf!JELM349ii", "hogdaw1gma");
 session_start();
 $email = $_SESSION["email"];
@@ -65,15 +65,24 @@ foreach ($professions as $prof) {
     }
 }
 
-$weight = 0;
-$name = "";
-foreach ($professions as $prof) { 
-    if ($pqs[$prof] / $div_arr[$prof] > $weight) {
-        $name = $prof;
-        $weight = $pqs[$prof] / $div_arr[$prof];
-    }
+// $weight = 0;
+// $name = "";
+// foreach ($professions as $prof) { 
+//     if ($pqs[$prof] / $div_arr[$prof] > $weight) {
+//         $name = $prof;
+//         $weight = $pqs[$prof] / $div_arr[$prof];
+//     }
+// }
+
+foreach ($professions as $prof) {
+    echo $prof; echo " ";
+    echo round(($pqs[$prof] / $div_arr[$prof])*100);
+    echo "<br>";
 }
 
-$_SESSION["best_profession"] = $name;
-$_SESSION["percentage"] = $weight;
+// $_SESSION["best_profession"] = $name;
+// $_SESSION["percentage"] = $weight;
+// Для кайфа ↓
+// $_SESSION["profs"] = $professions;
+// $_SESSION["pqs"] = $pqs;
 ?>
