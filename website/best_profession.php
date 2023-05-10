@@ -1,4 +1,5 @@
 <?php
+error_reporting(E_ALL ^ E_WARNING); 
 $link = mysqli_connect("VH297.spaceweb.ru", "hogdaw1gma", "mUhNf!JELM349ii", "hogdaw1gma");
 session_start();
 $email = $_SESSION["email"];
@@ -49,9 +50,10 @@ while($row = mysqli_fetch_assoc($result)) {
         array_push($professions, $row["profession_name"]);
     }
 }
-
+$div_arr = [];
 foreach ($professions as $prof) {
     $pqs[$prof] = 0;
+    $div_arr[$prof] = 0;
 }
 
 foreach ($professions as $prof) {
@@ -59,17 +61,19 @@ foreach ($professions as $prof) {
     $result = mysqli_query($link, $query) or die(mysqli_error($link));
     while($row = mysqli_fetch_assoc($result)) {
         $pqs[$prof] += $new[$row["id"]];
+        $div_arr[$prof] += 1;
     }
 }
 
-$weight_of_the_best_proffesion_in_the_world = 0;
-$name_of_the_best_proffesion_in_the_world = "";
-foreach ($professions as $prof) {
-    if ($pqs[$prof] > $the_best_proffesion_in_the_world) {
-        $the_best_proffesion_in_the_world = $pqs[$prof];
-        $name_of_the_best_proffesion_in_the_world = $prof;
+$weight = 0;
+$name = "";
+foreach ($professions as $prof) { 
+    if ($pqs[$prof] > $weight) {
+        $weight = $pqs[$prof];
+        $name = $prof;
     }
 }
 
-$_SESSION["best_profession"] = $name_of_the_best_proffesion_in_the_world;
+$_SESSION["best_profession"] = $name;
+$_SESSION["percentage"] = $weight / $div_arr[$name];
 ?>
