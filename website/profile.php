@@ -95,7 +95,7 @@ mysqli_close($link);
             $entry_value = $_SESSION["admin"];
             if ($entry_value) {
                 // Entry value is true, show the button
-                echo '<a class="expertbtn" href="extras.html" >Панель эксперта</a>';
+                echo '<a class="expertbtn" href="extras.php" >Подробнее о расчетах</a>';
                 // id="expertbtn" name="expert" type="submit"
               }
               session_abort();
