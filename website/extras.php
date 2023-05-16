@@ -57,31 +57,27 @@
           }
         }
           echo "После расчетов по данной формуле были получены следующие веса у пвк(До финальной суммы для подробностей):<br>";
-          $query = "SELECT ptt.PQ_id, tt.name_of_test, pq.kind FROM result_of_test as rof       join PQ_to_test as ptt on rof.type_of_test = ptt.test_id        join test_type as tt on tt.id = rof.type_of_test
-          join PQ as pq on pq.id=ptt.PQ_id      group by ptt.PQ_id, tt.name_of_test, pq.kind order by tt.name_of_test asc;";
+          $query = "SELECT DISTINCT ptp.profession_name, ptt.PQ_id, tt.name_of_test, rof.result, tt.type_of_data, pq.kind FROM result_of_test AS `rof` JOIN PQ_to_test AS `ptt` ON rof.type_of_test = ptt.test_id JOIN test_type AS `tt` ON tt.id = rof.type_of_test JOIN result_of_test AS `rot` ON rot.type_of_test = rof.type_of_test JOIN PQ AS `pq` ON pq.id=ptt.PQ_id JOIN PQ_to_professions AS `ptp` ON ptp.PQ_id = ptt.PQ_id WHERE rof.email = 'test@mail.ru' GROUP BY tt.name_of_test, pq.kind, ptp.profession_name ORDER BY `ptp`.`profession_name` ASC, `pq`.`kind` ASC";
           $result = mysqli_query($link, $query) or die(mysqli_error($link));
           //////////////////fafdsafadfasdasdas
-          $c = 0;
-
-            echo "<h1>Специалист информационной безопасности-</h1>";
-            while($row = mysqli_fetch_assoc($result) and $c < 8) {
-              $c+=1;
-              echo "<br> ".$row["kind"]." - ".$row["name_of_test"]." - ".round($new[$row["PQ_id"]], 2)."";
+          $prev_prof = "";
+          $prev_kind = "";
+            while($row = mysqli_fetch_assoc($result)) {
+              if($prev_prof!=$row["profession_name"] && $prev_kind != $row["kind"]){
+                $prev_prof = $row["profession_name"];
+                $prev_kind = $row["kind"];
+                echo "<h1>" . $prev_prof . "</h1>";
+                echo "<h2> - " . $prev_kind . " = ".round($new[$row["PQ_id"]], 2)."</h2>";
+              }
+              if($prev_prof==$row["profession_name"] && $prev_kind != $row["kind"]){
+                $prev_prof = $row["profession_name"];
+                $prev_kind = $row["kind"];
+                echo "<h2> - " . $prev_kind . " = ".round($new[$row["PQ_id"]], 2)."</h2>";
+              }
+              if($prev_prof==$row["profession_name"] && $prev_kind == $row["kind"]){
+                echo " -- " . $row["name_of_test"] ." = ".$row["result"] ." ". $row["type_of_data"] ."<br>";
+              }
             }
-
-            echo "<h1><br>Тестировщик-</h1>";
-            while($row = mysqli_fetch_assoc($result) and $c >= 8 and $c <= 16) {
-              $c+=1;
-              echo "<br> ".$row["kind"]." - ".$row["name_of_test"]." - ".round($new[$row["PQ_id"]], 2)."";
-            }
-
-            echo "<h1><br>Data Scientist-</h1>";
-            while($row = mysqli_fetch_assoc($result) and $c > 16) {
-              $c+=1;
-              echo "<br> ".$row["kind"]." - ".$row["name_of_test"]." - ".round($new[$row["PQ_id"]], 2)."";
-            }
-
-      
     ?>
       </body>
     </html>
