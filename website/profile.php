@@ -78,7 +78,7 @@ $query = "SELECT T.name_of_test, T.type_of_data , avg(R.result) as avg from resu
 $result = mysqli_query($link, $query) or die(mysqli_error($link));
 while($row = mysqli_fetch_assoc($result)) {
   echo "<tr>
-  <td>".$row["avg"]." ".$row["type_of_data"]." </td>
+  <td>".abs(round($row["avg"]))." ".$row["type_of_data"]." </td>
   <td>".$row["name_of_test"]."</td>
        </tr>";
 }
@@ -86,6 +86,20 @@ mysqli_close($link);
 ?>
             </table>
               </div>
+              <?php
+              include("best_profession.php");
+              // echo "<h1>Наиболее подходящая профессия: ".$_SESSION["best_profession"]."(".round($_SESSION["percentage"] * 100)."%)<>"
+              if (session_status() == PHP_SESSION_NONE) {
+                session_start();
+            }
+            $entry_value = $_SESSION["admin"];
+            if ($entry_value) {
+                // Entry value is true, show the button
+                echo '<a class="expertbtn" href="extras.php" >Подробнее о расчетах</a>';
+                // id="expertbtn" name="expert" type="submit"
+              }
+              session_abort();
+              ?>
             </div>
           </div><!-- /.container -->
 
